@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   selector: 'pps-button',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './Button.component.html',
-  styleUrl: './Button.component.scss',
+  templateUrl: './button.component.html',
+  styleUrl: './button.component.scss',
 })
 export class ButtonComponent {}
