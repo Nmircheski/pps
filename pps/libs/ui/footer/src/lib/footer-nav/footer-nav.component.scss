@@ -1,0 +1,25 @@
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.nav-header {
+  color: #33517e;
+  font-family: Raleway;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 14px; /* 100% */
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}
+
+.nav-list {
+  color: #484848;
+  font-family: Raleway;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 14px; /* 100% */
+}
