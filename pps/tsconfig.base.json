@@ -15,9 +15,10 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@pps/ui/input": ["libs/ui/input/src/index.ts"],
+      "@pps/feature-home": ["libs/home/feature-home/src/index.ts"],
       "@pps/ui/button": ["libs/ui/button/src/index.ts"],
       "@pps/ui/footer": ["libs/ui/footer/src/index.ts"],
+      "@pps/ui/input": ["libs/ui/input/src/index.ts"],
       "@pps/ui/navbar": ["libs/ui/navbar/src/index.ts"]
     }
   },
