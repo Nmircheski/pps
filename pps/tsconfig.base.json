@@ -14,7 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@pps/ui/button": ["libs/ui/button/src/index.ts"],
+      "@pps/ui/navbar": ["libs/ui/navbar/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
