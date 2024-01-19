@@ -1,0 +1,78 @@
+.card {
+  border: 1px solid #ccc;
+  padding-top: 40px;
+  padding-left: 40px;
+  padding-right: 20px;
+  padding-bottom: 40px;
+  text-align: center;
+  flex-shrink: 0;
+  background: #ebe8df;
+  background-blend-mode: multiply;
+  flex-direction: column;
+  align-items: flex-start;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 30px;
+  min-width: 40%;
+  min-height: 40%;
+  border-radius: 10px;
+  .card-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+}
+
+.card:hover {
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-header h3 {
+  color: #1b325e;
+  font-family: Mulish;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 28px; /* 100% */
+  text-transform: capitalize;
+}
+.card-icon img,
+.card-icon i {
+  width: 50px; /* Adjust as needed */
+  height: auto;
+  margin-right: 10px;
+}
+
+.card-body p {
+  text-align: left;
+  color: #333;
+  font-family: Open Sans;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px; /* 155.556% */
+}
+
+.card-link-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.card-link {
+  color: #333;
+  font-family: Raleway;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 16px; /* 106.667% */
+  letter-spacing: 0.75px;
+  text-transform: uppercase;
+}
