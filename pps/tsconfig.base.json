@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@pps/ui/details-view": ["libs/ui/details-view/src/index.ts"],
       "@pps/expandable-panel": ["libs/ui/src/index.ts"],
       "@pps/feature-home": ["libs/home/feature-home/src/index.ts"],
       "@pps/ui/banner": ["libs/ui/banner/src/index.ts"],
