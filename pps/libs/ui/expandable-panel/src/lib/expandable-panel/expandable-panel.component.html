@@ -1,39 +1,84 @@
-<div class="logo">
-  <img [src]="logoUrl" alt="App Logo" />
-</div>
+<section class="accordion-container pb-5">
+  <div class="content-container flex gap-10">
+    <div class="logo flex-1">
+      <img [src]="logoUrl" class="h-full" alt="App Logo" />
+    </div>
 
-<cdk-accordion class="example-accordion">
-  @for (item of items; track item; let index = $index) {
-    <cdk-accordion-item
-      #accordionItem="cdkAccordionItem"
-      class="example-accordion-item"
-      role="button"
-      tabindex="0"
-      [attr.id]="'accordion-header-' + index"
-      [attr.aria-expanded]="accordionItem.expanded"
-      [attr.aria-controls]="'accordion-body-' + index"
-    >
-      <div
-        class="example-accordion-item-header"
-        (click)="accordionItem.toggle()"
-      >
-        {{ item }}
-        <span class="example-accordion-item-description">
-          Click to {{ accordionItem.expanded ? 'close' : 'open' }}
-        </span>
+    <aside class="flex-1 flex flex-col">
+      <!-- TODO create a component - pps-title and reuse it -->
+      <div class="flex-1 padding pb-5">
+        <h6 class="sub-title">
+          {{ subTitle | uppercase }}
+        </h6>
+        <h1 class="basis-6 main-title">
+          {{ mainTitle }}
+        </h1>
       </div>
-      <div
-        class="example-accordion-item-body"
-        role="region"
-        [style.display]="accordionItem.expanded ? '' : 'none'"
-        [attr.id]="'accordion-body-' + index"
-        [attr.aria-labelledby]="'accordion-header-' + index"
-      >
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis
-        excepturi incidunt ipsum deleniti labore, tempore non nam doloribus
-        blanditiis veritatis illo autem iure aliquid ullam rem tenetur deserunt
-        velit culpa?
-      </div>
-    </cdk-accordion-item>
-  }
-</cdk-accordion>
+
+      <cdk-accordion class="example-accordion pr-5 pb-5">
+        <div class="flex flex-col h-full">
+          @for (item of items; track item; let index = $index) {
+            <cdk-accordion-item
+              #accordionItem="cdkAccordionItem"
+              class="example-accordion-item flex-1"
+              role="button"
+              [expanded]="index === 0"
+              tabindex="0"
+              [attr.id]="'accordion-header-' + index"
+              [attr.aria-expanded]="accordionItem.expanded"
+              [attr.aria-controls]="'accordion-body-' + index"
+            >
+              <div
+                class="example-accordion-item-header"
+                (click)="accordionItem.toggle()"
+              >
+                <span class="item-title">{{ item | uppercase }}</span>
+                <span class="example-accordion-item-description">
+                  @if (!accordionItem.expanded) {
+                    <svg
+                      width="7"
+                      height="10"
+                      viewBox="0 0 7 10"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M6.0625 5L1.0625 10L0 8.9375L3.9375 5L0 1.0625L1.0625 0L6.0625 5Z"
+                        fill="#444444"
+                      />
+                    </svg>
+                  } @else {
+                    <svg
+                      width="10"
+                      height="7"
+                      viewBox="0 0 10 7"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M5 6.0625L0 1.0625L1.0625 0L5 3.9375L8.9375 0L10 1.0625L5 6.0625Z"
+                        fill="#444444"
+                      />
+                    </svg>
+                  }
+                </span>
+              </div>
+              <div
+                class="example-accordion-item-body"
+                role="region"
+                [style.display]="accordionItem.expanded ? '' : 'none'"
+                [attr.id]="'accordion-body-' + index"
+                [attr.aria-labelledby]="'accordion-header-' + index"
+              >
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Perferendis excepturi incidunt ipsum deleniti labore, tempore
+                non nam doloribus blanditiis veritatis illo autem iure aliquid
+                ullam rem tenetur deserunt velit culpa?
+              </div>
+            </cdk-accordion-item>
+          }
+        </div>
+      </cdk-accordion>
+    </aside>
+  </div>
+</section>
