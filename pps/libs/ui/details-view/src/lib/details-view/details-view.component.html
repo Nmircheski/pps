@@ -1,1 +1,22 @@
-<p>details-view works!</p>
+<article class="flex gap-10">
+  <div class="img-container flex-1">
+    <img [src]="imageSrc" alt="App Logo" />
+  </div>
+
+  <section class="text-container flex-1 text-left flex flex-col">
+    <div class="flex-1">
+      <h6 class="sub-title">
+        {{ subTitle | uppercase }}
+      </h6>
+      <h1 class="basis-6 main-title">
+        {{ mainTitle }}
+      </h1>
+    </div>
+    <p class="flex-1 content">
+      {{ paragraphContent }}
+    </p>
+    <div class="flex-1 flex">
+      <pps-button class="self-end">{{ buttonTitle }}</pps-button>
+    </div>
+  </section>
+</article>
