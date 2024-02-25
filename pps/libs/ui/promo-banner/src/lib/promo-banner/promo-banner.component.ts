@@ -3,14 +3,13 @@ import { Component, Input } from '@angular/core';
 import { ButtonComponent } from '@pps/ui/button';
 
 @Component({
-  selector: 'pps-banner',
+  selector: 'pps-promo-banner',
   standalone: true,
   imports: [CommonModule, ButtonComponent],
-  templateUrl: './banner.component.html',
-  styleUrl: './banner.component.scss',
+  templateUrl: './promo-banner.component.html',
+  styleUrl: './promo-banner.component.scss',
 })
-export class BannerComponent {
+export class PromoBannerComponent {
   @Input() heading = '';
   @Input() content = '';
-  @Input() type: 'main' | 'mid' | 'end' = 'mid';
 }

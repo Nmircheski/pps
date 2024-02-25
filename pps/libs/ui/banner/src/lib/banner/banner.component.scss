@@ -1,11 +1,23 @@
 .cta-banner {
+  padding: 100px 100px;
+}
+
+.main-banner {
   background:
     linear-gradient(0deg, #192744 0%, #192744 100%),
     url('./../../../../../../apps/pps/src/assets/banner.png'),
     lightgray 50% / cover no-repeat;
   background-blend-mode: hard-light, normal;
   min-height: 400px;
-  padding: 100px 100px;
+  border-radius: 40px 40px 0 0;
+}
+
+.mid-banner {
+  background:
+    url('./../../../../../../apps/pps/src/assets/midPageBanner.png'),
+    lightgray 50% / cover no-repeat;
+  background-blend-mode: hard-light, normal;
+  min-height: 200px;
   border-radius: 40px 40px 0 0;
 }
 

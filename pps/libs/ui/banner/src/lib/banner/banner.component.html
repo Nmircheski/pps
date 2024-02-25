@@ -1,4 +1,8 @@
-<section class="cta-banner">
+<section
+  class="cta-banner"
+  [class.main-banner]="type === 'main'"
+  [class.mid-banner]="type === 'mid'"
+>
   <div class="cta-container">
     <h1 class="banner-heading">
       {{ heading }}

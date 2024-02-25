@@ -5,6 +5,7 @@ import { BannerComponent } from '@pps/ui/banner';
 import { CardComponent } from '@pps/ui/card';
 import { DetailsViewComponent } from '@pps/ui/details-view';
 import { ExpandablePanelComponent } from '@pps/ui/expandable-panel';
+import { PromoBannerComponent } from '@pps/ui/promo-banner';
 import { HomepageComponent } from './homepage/homepage.component';
 import { featureHomeRoutes } from './lib.routes';
 
@@ -13,6 +14,7 @@ import { featureHomeRoutes } from './lib.routes';
     CommonModule,
     RouterModule.forChild(featureHomeRoutes),
     BannerComponent,
+    PromoBannerComponent,
     CardComponent,
     ExpandablePanelComponent,
     DetailsViewComponent,
