@@ -1,6 +1,6 @@
 import { CdkAccordionModule } from '@angular/cdk/accordion';
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'pps-expandable-panel',
@@ -10,7 +10,14 @@ import { Component } from '@angular/core';
   styleUrl: './expandable-panel.component.scss',
 })
 export class ExpandablePanelComponent {
-  items = ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5'];
+  items = [
+    'храна и пијалоци',
+    'фармацевстка индустрија',
+    'хемиски средства и препарати',
+    'услужна индустрија',
+  ];
   expandedIndex = 0;
-  logoUrl: string = '';
+  @Input() logoUrl: string = '';
+  @Input() subTitle: string = '';
+  @Input() mainTitle: string = '';
 }
