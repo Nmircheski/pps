@@ -15,6 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      //TODO find best patterns for short names
+      "@pps/feature-products": ["libs/products/feature-products/src/index.ts"],
       "@pps/PromoBanner": ["ui/src/index.ts"],
       "@pps/expandable-panel": ["libs/ui/src/index.ts"],
       "@pps/feature-home": ["libs/home/feature-home/src/index.ts"],

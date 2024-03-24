@@ -11,4 +11,9 @@ export const appRoutes: Route[] = [
     loadChildren: () =>
       import('@pps/feature-home').then((m) => m.FeatureHomeModule),
   },
+  {
+    path: 'products/:productsId',
+    loadChildren: () =>
+      import('@pps/feature-products').then((m) => m.FeatureProductsModule),
+  },
 ];
