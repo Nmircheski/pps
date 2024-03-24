@@ -15,8 +15,10 @@
     <p class="flex-1 content">
       {{ paragraphContent }}
     </p>
-    <div class="flex-1 flex">
-      <pps-button class="self-end">{{ buttonTitle }}</pps-button>
-    </div>
+    @if (buttonTitle) {
+      <div class="flex-1 flex">
+        <pps-button class="self-end">{{ buttonTitle }}</pps-button>
+      </div>
+    }
   </section>
 </article>
