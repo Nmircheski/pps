@@ -1,0 +1,37 @@
+main {
+  margin-top: 50px;
+}
+
+swiper-container {
+  width: 1200px;
+  margin-top: 50px;
+}
+
+swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 500px !important;
+}
+
+swiper-slide img {
+  display: block;
+  width: 600px !important;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 28.57px;
+  opacity: 0px;
+}
+
+h1 {
+  padding-left: 150px;
+  font-family: Mulish;
+  font-size: 32px;
+  color: rgba(51, 81, 126, 1);
+  font-weight: 700;
+  line-height: 40px;
+  text-align: left;
+}
