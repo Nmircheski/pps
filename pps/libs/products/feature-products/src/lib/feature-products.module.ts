@@ -7,6 +7,7 @@ import { CardComponent } from '@pps/ui/card';
 import { ContactBannerComponent } from '@pps/ui/contact-banner';
 import { DetailsViewComponent } from '@pps/ui/details-view';
 import { ExpandablePanelComponent } from '@pps/ui/expandable-panel';
+import { ImageGalleryModule } from '@pps/ui/gallery';
 import { PromoBannerComponent } from '@pps/ui/promo-banner';
 import { featureHomeRoutes } from './lib.routes';
 import { ProductsPageComponent } from './products-page/ProductsPage.component';
@@ -22,6 +23,7 @@ import { ProductsPageComponent } from './products-page/ProductsPage.component';
     ExpandablePanelComponent,
     DetailsViewComponent,
     BenefitsModule,
+    ImageGalleryModule,
   ],
   declarations: [ProductsPageComponent],
 })

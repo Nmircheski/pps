@@ -1,0 +1,20 @@
+<div>
+  <main>
+    <h1>Галерија</h1>
+    <!-- image -->
+    <swiper-container
+      ppsSwiper
+      #swiper
+      [config]="swiperConfig"
+      (slidechange)="slideChange($event)"
+    >
+      @for (image of images; track image.src) {
+        <swiper-slide>
+          <img [src]="image.src" />
+        </swiper-slide>
+      }
+    </swiper-container>
+  </main>
+
+  <!-- /description -->
+</div>

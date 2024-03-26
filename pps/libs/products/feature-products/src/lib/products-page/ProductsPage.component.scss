@@ -4,3 +4,10 @@
   padding-left: 150px;
   padding-right: 150px;
 }
+
+.cards-container {
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
