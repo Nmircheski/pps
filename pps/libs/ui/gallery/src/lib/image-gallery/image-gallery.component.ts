@@ -33,7 +33,7 @@ export class ImageGalleryComponent {
   index = 0;
 
   // Swiper
-  swiperConfig: SwiperOptions = {
+  public readonly swiperConfig: SwiperOptions = {
     spaceBetween: 20,
     slidesPerView: 3,
   };
