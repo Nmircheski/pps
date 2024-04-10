@@ -21,4 +21,9 @@ export const appRoutes: Route[] = [
     loadChildren: () =>
       import('@pps/feature-contact').then((m) => m.FeatureContactModule),
   },
+  {
+    path: 'about-us',
+    loadChildren: () =>
+      import('@pps/feature-about-us').then((m) => m.FeatureAboutUsModule),
+  },
 ];

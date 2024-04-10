@@ -17,6 +17,7 @@
     "paths": {
       "@pps/PromoBanner": ["ui/src/index.ts"],
       "@pps/expandable-panel": ["libs/ui/src/index.ts"],
+      "@pps/feature-about-us": ["libs/about-us/feature-about-us/src/index.ts"],
       "@pps/feature-contact": ["libs/contact/feature-contact/src/index.ts"],
       "@pps/feature-home": ["libs/home/feature-home/src/index.ts"],
       "@pps/feature-products": ["libs/products/feature-products/src/index.ts"],

@@ -15,4 +15,5 @@ export class DetailsViewComponent {
   @Input() paragraphContent: string = '';
   @Input() mainTitle: string = '';
   @Input() subTitle: string = '';
+  @Input() colReverse: boolean | null = null;
 }
