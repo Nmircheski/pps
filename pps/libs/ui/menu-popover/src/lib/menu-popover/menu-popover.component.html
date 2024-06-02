@@ -1,18 +1,21 @@
-<a cdkOverlayOrigin #trigger="cdkOverlayOrigin" (click)="isOpen = !isOpen"
+<a
+  class="menu-trigger"
+  cdkOverlayOrigin
+  #trigger="cdkOverlayOrigin"
+  (click)="isOpen = !isOpen"
   >Products</a
 >
 <ng-template
   cdkConnectedOverlay
   #menu="cdkConnectedOverlay"
   [cdkConnectedOverlayHasBackdrop]="true"
-  [cdkConnectedOverlayBackdropClass]="''"
+  [cdkConnectedOverlayBackdropClass]="['']"
   (backdropClick)="isOpen = false"
   [cdkConnectedOverlayOrigin]="trigger"
   [cdkConnectedOverlayOpen]="isOpen"
 >
   <ul class="example-list">
-    <li (click)="onItemClicked.emit()">Item 1</li>
-    <li (click)="onItemClicked.emit()">Item 2</li>
-    <li (click)="onItemClicked.emit()">Item 3</li>
+    <li class="text-left" (click)="onItemClicked.emit()">Етикети</li>
+    <li class="text-left" (click)="onItemClicked.emit()">Чаши</li>
   </ul>
 </ng-template>
