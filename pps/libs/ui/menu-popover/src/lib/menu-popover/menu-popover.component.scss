@@ -1,0 +1,23 @@
+.example-list {
+  width: 125px;
+  border-radius: 15px;
+  background: #fff;
+  text-align: center;
+  padding: 10px;
+  margin: 0;
+  margin-top: 10px;
+}
+
+.example-list > li {
+  list-style-type: none;
+  border-bottom: solid 1px #8b8b8b;
+  padding: 8px 0;
+}
+
+.example-list > li:last-child {
+  border-bottom: none;
+}
+
+.menu-trigger:hover {
+  cursor: pointer;
+}
