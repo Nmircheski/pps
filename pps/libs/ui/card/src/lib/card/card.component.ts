@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'pps-card',
@@ -8,4 +8,6 @@ import { CommonModule } from '@angular/common';
   templateUrl: './card.component.html',
   styleUrl: './card.component.scss',
 })
-export class CardComponent {}
+export class CardComponent {
+  @Input() public type: 'labels' | 'cups' = 'labels';
+}

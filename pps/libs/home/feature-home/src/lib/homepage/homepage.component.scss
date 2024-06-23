@@ -1,8 +1,8 @@
 .cards-section {
   text-align: center;
   padding-top: 30px;
-  padding-left: 150px;
-  padding-right: 150px;
+  padding-left: 300px;
+  padding-right: 300px;
 }
 
 .cards-heading {
@@ -34,6 +34,9 @@
 .cards-container {
   padding-top: 20px;
   display: flex;
-  justify-content: space-between;
   gap: 40px;
+
+  pps-card {
+    flex: 1;
+  }
 }

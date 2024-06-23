@@ -1,12 +1,13 @@
 .card {
   border: 1px solid #ccc;
-  padding-top: 40px;
+  padding-top: 100px;
   padding-left: 40px;
   padding-right: 20px;
-  padding-bottom: 40px;
+  padding-bottom: 50px;
   text-align: center;
   flex-shrink: 0;
   background: #ebe8df;
+
   background-blend-mode: multiply;
   flex-direction: column;
   align-items: flex-start;
@@ -14,9 +15,14 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 30px;
-  min-width: 40%;
-  min-height: 40%;
-  border-radius: 10px;
+  min-width: 100%;
+  min-height: 100%;
+  flex: 1;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+
+  border-radius: 25px;
   .card-header {
     display: flex;
     flex-direction: column;
@@ -25,7 +31,21 @@
   }
 }
 
+.card.labels {
+  background-image: url('../../../../../../apps/pps/src/assets/card-labels-bg.png');
+}
+
+.card.cups {
+  background-image: url('../../../../../../apps/pps/src/assets/card-cups-bg.png');
+}
+
 .card:hover {
+  transform: translateY(-10px);
+  cursor: pointer;
+
+  .card-link {
+    border-bottom: 1px solid black;
+  }
 }
 
 .card-header {
@@ -75,4 +95,5 @@
   line-height: 16px; /* 106.667% */
   letter-spacing: 0.75px;
   text-transform: uppercase;
+  padding-bottom: 5px;
 }

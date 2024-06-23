@@ -1,31 +1,35 @@
-<section class="container">
-  <section class="form-container">
-    <header>
-      <h1>Контактирај не!</h1>
-      <h6>Би сакале да чуеме за вашите потреби за етикети и хартиени чаши.</h6>
-      <p class="header-description">
-        Заедно, можеме да создадеме решенија кои имаат трајно влијание во вашата
-        индустрија и го поттикнуваат успехот на вашиот бизнис.
-      </p>
-    </header>
-    <div class="flex flex-col my-5">
-      @for (item of contactItems; track item.value) {
-        <div class="flex flex-col">
-          <label class="contact-item-label" for="item.label">{{
-            item.label | uppercase
-          }}</label>
-          <input
-            [type]="item.type"
-            [id]="item.label"
-            [name]="item.label"
-            [readonly]="true"
-            [value]="item.value"
-          />
-        </div>
-      }
+<section class="w-full h-[85vh] flex gap-10">
+  <section class="form-container flex-1">
+    <div class="form-content-container flex flex-col gap-10">
+      <header>
+        <h1>Контактирај не!</h1>
+        <h6>
+          Би сакале да чуеме за вашите потреби за етикети и хартиени чаши.
+        </h6>
+        <p class="header-description">
+          Заедно, можеме да создадеме решенија кои имаат трајно влијание во
+          вашата индустрија и го поттикнуваат успехот на вашиот бизнис.
+        </p>
+      </header>
+      <div class="">
+        @for (item of contactItems; track item.value) {
+          <div class="flex flex-col">
+            <label class="contact-item-label" for="item.label">{{
+              item.label | uppercase
+            }}</label>
+            <input
+              [type]="item.type"
+              [id]="item.label"
+              [name]="item.label"
+              [readonly]="true"
+              [value]="item.value"
+            />
+          </div>
+        }
+      </div>
     </div>
   </section>
-  <aside class="image-container">
+  <aside class="image-container flex-1">
     <div class="img"></div>
   </aside>
 </section>

@@ -1,5 +1,5 @@
 .cta-banner {
-  padding: 100px 100px;
+  padding: 100px 300px;
 }
 
 .main-banner {
@@ -18,7 +18,6 @@
     lightgray 50% / cover no-repeat;
   background-blend-mode: hard-light, normal;
   min-height: 200px;
-  border-radius: 40px 40px 0 0;
 }
 
 .cta-container {
@@ -46,7 +45,17 @@
   margin-bottom: 30px;
 }
 
-.cta-button > .psa-button {
-  height: 100px;
-  width: 100px;
+.cta-button .pps-button {
+  background: rgba(248, 242, 228, 1);
+
+  > p {
+    color: rgba(51, 51, 51, 1) !important;
+  }
+  > .button-suffix {
+    background-color: rgba(51, 51, 51, 1) !important;
+  }
+}
+
+.cta-button .pps-button:hover {
+  background: rgba(196, 192, 181, 1);
 }
