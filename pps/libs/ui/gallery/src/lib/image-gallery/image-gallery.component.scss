@@ -3,7 +3,6 @@ main {
 }
 
 swiper-container {
-  width: 1200px;
   margin-top: 50px;
 }
 
@@ -16,6 +15,7 @@ swiper-slide {
   align-items: center;
   width: 500px !important;
   height: 100%;
+  margin-left: 20px;
 }
 
 swiper-slide img {
@@ -28,11 +28,15 @@ swiper-slide img {
 }
 
 h1 {
-  padding-left: 150px;
   font-family: Mulish;
   font-size: 32px;
   color: rgba(51, 81, 126, 1);
   font-weight: 700;
   line-height: 40px;
   text-align: left;
+}
+
+.gallery-container h1 {
+  padding-left: 300px;
+  padding-right: 300px;
 }

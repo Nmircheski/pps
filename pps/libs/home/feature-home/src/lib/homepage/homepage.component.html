@@ -13,8 +13,8 @@
   </p>
 
   <div class="cards-container">
-    <pps-card></pps-card>
-    <pps-card></pps-card>
+    <pps-card [type]="'labels'"></pps-card>
+    <pps-card [type]="'cups'"></pps-card>
   </div>
 </section>
 <pps-details-view
@@ -27,6 +27,7 @@
 </pps-details-view>
 
 <pps-promo-banner
+  class="mt-40 block"
   [heading]="
     'Откријте ја разликата што нашата експертиза може да ја направи за вашиот бизнис'
   "

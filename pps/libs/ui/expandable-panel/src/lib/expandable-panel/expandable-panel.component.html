@@ -1,21 +1,25 @@
 <section class="accordion-container pb-5">
-  <div class="content-container flex gap-10">
+  <div class="content-container flex gap-10 overflow-hidden">
     <div class="logo flex-1">
-      <img [src]="logoUrl" class="h-full" alt="App Logo" />
+      <img
+        [src]="logoUrl"
+        class="h-full w-full overflow-hidden"
+        alt="App Logo"
+      />
     </div>
 
     <aside class="flex-1 flex flex-col">
       <!-- TODO create a component - pps-title and reuse it -->
-      <div class="flex-1 padding pb-5">
-        <h6 class="sub-title">
+      <div class="flex-1 padding pb-5 pt-10">
+        <h6 class="sub-title mt-5">
           {{ subTitle | uppercase }}
         </h6>
-        <h1 class="basis-6 main-title">
+        <h1 class="main-title mt-5">
           {{ mainTitle }}
         </h1>
       </div>
 
-      <cdk-accordion class="example-accordion pr-5 pb-5">
+      <cdk-accordion class="example-accordion pr-5 pb-5 flex-1">
         <div class="flex flex-col h-full">
           @for (item of items; track item; let index = $index) {
             <cdk-accordion-item
@@ -30,7 +34,7 @@
             >
               <div
                 class="example-accordion-item-header"
-                (click)="accordionItem.toggle()"
+                (click)="!accordionItem.expanded ? accordionItem.toggle() : ''"
               >
                 <span class="item-title">{{ item | uppercase }}</span>
                 <span class="example-accordion-item-description">
