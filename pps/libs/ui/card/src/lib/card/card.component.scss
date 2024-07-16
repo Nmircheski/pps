@@ -2,7 +2,7 @@
   border: 1px solid #ccc;
   padding-top: 100px;
   padding-left: 40px;
-  padding-right: 20px;
+  padding-right: calc(2px + 1.5625vw);
   padding-bottom: 50px;
   text-align: center;
   flex-shrink: 0;

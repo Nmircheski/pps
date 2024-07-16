@@ -27,7 +27,6 @@
   font-weight: 700;
   line-height: 20px;
   letter-spacing: 0em;
-  text-align: left;
   color: #4d4d4d;
 }
 
@@ -53,8 +52,8 @@
 
 .accordion-container {
   padding-top: 30px;
-  padding-left: 300px;
-  padding-right: 300px;
+  padding-left: calc(8px + 1.5625vw);
+  padding-right: calc(8px + 1.5625vw);
   min-height: 500px;
 }
 
@@ -70,7 +69,6 @@
   font-weight: 600;
   line-height: 14px;
   letter-spacing: 0.1em;
-  text-align: left;
   color: #7a82cc;
 }
 .main-title {
@@ -79,6 +77,11 @@
   font-weight: 700;
   line-height: 40px;
   letter-spacing: 0em;
-  text-align: left;
   color: #33517e;
+}
+
+@media (max-width: 375px) {
+  .content-container {
+    height: auto;
+  }
 }

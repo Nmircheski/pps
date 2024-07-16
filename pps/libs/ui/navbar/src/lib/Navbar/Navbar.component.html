@@ -1,20 +1,58 @@
-<header class="main-nav">
-  <div class="logo">
-    <img [src]="logoUrl" alt="App Logo" />
+<header
+  class="main-nav sm:flex-row gap-12 sm:gap-0 sm:justify-between sm:items-center"
+  [class.justify-end]="!menuOpen"
+  [class.h-screen]="menuOpen"
+  [class.flex-col]="menuOpen"
+  [class.justify-start]="menuOpen"
+  [class.items-start]="menuOpen"
+>
+  <div
+    class="logo sm:block"
+    [class.flex]="menuOpen"
+    [class.flex-row]="menuOpen"
+  >
+    <img [src]="logoUrl" alt="App Logo" [class.hidden]="!menuOpen" />
+    <div class="sm:hidden" (click)="toggleMenu()">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16m-7 6h7"
+        />
+      </svg>
+    </div>
   </div>
+
   <nav class="navbar">
-    <ul>
-      <li class="nav-link">
+    <ul
+      class="nav-list flex self-start flex-row"
+      [class.flex-col]="menuOpen"
+      [class.hidden]="!menuOpen"
+    >
+      <li class="nav-link sm:self-center sm:justify-center">
         <a href="#home" [routerLink]="['/home']">Home</a>
       </li>
-      <li class="nav-link">
+      <li class="nav-link sm:self-center sm:justify-center">
         <pps-menu-popover></pps-menu-popover>
       </li>
-      <li class="nav-link"><a [routerLink]="['/about-us']">About</a></li>
+      <li class="nav-link sm:self-center sm:justify-center">
+        <a [routerLink]="['/about-us']">About</a>
+      </li>
     </ul>
   </nav>
 
-  <div class="contact-info">
+  <div
+    class="contact-info flex sm:self-center"
+    [class.hidden]="!menuOpen"
+    [class.flex-col]="menuOpen"
+  >
     <p href="#contact" class="phone-link">+389 71 234567</p>
 
     <pps-button [routerLink]="['/contact']"> Contact </pps-button>

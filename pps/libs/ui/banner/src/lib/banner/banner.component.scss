@@ -1,5 +1,5 @@
 .cta-banner {
-  padding: 100px 300px;
+  padding: 100px calc(8px + 5.5625vw);
 }
 
 .main-banner {
@@ -8,7 +8,10 @@
     url('./../../../../../../apps/pps/src/assets/banner.png'),
     lightgray 50% / cover no-repeat;
   background-blend-mode: hard-light, normal;
-  min-height: 400px;
+  overflow: hidden;
+  min-height: 200px;
+  width: 100%;
+  max-width: 100%;
   border-radius: 40px 40px 0 0;
 }
 
@@ -18,10 +21,6 @@
     lightgray 50% / cover no-repeat;
   background-blend-mode: hard-light, normal;
   min-height: 200px;
-}
-
-.cta-container {
-  width: 40%;
 }
 
 .banner-heading {
@@ -58,4 +57,14 @@
 
 .cta-button .pps-button:hover {
   background: rgba(196, 192, 181, 1);
+}
+
+@media (max-width: 375px) {
+  .cta-container {
+    width: 100%;
+  }
+
+  .banner-heading {
+    font-size: 28px;
+  }
 }

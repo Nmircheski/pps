@@ -1,5 +1,11 @@
-import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { CommonModule, DOCUMENT } from '@angular/common';
+import {
+  Component,
+  Inject,
+  Input,
+  Renderer2,
+  ViewEncapsulation,
+} from '@angular/core';
 
 import { RouterModule } from '@angular/router';
 import { ButtonComponent } from '@pps/ui/button';
@@ -7,11 +13,31 @@ import { MenuPopoverComponent } from '@pps/ui/menu-popover';
 
 @Component({
   selector: 'pps-navbar',
+  exportAs: 'ppsNavbar',
   standalone: true,
   imports: [CommonModule, ButtonComponent, MenuPopoverComponent, RouterModule],
   templateUrl: './Navbar.component.html',
   styleUrl: './Navbar.component.scss',
+  encapsulation: ViewEncapsulation.None,
 })
 export class NavbarComponent {
+  public menuOpen = false;
+
   @Input() logoUrl: string = '';
+
+  constructor(
+    @Inject(DOCUMENT) private document: Document,
+    private renderer: Renderer2,
+  ) {}
+
+  protected toggleMenu(): void {
+    this.menuOpen = !this.menuOpen;
+
+    if (this.menuOpen) {
+      document.body.style.overflow = 'hidden';
+      this.renderer.addClass(this.document.body, 'overflow-hidden');
+    } else {
+      this.renderer.removeClass(this.document.body, 'overflow-hidden');
+    }
+  }
 }

@@ -21,9 +21,9 @@
 }
 
 .form-content-container {
-  padding-left: 300px;
-  padding-top: 80px;
-  padding-right: 50px;
+  padding-left: calc(8px + 1.5625vw);
+  padding-top: calc(12px + 1.5625vw);
+  padding-right: calc(8px + 1.5625vw);
 }
 
 .form-container p {

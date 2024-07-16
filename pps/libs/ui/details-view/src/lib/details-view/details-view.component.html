@@ -1,10 +1,13 @@
-<article class="flex gap-10" [class.flex-col-reverse]="colReverse">
-  <div class="img-container flex-1">
+<article
+  class="flex flex-wrap sm:flex-nowrap gap-10"
+  [class.flex-col-reverse]="colReverse"
+>
+  <div class="img-container sm:flex-1">
     <img [src]="imageSrc" alt="App Logo" [class.reverse-image]="colReverse" />
   </div>
 
   <section
-    class="text-container flex-1 text-left flex"
+    class="text-container sm:flex-1 text-left flex"
     [class.flex-col]="!colReverse"
     [class.flex-row]="colReverse"
   >

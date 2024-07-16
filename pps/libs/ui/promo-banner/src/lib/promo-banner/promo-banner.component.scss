@@ -1,7 +1,7 @@
 .cta-banner {
   margin-top: 100px;
-  padding-left: 300px;
-  padding-right: 300px;
+  padding-left: calc(8px + 1.5625vw);
+  padding-right: calc(8px + 1.5625vw);
   padding-top: 20px;
   padding-bottom: 20px;
   position: relative;
@@ -30,7 +30,7 @@
   position: absolute;
   z-index: 999;
   padding: 20px;
-  padding-left: 300px;
+  padding-left: calc(8px + 1.5625vw);
 }
 
 .description-container {
@@ -101,4 +101,18 @@
   background: rgba(9, 26, 51, 1);
   z-index: 1;
   left: 0;
+}
+
+@media (max-width: 375px) {
+  .banner-container {
+    height: 525px;
+  }
+
+  .description-container {
+    width: 100%;
+  }
+
+  .cta-banner {
+    background: rgba(14, 39, 77, 1);
+  }
 }

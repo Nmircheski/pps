@@ -37,6 +37,6 @@ h1 {
 }
 
 .gallery-container h1 {
-  padding-left: 300px;
-  padding-right: 300px;
+  padding-left: calc(8px + 1.5625vw);
+  padding-right: calc(8px + 1.5625vw);
 }

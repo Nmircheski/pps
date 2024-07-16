@@ -10,4 +10,5 @@ import { Component, Input } from '@angular/core';
 })
 export class CardComponent {
   @Input() public type: 'labels' | 'cups' = 'labels';
+  @Input() public title = '';
 }

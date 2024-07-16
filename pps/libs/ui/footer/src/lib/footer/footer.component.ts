@@ -17,6 +17,19 @@ export class FooterComponent {
 
   navConfigs: FooterList[] = [
     {
+      title: 'Продукти',
+      items: [
+        {
+          name: 'Самоплепливи Етикети',
+          routerLink: '',
+        },
+        {
+          name: 'Хартиени чаши',
+          routerLink: '',
+        },
+      ],
+    },
+    {
       title: 'сајт мапа',
       items: [
         {
@@ -27,10 +40,7 @@ export class FooterComponent {
           name: 'За нас',
           routerLink: '',
         },
-        {
-          name: 'Продукти',
-          routerLink: '',
-        },
+
         {
           name: 'Контакт',
           routerLink: '',
@@ -56,5 +66,5 @@ export class FooterComponent {
     },
   ];
 
-  public emailPlaceholder = 'email@address.com';
+  public emailPlaceholder = 'emailaddress@pps.com';
 }
