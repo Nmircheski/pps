@@ -36,6 +36,14 @@ h1 {
   text-align: left;
 }
 
+@media (max-width: 375px) {
+  h1 {
+    font-size: 26px;
+    line-height: 34px;
+    text-align: center;
+  }
+}
+
 .gallery-container h1 {
   padding-left: calc(8px + 1.5625vw);
   padding-right: calc(8px + 1.5625vw);

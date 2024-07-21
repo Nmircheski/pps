@@ -1,11 +1,7 @@
-<article
-  class="card"
-  [class.labels]="type === 'labels'"
-  [class.cups]="type === 'cups'"
->
+<article class="card bg-{{ bgType }}">
   <header class="card-header">
     <div class="card-icon">
-      @switch (type) {
+      @switch (titleIcon) {
         @case ('labels') {
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -72,23 +68,14 @@
     </div>
     <h3 class="text-left">{{ title }}</h3>
   </header>
-  <div class="card-body hidden sm:block">
+  <div class="card-body sm:block" [class.hidden]="hideContentSm">
     <p>
       Без разлика дали ви се потребни издржливи, водоотпорни етикети за
       надворешна употреба, на високи или ниски температури, имаме решенија....
     </p>
   </div>
 
-  <p class="card-link-container">
-    <a class="card-link"> Дознај повеќе </a>
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="4"
-      height="4"
-      viewBox="0 0 4 4"
-      fill="none"
-    >
-      <circle cx="2" cy="2" r="2" fill="#333333" />
-    </svg>
-  </p>
+  <pps-button [class.hidden]="hideLinkButtonSm" class="sm:block">
+    Дознај повеќе
+  </pps-button>
 </article>

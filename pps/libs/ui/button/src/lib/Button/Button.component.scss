@@ -5,16 +5,40 @@
   align-items: center;
   gap: 10px;
   border-radius: 12px;
-  background: #254481;
+
   color: #ffffff;
   padding-left: 20px;
-  padding-right: calc(2px + 1.5625vw);
+  padding-right: 20px;
   padding-top: 15px;
   padding-bottom: 15px;
 }
 
 .pps-button:hover {
   background: #1b325e;
+}
+
+.pps-button.bg-blue {
+  background: #254481;
+  color: white;
+  .button-suffix {
+    background: white;
+  }
+}
+
+.pps-button.bg-light {
+  background: rgba(248, 242, 228, 1);
+  color: rgba(51, 51, 51, 1);
+  .button-suffix {
+    background: rgba(51, 51, 51, 1);
+  }
+}
+
+.pps-button.bg-none {
+  background: transparent;
+  color: rgba(51, 51, 51, 1);
+  .button-suffix {
+    background: rgba(51, 51, 51, 1);
+  }
 }
 
 .figma-button {
@@ -27,7 +51,6 @@
 }
 
 .button-text {
-  color: white;
   font-size: 16px;
   font-weight: 600;
   text-transform: uppercase;
@@ -37,8 +60,7 @@
 }
 
 .button-suffix {
+  border-radius: 9999px;
   width: 6px;
   height: 6px;
-  background: white;
-  border-radius: 9999px;
 }

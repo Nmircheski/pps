@@ -1,5 +1,5 @@
 <header
-  class="main-nav sm:flex-row gap-12 sm:gap-0 sm:justify-between sm:items-center"
+  class="main-nav sm:flex-row gap-12 sm:gap-0 sm:justify-between sm:items-center w-full"
   [class.justify-end]="!menuOpen"
   [class.h-screen]="menuOpen"
   [class.flex-col]="menuOpen"
@@ -11,7 +11,7 @@
     [class.flex]="menuOpen"
     [class.flex-row]="menuOpen"
   >
-    <img [src]="logoUrl" alt="App Logo" [class.hidden]="!menuOpen" />
+    <img [src]="logoUrl" alt="App Logo" />
     <div class="sm:hidden" (click)="toggleMenu()">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -30,20 +30,23 @@
     </div>
   </div>
 
-  <nav class="navbar">
+  <nav class="navbar w-full">
     <ul
-      class="nav-list flex self-start flex-row"
+      class="nav-list flex self-start flex-row w-full"
       [class.flex-col]="menuOpen"
       [class.hidden]="!menuOpen"
     >
       <li class="nav-link sm:self-center sm:justify-center">
-        <a href="#home" [routerLink]="['/home']">Home</a>
+        <a href="#home" [routerLink]="['/home']">Почетна</a>
+      </li>
+      <li class="nav-link sm:self-center sm:justify-center align-center">
+        <pps-menu-popover class="w-full">Продукти</pps-menu-popover>
       </li>
       <li class="nav-link sm:self-center sm:justify-center">
-        <pps-menu-popover></pps-menu-popover>
+        <a [routerLink]="['/about-us']">За нас</a>
       </li>
       <li class="nav-link sm:self-center sm:justify-center">
-        <a [routerLink]="['/about-us']">About</a>
+        <a href="#contact" class="phone-link">+389 71 23456</a>
       </li>
     </ul>
   </nav>
@@ -53,8 +56,6 @@
     [class.hidden]="!menuOpen"
     [class.flex-col]="menuOpen"
   >
-    <p href="#contact" class="phone-link">+389 71 234567</p>
-
-    <pps-button [routerLink]="['/contact']"> Contact </pps-button>
+    <pps-button [routerLink]="['/contact']"> Контакт </pps-button>
   </div>
 </header>

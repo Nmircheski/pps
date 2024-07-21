@@ -6,19 +6,20 @@
     <img [src]="imageSrc" alt="App Logo" [class.reverse-image]="colReverse" />
   </div>
 
+  <header class="sm:flex-1">
+    <h6 class="sub-title">
+      {{ subTitle | uppercase }}
+    </h6>
+    <h1 class="basis-6 main-title">
+      {{ mainTitle }}
+    </h1>
+  </header>
+
   <section
     class="text-container sm:flex-1 text-left flex"
     [class.flex-col]="!colReverse"
     [class.flex-row]="colReverse"
   >
-    <div class="flex-1">
-      <h6 class="sub-title">
-        {{ subTitle | uppercase }}
-      </h6>
-      <h1 class="basis-6 main-title">
-        {{ mainTitle }}
-      </h1>
-    </div>
     <p class="flex-1 content">
       {{ paragraphContent }}
     </p>

@@ -31,12 +31,17 @@
   }
 }
 
-.card.labels {
+.card.bg-labels {
   background-image: url('../../../../../../apps/pps/src/assets/card-labels-bg.png');
 }
 
-.card.cups {
+.card.bg-cups {
   background-image: url('../../../../../../apps/pps/src/assets/card-cups-bg.png');
+}
+
+.card.bg-light {
+  background: rgba(250, 247, 246, 1);
+  border: none;
 }
 
 .card:hover {

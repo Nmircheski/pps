@@ -17,5 +17,8 @@
 @media (max-width: 375px) {
   .list-container {
     flex-wrap: wrap;
+    gap: 20px;
+    padding: 40px 20px;
+    justify-content: flex-start;
   }
 }

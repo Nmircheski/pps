@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'pps-button',
@@ -8,4 +8,9 @@ import { Component } from '@angular/core';
   templateUrl: './button.component.html',
   styleUrl: './button.component.scss',
 })
-export class ButtonComponent {}
+export class ButtonComponent {
+  /**
+   * Background type
+   */
+  @Input() public bgType: 'blue' | 'light' | 'none' = 'blue';
+}

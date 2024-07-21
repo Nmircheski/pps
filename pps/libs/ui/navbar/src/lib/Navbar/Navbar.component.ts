@@ -34,7 +34,6 @@ export class NavbarComponent {
     this.menuOpen = !this.menuOpen;
 
     if (this.menuOpen) {
-      document.body.style.overflow = 'hidden';
       this.renderer.addClass(this.document.body, 'overflow-hidden');
     } else {
       this.renderer.removeClass(this.document.body, 'overflow-hidden');

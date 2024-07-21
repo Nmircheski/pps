@@ -1,9 +1,9 @@
 <a
-  class="menu-trigger"
+  class="menu-trigger w-full justify-between items-center"
   cdkOverlayOrigin
   #trigger="cdkOverlayOrigin"
   (click)="isOpen = !isOpen"
-  >Products
+  ><ng-content></ng-content>
   <svg
     class="inline-block"
     width="8"

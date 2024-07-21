@@ -1,5 +1,5 @@
 <pps-details-view
-  [imageSrc]="'assets/aboutUsImageDetails.png'"
+  [imageSrc]="'assets/card-cups-small.png'"
   [subTitle]="detailsViewConfig.subTitle"
   [mainTitle]="detailsViewConfig.mainTitle"
   [paragraphContent]="detailsViewConfig.paragraphContent"
@@ -7,13 +7,34 @@
 </pps-details-view>
 <section class="cards-section">
   <pps-benefits-list> </pps-benefits-list>
+  <p class="cards-heading">Видови самолепливи етикети</p>
   <div class="cards-container">
-    <pps-card [title]="'Самолеплива Хартија'"></pps-card>
-    <pps-card [title]="'Самолеплива Пластика'"></pps-card>
+    <pps-card
+      [title]="'Самолеплива Хартија'"
+      [bgType]="'light'"
+      [hideLinkButtonSm]="true"
+      [hideContentSm]="false"
+    ></pps-card>
+    <pps-card
+      [title]="'Самолеплива Пластика'"
+      [bgType]="'light'"
+      [hideLinkButtonSm]="true"
+      [hideContentSm]="false"
+    ></pps-card>
   </div>
   <div class="cards-container">
-    <pps-card [title]="'Термална Самолеплива Хартија'"></pps-card>
-    <pps-card [title]="'А4  Самолепливи Пресечени Етикети'"></pps-card>
+    <pps-card
+      [title]="'Термална Самолеплива Хартија'"
+      [bgType]="'light'"
+      [hideLinkButtonSm]="true"
+      [hideContentSm]="false"
+    ></pps-card>
+    <pps-card
+      [title]="'А4  Самолепливи Пресечени Етикети'"
+      [bgType]="'light'"
+      [hideLinkButtonSm]="true"
+      [hideContentSm]="false"
+    ></pps-card>
   </div>
 </section>
 
