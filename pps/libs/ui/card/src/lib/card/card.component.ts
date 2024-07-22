@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 import { ButtonComponent } from '@pps/ui/button';
 
 @Component({
@@ -8,6 +8,7 @@ import { ButtonComponent } from '@pps/ui/button';
   imports: [CommonModule, ButtonComponent],
   templateUrl: './card.component.html',
   styleUrl: './card.component.scss',
+  encapsulation: ViewEncapsulation.None,
 })
 export class CardComponent {
   @Input() public titleIcon: 'labels' | 'cups' = 'labels';

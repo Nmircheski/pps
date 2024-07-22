@@ -9,10 +9,31 @@
 }
 
 .svg-container {
+  position: relative;
+  z-index: 9999;
+}
+
+.cup {
   position: absolute;
-  top: -150px;
-  right: 0;
-  z-index: 1;
+  width: 100px; /* Adjust size as needed */
+}
+
+.cup1 {
+  width: 203.21px;
+  height: 285.09px;
+  top: -150.31px;
+  left: 30.23px;
+  gap: 0px;
+  z-index: 9999;
+  /* Rotates the lid to point north-west */
+}
+
+.cup2 {
+  width: 203.21px;
+  height: 290.33px;
+  top: -94.54px;
+  left: 93.53px;
+  /* Rotates the lid to point north-east */
 }
 
 .svg-container svg {
@@ -110,9 +131,35 @@
 
   .description-container {
     width: 100%;
+    z-index: 999999;
+    padding: 150px 0 50px 0;
+    p,
+    pps-button,
+    h1 {
+      z-index: 999999;
+    }
   }
 
   .cta-banner {
     background: rgba(14, 39, 77, 1);
+  }
+
+  .content-container {
+    padding: 0;
+    padding-top: 180px;
+    height: 100%;
+  }
+
+  .contact-banner-heading {
+    font-size: 26px;
+    line-height: 34px;
+    text-align: left;
+    width: 100%;
+  }
+
+  .banner-content {
+    font-size: 16px;
+    line-height: 26px;
+    text-align: left;
   }
 }

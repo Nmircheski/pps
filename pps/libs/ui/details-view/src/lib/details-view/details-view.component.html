@@ -1,5 +1,6 @@
 <article
   class="flex flex-wrap sm:flex-nowrap gap-10"
+  [class.mb-40]="marginBottom"
   [class.flex-col-reverse]="colReverse"
 >
   <div class="img-container sm:flex-1">
@@ -24,7 +25,7 @@
       {{ paragraphContent }}
     </p>
     @if (buttonTitle) {
-      <div class="flex-1 flex">
+      <div class="flex-1 flex btn-container">
         <pps-button class="self-end">{{ buttonTitle }}</pps-button>
       </div>
     }

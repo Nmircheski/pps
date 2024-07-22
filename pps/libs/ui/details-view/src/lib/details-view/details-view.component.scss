@@ -54,6 +54,17 @@ article {
     order: 1;
   }
 
+  .main-title {
+    font-size: 26px;
+    line-height: 34px;
+  }
+
+  .sub-title {
+    font-size: 14px;
+    line-height: 14px;
+    letter-spacing: 0.1em;
+  }
+
   .main-title,
   .sub-title {
     text-align: center;
@@ -65,5 +76,15 @@ article {
 
   .text-container {
     order: 3;
+  }
+
+  .btn-container {
+    margin-top: 20px;
+  }
+
+  .img-container img {
+    width: 315px;
+    height: 192px;
+    border-radius: 18.28px;
   }
 }

@@ -1,19 +1,14 @@
-<pps-details-view
-  [imageSrc]="'assets/card-cups.png'"
-  [subTitle]="detailsViewConfig.subTitle"
-  [mainTitle]="detailsViewConfig.mainTitle"
-  [paragraphContent]="detailsViewConfig.paragraphContent"
-  [colReverse]="true"
->
-</pps-details-view>
-
-<pps-details-view
-  [imageSrc]="'assets/aboutUsImageDetails.png'"
-  [subTitle]="detailsViewConfig.subTitle"
-  [mainTitle]="detailsViewConfig.mainTitle"
-  [paragraphContent]="detailsViewConfig.paragraphContent"
->
-</pps-details-view>
+@for (config of detailsViewConfigList; track $index) {
+  <pps-details-view
+    [imageSrc]="config.imageSrc"
+    [subTitle]="config.subTitle"
+    [mainTitle]="config.mainTitle"
+    [paragraphContent]="config.paragraphContent"
+    [buttonTitle]="config.buttonTitle ?? ''"
+    [marginBottom]="config.marginBottom ?? false"
+  >
+  </pps-details-view>
+}
 
 <pps-promo-banner
   [heading]="
@@ -26,16 +21,17 @@
 </pps-promo-banner>
 
 <pps-expandable-panel
-  [logoUrl]="'assets/industryExpandablePanel.png'"
+  [logoUrl]="'assets/tape.png'"
   [subTitle]="expandablePanelConfig.subTitle"
   [mainTitle]="expandablePanelConfig.mainTitle"
 ></pps-expandable-panel>
 
 <pps-details-view
-  [imageSrc]="'assets/aboutUsImageDetails.png'"
-  [subTitle]="detailsViewConfig.subTitle"
-  [mainTitle]="detailsViewConfig.mainTitle"
-  [paragraphContent]="detailsViewConfig.paragraphContent"
+  [imageSrc]="endDetailsConfig.imageSrc"
+  [subTitle]="endDetailsConfig.subTitle"
+  [mainTitle]="endDetailsConfig.mainTitle"
+  [paragraphContent]="endDetailsConfig.paragraphContent"
+  [buttonTitle]="endDetailsConfig.buttonTitle ?? ''"
 >
 </pps-details-view>
 

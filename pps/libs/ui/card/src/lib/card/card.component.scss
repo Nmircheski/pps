@@ -102,3 +102,9 @@
   text-transform: uppercase;
   padding-bottom: 5px;
 }
+
+@media (max-width: 375px) {
+  button.bg-none {
+    padding-left: 0 !important;
+  }
+}

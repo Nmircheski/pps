@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 import { ButtonComponent } from '@pps/ui/button';
 
 @Component({
@@ -8,6 +8,7 @@ import { ButtonComponent } from '@pps/ui/button';
   imports: [CommonModule, ButtonComponent],
   templateUrl: './details-view.component.html',
   styleUrl: './details-view.component.scss',
+  encapsulation: ViewEncapsulation.None,
 })
 export class DetailsViewComponent {
   @Input() imageSrc: string = '';
@@ -16,4 +17,5 @@ export class DetailsViewComponent {
   @Input() mainTitle: string = '';
   @Input() subTitle: string = '';
   @Input() colReverse: boolean | null = null;
+  @Input() marginBottom: boolean = false;
 }

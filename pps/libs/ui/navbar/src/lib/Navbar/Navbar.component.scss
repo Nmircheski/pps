@@ -47,7 +47,7 @@
 }
 
 @media (max-width: 375px) {
-  .main-nav {
+  .main-nav[open='true'] {
     padding: 0;
     margin: 0;
     position: relative;
