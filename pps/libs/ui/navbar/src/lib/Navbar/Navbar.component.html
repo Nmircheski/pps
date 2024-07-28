@@ -88,13 +88,17 @@
                 [style.display]="accordionItem.expanded ? '' : 'none'"
               >
                 <li class="nav-link sub-link sm:self-center sm:justify-center">
-                  <a [routerLink]="['/about-us']" (click)="toggleMenu()"
+                  <a
+                    [routerLink]="['/products/labels']"
+                    (click)="toggleMenu(); accordionItem.toggle()"
                     >Самолепливи Етикети</a
                   >
                 </li>
 
                 <li class="nav-link sub-link sm:self-center sm:justify-center">
-                  <a [routerLink]="['/about-us']" (click)="toggleMenu()"
+                  <a
+                    [routerLink]="['/products/cups']"
+                    (click)="toggleMenu(); accordionItem.toggle()"
                     >Хартиени чаши</a
                   >
                 </li>
@@ -104,7 +108,11 @@
         </ng-container>
         <ng-template #menuIcon let-item="accordionItem">
           <!-- TODO user accordion  -->
-          <div class="inline-block" (click)="item?.toggle()">
+          <div
+            class="inline-block"
+            [class.rotate-180]="item?.expanded"
+            (click)="item?.toggle()"
+          >
             <svg
               width="8"
               height="4"

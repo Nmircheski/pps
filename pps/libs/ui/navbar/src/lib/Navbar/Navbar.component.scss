@@ -46,6 +46,11 @@
   cursor: pointer;
 }
 
+.rotate-180 {
+  transition: transform 0.3s;
+  transform: rotate(180deg);
+}
+
 @media (max-width: 375px) {
   .main-nav[open='true'] {
     padding-top: 0;
@@ -87,6 +92,8 @@
 
   .sub-link {
     padding-left: 15px;
+    padding-top: 20px;
+    padding-bottom: 0px;
     font-size: 16px;
     line-height: 20px;
   }
