@@ -1,3 +1,4 @@
+import { CdkAccordionModule } from '@angular/cdk/accordion';
 import { CommonModule, DOCUMENT } from '@angular/common';
 import {
   Component,
@@ -15,7 +16,13 @@ import { MenuPopoverComponent } from '@pps/ui/menu-popover';
   selector: 'pps-navbar',
   exportAs: 'ppsNavbar',
   standalone: true,
-  imports: [CommonModule, ButtonComponent, MenuPopoverComponent, RouterModule],
+  imports: [
+    CommonModule,
+    ButtonComponent,
+    MenuPopoverComponent,
+    RouterModule,
+    CdkAccordionModule,
+  ],
   templateUrl: './Navbar.component.html',
   styleUrl: './Navbar.component.scss',
   encapsulation: ViewEncapsulation.None,

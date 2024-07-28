@@ -66,15 +66,45 @@
           <ng-container [ngTemplateOutlet]="menuIcon" menuIcon> </ng-container>
         </pps-menu-popover>
         <ng-container class="block sm:hidden">
-          <a class="w-full flex justify-between items-center">
-            Продукти
-            <ng-container [ngTemplateOutlet]="menuIcon" menuIcon>
-            </ng-container>
-          </a>
+          <cdk-accordion class="w-full">
+            <cdk-accordion-item
+              class="w-full"
+              #accordionItem="cdkAccordionItem"
+            >
+              <a class="w-full flex justify-between items-center">
+                Продукти
+                <ng-container
+                  [ngTemplateOutlet]="menuIcon"
+                  menuIcon
+                  [ngTemplateOutletContext]="{
+                    accordionItem: accordionItem
+                  }"
+                >
+                </ng-container>
+              </a>
+              <div
+                class="w-full"
+                role="region"
+                [style.display]="accordionItem.expanded ? '' : 'none'"
+              >
+                <li class="nav-link sub-link sm:self-center sm:justify-center">
+                  <a [routerLink]="['/about-us']" (click)="toggleMenu()"
+                    >Самолепливи Етикети</a
+                  >
+                </li>
+
+                <li class="nav-link sub-link sm:self-center sm:justify-center">
+                  <a [routerLink]="['/about-us']" (click)="toggleMenu()"
+                    >Хартиени чаши</a
+                  >
+                </li>
+              </div>
+            </cdk-accordion-item>
+          </cdk-accordion>
         </ng-container>
-        <ng-template #menuIcon>
+        <ng-template #menuIcon let-item="accordionItem">
           <!-- TODO user accordion  -->
-          <div class="inline-block">
+          <div class="inline-block" (click)="item?.toggle()">
             <svg
               width="8"
               height="4"
