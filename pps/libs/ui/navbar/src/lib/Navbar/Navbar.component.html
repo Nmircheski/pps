@@ -76,7 +76,11 @@
     </ul>
   </nav>
 
-  <pps-button [class.hidden]="!menuOpen" [routerLink]="['/contact']">
-    Контакт
-  </pps-button>
+  <div
+    class="contact-info flex sm:self-center"
+    [class.hidden]="!menuOpen"
+    [class.flex-col]="menuOpen"
+  >
+    <pps-button [routerLink]="['/contact']"> Контакт </pps-button>
+  </div>
 </header>
