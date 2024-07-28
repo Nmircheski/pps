@@ -3,6 +3,6 @@ export interface DetailsViewConfig {
   mainTitle: string;
   paragraphContent: string;
   imageSrc: string;
-  buttonTitle?: string;
+  buttonTitle: string;
   marginBottom?: boolean;
 }

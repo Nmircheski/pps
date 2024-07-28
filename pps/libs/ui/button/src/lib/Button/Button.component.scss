@@ -64,3 +64,13 @@
   width: 6px;
   height: 6px;
 }
+
+@media (max-width: 375px) {
+  .pps-button.bg-none .button-text {
+    font-family: Raleway;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-align: left;
+  }
+}

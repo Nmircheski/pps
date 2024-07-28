@@ -104,7 +104,21 @@
 }
 
 @media (max-width: 375px) {
+  .card {
+    padding-left: 20px;
+    padding-top: 30px;
+    padding-bottom: 10px;
+    padding-right: calc(2px + 1.5625vw);
+    gap: 0px;
+  }
+
   button.bg-none {
     padding-left: 0 !important;
+  }
+
+  .card-header h3 {
+    font-size: 22px;
+    line-height: 32px;
+    text-align: left;
   }
 }

@@ -6,7 +6,6 @@
   [type]="'main'"
 ></pps-banner>
 
-<!-- TODO create a card-list component with it's own styling-->
 <section class="cards-section">
   <h3 class="cards-heading-small">Продукти</h3>
   <p class="cards-heading">
@@ -29,10 +28,10 @@
 
 <pps-details-view
   [imageSrc]="'assets/aboutUsImageDetails.png'"
-  [buttonTitle]="detailsViewConfig.buttonTitle"
-  [subTitle]="detailsViewConfig.subTitle"
-  [mainTitle]="detailsViewConfig.mainTitle"
-  [paragraphContent]="detailsViewConfig.paragraphContent"
+  [buttonTitle]="detailsViewConfig[0].buttonTitle"
+  [subTitle]="detailsViewConfig[0].subTitle"
+  [mainTitle]="detailsViewConfig[0].mainTitle"
+  [paragraphContent]="detailsViewConfig[0].paragraphContent"
 >
 </pps-details-view>
 
@@ -52,6 +51,17 @@
   [subTitle]="expandablePanelConfig.subTitle"
   [mainTitle]="expandablePanelConfig.mainTitle"
 ></pps-expandable-panel>
+
+<pps-details-view
+  class="bottom-details"
+  [imageSrc]="detailsViewConfig[1].imageSrc"
+  [buttonTitle]="detailsViewConfig[1].buttonTitle"
+  [subTitle]="detailsViewConfig[1].subTitle"
+  [mainTitle]="detailsViewConfig[1].mainTitle"
+  [paragraphContent]="detailsViewConfig[1].paragraphContent"
+>
+</pps-details-view>
+
 <pps-contact-banner
   [heading]="
     'Откријте ја разликата што нашата експертиза може да ја направи за вашиот бизнис'

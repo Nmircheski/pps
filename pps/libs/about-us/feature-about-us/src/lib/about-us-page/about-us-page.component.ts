@@ -14,6 +14,7 @@ export class AboutUsPageComponent {
       mainTitle: 'Бизнис што се темели на цврсти фамилијарни темели',
       imageSrc: 'assets/card-cups-small.png',
       marginBottom: false,
+      buttonTitle: '',
       paragraphContent:
         'Нашиот посветен тим континуирано истражува и развива нови решенија за етикетирање за да биде во тек со постојано менувачките трендови НА пазарот и да му помогне НА вашиот бренд да остане пред конкуренцијата.',
     },

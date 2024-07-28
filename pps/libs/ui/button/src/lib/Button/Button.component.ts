@@ -14,4 +14,6 @@ export class ButtonComponent {
    * Background type
    */
   @Input() public bgType: 'blue' | 'light' | 'none' = 'blue';
+
+  @Input() public iconPosition: 'suffix' | 'prefix' = 'suffix';
 }
