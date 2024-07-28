@@ -4,7 +4,12 @@
   [class.flex-col-reverse]="colReverse"
 >
   <div class="img-container sm:flex-1">
-    <img [src]="imageSrc" alt="App Logo" [class.reverse-image]="colReverse" />
+    <img
+      [src]="imageSrc"
+      alt="App Logo"
+      [class.reverse-image]="colReverse"
+      class="img-{{ imageSize }}"
+    />
   </div>
 
   <header class="sm:flex-1 details-header">
@@ -21,9 +26,13 @@
     [class.flex-col]="!colReverse"
     [class.flex-row]="colReverse"
   >
-    <p class="flex-1 content">
-      {{ paragraphContent }}
-    </p>
+    @for (paragraph of paragraphs; track $index) {
+      <p class="flex-1 content">
+        {{ paragraph }}
+      </p>
+      <br />
+    }
+
     @if (buttonTitle) {
       <div class="flex-1 flex btn-container">
         <pps-button class="self-end">{{ buttonTitle }}</pps-button>

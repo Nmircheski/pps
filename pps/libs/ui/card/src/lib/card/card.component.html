@@ -70,8 +70,7 @@
   </header>
   <div class="card-body sm:block" [class.hidden]="hideContentSm">
     <p>
-      Без разлика дали ви се потребни издржливи, водоотпорни етикети за
-      надворешна употреба, на високи или ниски температури, имаме решенија....
+      <ng-content [select]="'card-content'"> </ng-content>
     </p>
   </div>
 

@@ -2,7 +2,8 @@
   [imageSrc]="'assets/card-cups-small.png'"
   [subTitle]="detailsViewConfig.subTitle"
   [mainTitle]="detailsViewConfig.mainTitle"
-  [paragraphContent]="detailsViewConfig.paragraphContent"
+  [textContent]="detailsViewConfig.paragraphContent"
+  [imageSize]="'large'"
 >
 </pps-details-view>
 <section class="cards-section">
@@ -14,7 +15,12 @@
       [bgType]="'light'"
       [hideLinkButtonSm]="true"
       [hideContentSm]="false"
-    ></pps-card>
+    >
+      <ng-container card-content>
+        Без разлика дали ви се потребни издржливи, водоотпорни етикети за
+        надворешна употреба, на високи или ниски температури, имаме решенија....
+      </ng-container>
+    </pps-card>
     <pps-card
       [title]="'Самолеплива Пластика'"
       [bgType]="'light'"

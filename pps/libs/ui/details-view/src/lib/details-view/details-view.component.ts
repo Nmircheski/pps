@@ -13,9 +13,23 @@ import { ButtonComponent } from '@pps/ui/button';
 export class DetailsViewComponent {
   @Input() imageSrc: string = '';
   @Input() buttonTitle: string = '';
-  @Input() paragraphContent: string = '';
+  @Input() imageSize: 'small' | 'large' = 'small';
+  @Input() set textContent(text: string) {
+    this.splitTextIntoParagraphs(text);
+  }
+  @Input() paragraphDelimiter: string = '<br>';
   @Input() mainTitle: string = '';
   @Input() subTitle: string = '';
   @Input() colReverse: boolean | null = null;
   @Input() marginBottom: boolean = false;
+
+  paragraphs: string[] = [];
+
+  private splitTextIntoParagraphs(text: string) {
+    if (!text.length) {
+      this.paragraphs = [];
+    } else {
+      this.paragraphs = text.split(this.paragraphDelimiter);
+    }
+  }
 }

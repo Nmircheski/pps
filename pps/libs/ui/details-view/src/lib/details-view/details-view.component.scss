@@ -50,9 +50,13 @@ article {
     line-height: 26px;
   }
 
-  .main-title {
-    font-size: 26px;
-    line-height: 34px;
+  .details-header {
+    width: 100%;
+
+    .main-title {
+      font-size: 26px;
+      line-height: 34px;
+    }
   }
 
   .sub-title {
@@ -84,7 +88,16 @@ article {
 
   .img-container img {
     width: 315px;
-    height: 192px;
+  }
+
+  .img-small {
+    width: 315px;
+    height: 200px;
+    border-radius: 7.87px !important;
+  }
+
+  .img-large {
+    height: 315px;
     border-radius: 18.28px;
   }
 }
