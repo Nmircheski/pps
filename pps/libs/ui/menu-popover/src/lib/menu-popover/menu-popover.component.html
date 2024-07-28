@@ -4,19 +4,7 @@
   #trigger="cdkOverlayOrigin"
   (click)="isOpen = !isOpen"
   ><ng-content></ng-content>
-  <svg
-    class="inline-block"
-    width="8"
-    height="4"
-    viewBox="0 0 8 4"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="M4.51371 3.64645C4.31845 3.84171 4.00186 3.84171 3.8066 3.64645L1.01371 0.853553C0.698726 0.53857 0.921811 0 1.36726 0H6.95305C7.3985 0 7.62159 0.538571 7.3066 0.853553L4.51371 3.64645Z"
-      fill="#6B72B2"
-    />
-  </svg>
+  <ng-content [select]="'menuIcon'"> </ng-content>
 </a>
 <ng-template
   cdkConnectedOverlay
