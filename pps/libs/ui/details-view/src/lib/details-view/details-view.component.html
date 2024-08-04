@@ -1,7 +1,7 @@
 <article
-  class="details-article flex flex-wrap sm:grid sm:grid-cols-2 sm:grid-rows-2 sm:flex-nowrap gap-x-20 px-responsive mt-20"
+  class="details-article flex flex-wrap gap-4 sm:grid sm:grid-cols-2 sm:grid-rows-2 sm:flex-nowrap gap-x-20 px-responsive pb-20"
   [class.mb-40]="marginBottom"
-  [class.flex-col-reverse]="colReverse"
+  [class.sm:flex-col-reverse]="colReverse"
 >
   <div
     class="img-container text-left"
@@ -11,13 +11,12 @@
     <img
       [src]="imageSrc"
       alt="App Logo"
-      [class.reverse-image]="colReverse"
       [class.row-reverse]="_layout === 'row-reverse'"
       class="img-{{ imageSize }}"
     />
   </div>
 
-  <header class="details-header pb-10" [class]="headerClassList">
+  <header class="details-header sm:pb-10" [class]="headerClassList">
     <h6 class="sub-title">
       {{ subTitle | uppercase }}
     </h6>
@@ -27,9 +26,7 @@
   </header>
 
   <section
-    class="sm:flex-col text-container text-left flex sm:gap-1"
-    [class.flex-col]="!colReverse"
-    [class.flex-row]="colReverse"
+    class="flex-col sm:flex-col text-container text-left flex sm:gap-1"
     [class]="textClassList"
   >
     @for (paragraph of paragraphs; track $index) {

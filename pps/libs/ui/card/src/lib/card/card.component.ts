@@ -1,5 +1,11 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, ViewEncapsulation } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+  ViewEncapsulation,
+} from '@angular/core';
 import { ButtonComponent } from '@pps/ui/button';
 
 @Component({
@@ -11,6 +17,9 @@ import { ButtonComponent } from '@pps/ui/button';
   encapsulation: ViewEncapsulation.None,
 })
 export class CardComponent {
+  onButtonClick() {
+    this.buttonClicked.emit();
+  }
   @Input() public titleIcon: 'labels' | 'cups' = 'labels';
   @Input() public title = '';
   /**
@@ -27,4 +36,6 @@ export class CardComponent {
    * @default false
    */
   @Input() public hideLinkButtonSm = false;
+
+  @Output() buttonClicked = new EventEmitter<void>();
 }

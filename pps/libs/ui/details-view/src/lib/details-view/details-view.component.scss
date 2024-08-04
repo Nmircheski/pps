@@ -95,8 +95,10 @@ article {
     margin-top: 20px;
   }
 
-  .img-container img {
+  .img-container img,
+  .img-container img.img-large {
     width: 315px;
+    height: 315px;
   }
 
   .img-small {

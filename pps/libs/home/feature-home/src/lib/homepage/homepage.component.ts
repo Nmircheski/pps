@@ -1,4 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
+import { Router } from '@angular/router';
 import { DetailsViewConfig } from '@pps/ui/details-view';
 
 @Component({
@@ -8,6 +9,10 @@ import { DetailsViewConfig } from '@pps/ui/details-view';
   encapsulation: ViewEncapsulation.None,
 })
 export class HomepageComponent {
+  routeToProducts(type: string) {
+    console.log('product');
+    this.router.navigate([`/products/${type}`]);
+  }
   detailsViewConfig: DetailsViewConfig[] = [
     {
       layout: 'col-reverse',
@@ -39,4 +44,6 @@ export class HomepageComponent {
   };
 
   // TODO create a card-list component with it's own styling
+
+  constructor(private readonly router: Router) {}
 }

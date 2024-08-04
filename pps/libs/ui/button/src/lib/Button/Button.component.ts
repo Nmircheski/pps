@@ -1,5 +1,11 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, ViewEncapsulation } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+  ViewEncapsulation,
+} from '@angular/core';
 
 @Component({
   selector: 'pps-button',
@@ -16,4 +22,12 @@ export class ButtonComponent {
   @Input() public bgType: 'blue' | 'light' | 'none' = 'blue';
 
   @Input() public iconPosition: 'suffix' | 'prefix' = 'suffix';
+
+  @Output() onClick = new EventEmitter<void>();
+
+  constructor() {}
+
+  onClicked() {
+    this.onClick.emit();
+  }
 }

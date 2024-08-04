@@ -80,6 +80,10 @@ textarea.contact-text {
 }
 
 @media (max-width: 375px) {
+  .contact-section {
+    height: 100%;
+  }
+
   input.contact-text {
     flex: 1 1 45%;
   }

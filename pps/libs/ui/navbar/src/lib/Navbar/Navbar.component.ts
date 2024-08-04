@@ -1,13 +1,15 @@
-import { CdkAccordionModule } from '@angular/cdk/accordion';
+import { CdkAccordion, CdkAccordionModule } from '@angular/cdk/accordion';
 import { CommonModule, DOCUMENT } from '@angular/common';
 import {
   Component,
   Inject,
   Input,
   Renderer2,
+  ViewChild,
   ViewEncapsulation,
 } from '@angular/core';
 
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Router, RouterModule } from '@angular/router';
 import { ButtonComponent } from '@pps/ui/button';
 import { MenuPopoverComponent } from '@pps/ui/menu-popover';
@@ -28,17 +30,35 @@ import { MenuPopoverComponent } from '@pps/ui/menu-popover';
   encapsulation: ViewEncapsulation.None,
 })
 export class NavbarComponent {
+  navigateHome() {
+    this.router.navigate([`home`]);
+  }
   public menuOpen = false;
+  protected isMobileScreen: boolean = false;
 
   @Input() logoUrl: string = '';
+
+  @ViewChild('popoverMenu') popover: MenuPopoverComponent | undefined;
 
   constructor(
     @Inject(DOCUMENT) private document: Document,
     private renderer: Renderer2,
     private router: Router,
-  ) {}
+    private breakpointObserver: BreakpointObserver,
+  ) {
+    this.breakpointObserver
+      .observe([Breakpoints.Handset])
+      .subscribe((result) => {
+        this.isMobileScreen = result.matches;
+        console.log('isMobile:', this.isMobileScreen);
+      });
+  }
 
   protected toggleMenu(): void {
+    if (!this.isMobileScreen) {
+      return;
+    }
+
     this.menuOpen = !this.menuOpen;
 
     if (this.menuOpen) {
@@ -48,9 +68,11 @@ export class NavbarComponent {
     }
   }
 
-  togglePopover(popover: MenuPopoverComponent | undefined) {
-    console.log('togglePopover');
-    popover?.togglePopover();
+  togglePopover(
+    popover: MenuPopoverComponent | undefined,
+    accordion: CdkAccordion | undefined,
+  ) {
+    this.popover?.togglePopover();
   }
 
   protected popoverItemClicked(productType: string) {

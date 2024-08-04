@@ -8,7 +8,10 @@
   [class.items-start]="menuOpen"
 >
   <!-- TODO use class and style binding from angular -->
-  <div class="logo sm:block flex justify-between w-full item1">
+  <div
+    class="logo sm:block flex justify-between w-full sm:flex-1"
+    (click)="navigateHome()"
+  >
     <!-- <img [src]="logoUrl" alt="App Logo" /> -->
     <!-- TODO CREATE LOGO COMPONENT -->
     <svg
@@ -51,31 +54,42 @@
   </div>
 
   <nav
-    class="navbar w-full sm:block sm:flex-1 item2"
-    [class.hidden]="!menuOpen"
+    class="flex navbar w-full sm:block item2 sm:justify-center sm:align-center"
+    [class.hide-nav]="!menuOpen"
   >
-    <ul class="nav-list flex flex-row w-full" [class.flex-col]="menuOpen">
-      <li class="nav-link sm:self-center sm:justify-center">
+    <ul
+      class="nav-list flex flex-row w-full sm:justify-center"
+      [class.flex-col]="menuOpen"
+    >
+      <li
+        class="nav-link sm:self-center sm:justify-center"
+        (click)="toggleMenu()"
+      >
         <a href="#home" [routerLink]="['/home']">Почетна</a>
       </li>
       <li
         class="nav-link sm:self-center sm:justify-center align-center"
-        (click)="togglePopover(popoverMenu)"
+        (click)="togglePopover(undefined, undefined)"
       >
-        <pps-menu-popover
-          #popoverMenu
-          class="w-full hidden sm:block"
-          (onItemClicked)="popoverItemClicked($event)"
-          >Продукти
-          <ng-container [ngTemplateOutlet]="menuIcon" menuIcon> </ng-container>
-        </pps-menu-popover>
-        <ng-container>
+        @if (!isMobileScreen) {
+          <pps-menu-popover
+            #popoverMenu
+            class="w-full hidden sm:block"
+            (onItemClicked)="popoverItemClicked($event); toggleMenu()"
+            >Продукти
+            <ng-container [ngTemplateOutlet]="menuIcon" menuIcon>
+            </ng-container>
+          </pps-menu-popover>
+        } @else {
           <cdk-accordion class="w-full block sm:hidden">
             <cdk-accordion-item
               class="w-full"
               #accordionItem="cdkAccordionItem"
             >
-              <a class="w-full flex justify-between items-center">
+              <a
+                class="w-full flex justify-between items-center"
+                (click)="accordionItem?.toggle()"
+              >
                 Продукти
                 <ng-container
                   [ngTemplateOutlet]="menuIcon"
@@ -109,14 +123,11 @@
               </div>
             </cdk-accordion-item>
           </cdk-accordion>
-        </ng-container>
+        }
+
         <ng-template #menuIcon let-item="accordionItem">
           <!-- TODO user accordion  -->
-          <div
-            class="inline-block"
-            [class.rotate-180]="item?.expanded"
-            (click)="item?.toggle()"
-          >
+          <div class="inline-block" [class.rotate-180]="item?.expanded">
             <svg
               width="8"
               height="4"
@@ -132,20 +143,25 @@
           </div>
         </ng-template>
       </li>
-      <li class="nav-link sm:self-center sm:justify-center">
+      <li
+        class="nav-link sm:self-center sm:justify-center"
+        (click)="toggleMenu()"
+      >
         <a [routerLink]="['/about-us']">За нас</a>
       </li>
     </ul>
 
     <span
-      class="nav-link phone-link-container sm:self-center sm:justify-center"
+      class="nav-link phone-link-container sm:self-center sm:justify-center sm:whitespace-nowrap"
+      (click)="toggleMenu()"
     >
       <a [routerLink]="['/contact']" class="phone-link">+389 71 23456</a>
     </span>
   </nav>
 
   <div
-    class="contact-info flex sm:self-center sm:block w-full item3"
+    class="contact-info flex sm:self-center sm:block w-full item3 sm:flex-1"
+    (click)="toggleMenu()"
     [class.flex-col]="menuOpen"
     [class.hidden]="!menuOpen"
   >
