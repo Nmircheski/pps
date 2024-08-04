@@ -1,8 +1,7 @@
 <a
-  class="menu-trigger w-full justify-between items-center"
+  class="menu-trigger w-full justify-between items-center flex justify-center align-center gap-2"
   cdkOverlayOrigin
   #trigger="cdkOverlayOrigin"
-  (click)="isOpen = !isOpen"
   ><ng-content></ng-content>
   <ng-content [select]="'menuIcon'"> </ng-content>
 </a>
@@ -16,7 +15,17 @@
   [cdkConnectedOverlayOpen]="isOpen"
 >
   <ul class="example-list">
-    <li class="text-left" (click)="onItemClicked.emit()">Етикети</li>
-    <li class="text-left" (click)="onItemClicked.emit()">Чаши</li>
+    <li
+      class="text-left nav-link"
+      (click)="onItemClicked.emit('labels'); isOpen = !isOpen"
+    >
+      <a> Етикети </a>
+    </li>
+    <li
+      class="text-left nav-link"
+      (click)="onItemClicked.emit('cups'); isOpen = !isOpen"
+    >
+      <a> Чаши </a>
+    </li>
   </ul>
 </ng-template>

@@ -3,8 +3,29 @@
   margin-bottom: 30px;
   display: flex;
   width: 100%;
-  padding-left: calc(10px + 1.5625vw);
-  padding-right: calc(10px + 1.5625vw);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+}
+
+.navbar > ul {
+  justify-self: center;
+}
+
+.item1,
+.item3 {
+  flex: 1; /* These items will take up equal space */
+}
+
+.item2 {
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  white-space: nowrap;
 }
 
 .logo {
@@ -25,6 +46,10 @@
 
 .contact-info {
   color: #6b72b2;
+}
+
+.phone-link-container {
+  margin-left: 100px;
 }
 
 .phone-link {
