@@ -1,29 +1,46 @@
 <article
-  class="flex flex-wrap sm:flex-nowrap gap-10"
+  class="details-article flex flex-wrap sm:grid sm:grid-cols-2 sm:grid-rows-2 sm:flex-nowrap gap-x-20 px-responsive mt-20"
+  [class.mb-40]="marginBottom"
   [class.flex-col-reverse]="colReverse"
 >
-  <div class="img-container sm:flex-1">
-    <img [src]="imageSrc" alt="App Logo" [class.reverse-image]="colReverse" />
+  <div
+    class="img-container text-left"
+    [class.text-right]="colReverse"
+    [class]="imgClassList"
+  >
+    <img
+      [src]="imageSrc"
+      alt="App Logo"
+      [class.reverse-image]="colReverse"
+      [class.row-reverse]="_layout === 'row-reverse'"
+      class="img-{{ imageSize }}"
+    />
   </div>
 
+  <header class="details-header pb-10" [class]="headerClassList">
+    <h6 class="sub-title">
+      {{ subTitle | uppercase }}
+    </h6>
+    <h1 class="basis-6 main-title">
+      {{ mainTitle }}
+    </h1>
+  </header>
+
   <section
-    class="text-container sm:flex-1 text-left flex"
+    class="sm:flex-col text-container text-left flex sm:gap-1"
     [class.flex-col]="!colReverse"
     [class.flex-row]="colReverse"
+    [class]="textClassList"
   >
-    <div class="flex-1">
-      <h6 class="sub-title">
-        {{ subTitle | uppercase }}
-      </h6>
-      <h1 class="basis-6 main-title">
-        {{ mainTitle }}
-      </h1>
-    </div>
-    <p class="flex-1 content">
-      {{ paragraphContent }}
-    </p>
+    @for (paragraph of paragraphs; track $index) {
+      <p class="flex-1 content">
+        {{ paragraph }}
+      </p>
+      <br />
+    }
+
     @if (buttonTitle) {
-      <div class="flex-1 flex">
+      <div class="flex-1 flex btn-container">
         <pps-button class="self-end">{{ buttonTitle }}</pps-button>
       </div>
     }

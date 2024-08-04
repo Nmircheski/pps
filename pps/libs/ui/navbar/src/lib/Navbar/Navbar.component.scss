@@ -13,11 +13,8 @@
 
 .nav-link {
   display: flex;
-  padding: 10px 20px;
-
-  gap: 10px;
+  padding: 15px 20px;
   color: #6b72b2;
-
   font-size: 15px;
   font-style: normal;
   font-weight: 600;
@@ -28,7 +25,6 @@
 
 .contact-info {
   color: #6b72b2;
-  gap: 6px;
 }
 
 .phone-link {
@@ -50,7 +46,55 @@
   cursor: pointer;
 }
 
+.rotate-180 {
+  transition: transform 0.3s;
+  transform: rotate(180deg);
+}
+
 @media (max-width: 375px) {
-  .main-nav {
+  .main-nav[open='true'] {
+    padding-top: 0;
+    padding-bottom: 0;
+    margin: 30px 0px;
+    position: relative;
+    height: 100vh;
+  }
+
+  .contact-info {
+    position: absolute;
+    bottom: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    button {
+      width: 70vw;
+      .button-text {
+        font-size: 24px;
+        line-height: 24px;
+        letter-spacing: 0.1em;
+      }
+    }
+  }
+
+  .nav-link,
+  .phone-link {
+    font-size: 22.5px;
+    line-height: 24px;
+    letter-spacing: 0.1em;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .phone-link {
+    padding: 0;
+    margin-top: 50px;
+  }
+
+  .sub-link {
+    padding-left: 15px;
+    padding-top: 20px;
+    padding-bottom: 0px;
+    font-size: 16px;
+    line-height: 20px;
   }
 }

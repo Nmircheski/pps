@@ -1,8 +1,6 @@
 .cards-section {
   text-align: center;
   padding-top: 30px;
-  padding-left: calc(8px + 1.5625vw);
-  padding-right: calc(8px + 1.5625vw);
 }
 
 .cards-container {
@@ -10,6 +8,19 @@
   display: flex;
   justify-content: space-between;
   gap: 40px;
+}
+
+.cards-heading {
+  color: #33517e;
+  text-align: center;
+  font-family: Mulish;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 34px; /* 125% */
+  max-width: 600px; /* Adjust the width as needed */
+  margin: 40px auto 10px auto; /* This centers the paragraph */
+  text-align: center;
 }
 
 @media (max-width: 375px) {

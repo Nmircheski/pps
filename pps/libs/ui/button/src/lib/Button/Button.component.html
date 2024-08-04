@@ -1,4 +1,7 @@
-<button class="pps-button">
+<button
+  class="pps-button bg-{{ bgType }}"
+  [class.flex-row-reverse]="iconPosition === 'prefix'"
+>
   <p class="button-text">
     <ng-content></ng-content>
   </p>

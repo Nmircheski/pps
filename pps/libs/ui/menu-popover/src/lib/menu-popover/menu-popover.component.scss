@@ -21,3 +21,10 @@
 .menu-trigger:hover {
   cursor: pointer;
 }
+
+@media (max-width: 375px) {
+  .menu-trigger {
+    display: flex;
+    justify-content: space-between;
+  }
+}

@@ -1,35 +1,91 @@
-<section class="w-full h-[85vh] flex gap-10">
+<section
+  class="contact-section w-full h-full flex gap-10 flex-col-reverse sm:flex-row"
+>
   <section class="form-container flex-1">
-    <div class="form-content-container flex flex-col gap-10">
+    <div class="form-content-container flex flex-col gap-10 pl-responsive">
       <header>
-        <h1>Контактирај не!</h1>
-        <h6>
+        <h1 class="main-title contact-text">Контактирај не!</h1>
+        <h6 class="mt-4">
           Би сакале да чуеме за вашите потреби за етикети и хартиени чаши.
         </h6>
-        <p class="header-description">
+        <p class="header-description mt-10">
           Заедно, можеме да создадеме решенија кои имаат трајно влијание во
           вашата индустрија и го поттикнуваат успехот на вашиот бизнис.
         </p>
       </header>
-      <div class="">
+      <div class="flex flex-col gap-5">
         @for (item of contactItems; track item.value) {
           <div class="flex flex-col">
             <label class="contact-item-label" for="item.label">{{
               item.label | uppercase
             }}</label>
-            <input
-              [type]="item.type"
-              [id]="item.label"
-              [name]="item.label"
-              [readonly]="true"
-              [value]="item.value"
-            />
+            <div
+              [class.flex]="item.type === 'link'"
+              [class.flex-row]="item.type === 'link'"
+            >
+              @if (item.type === 'link') {
+                <textarea
+                  class="contact-text"
+                  [id]="item.label"
+                  [name]="item.label"
+                  [readonly]="true"
+                  [value]="item.value"
+                >
+                </textarea>
+                <a
+                  [href]="'https://maps.app.goo.gl/CPipUEJJXwt8sioS6'"
+                  [attr.target]="'_blank'"
+                >
+                  <svg
+                    width="40"
+                    height="40"
+                    viewBox="0 0 40 40"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <rect width="40" height="40" rx="8" fill="#F8F2E4" />
+                    <mask
+                      id="mask0_1103_1890"
+                      style="mask-type: alpha"
+                      maskUnits="userSpaceOnUse"
+                      x="10"
+                      y="10"
+                      width="20"
+                      height="20"
+                    >
+                      <rect
+                        x="10"
+                        y="10"
+                        width="20"
+                        height="20"
+                        fill="#D9D9D9"
+                      />
+                    </mask>
+                    <g mask="url(#mask0_1103_1890)">
+                      <path
+                        d="M14.5 27C14.0875 27 13.7344 26.8531 13.4406 26.5594C13.1469 26.2656 13 25.9125 13 25.5V14.5C13 14.0875 13.1469 13.7344 13.4406 13.4406C13.7344 13.1469 14.0875 13 14.5 13H20V14.5H14.5V25.5H25.5V20H27V25.5C27 25.9125 26.8531 26.2656 26.5594 26.5594C26.2656 26.8531 25.9125 27 25.5 27H14.5ZM18.0625 23L17 21.9375L24.4375 14.5H22V13H27V18H25.5V15.5625L18.0625 23Z"
+                        fill="#333333"
+                      />
+                    </g>
+                  </svg>
+                </a>
+              } @else {
+                <input
+                  class="contact-text"
+                  [type]="item.type"
+                  [id]="item.label"
+                  [name]="item.label"
+                  [readonly]="true"
+                  [value]="item.value"
+                />
+              }
+            </div>
           </div>
         }
       </div>
     </div>
   </section>
-  <aside class="image-container flex-1">
-    <div class="img"></div>
+  <aside class="image-container h-full flex-1">
+    <div class="img h-full bg-cover bg-center"></div>
   </aside>
 </section>
