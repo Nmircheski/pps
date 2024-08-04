@@ -10,7 +10,11 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrl: './menu-popover.component.scss',
 })
 export class MenuPopoverComponent {
-  isOpen = false;
+  public isOpen = false;
 
-  @Output() protected onItemClicked = new EventEmitter<void>();
+  @Output() protected onItemClicked = new EventEmitter<string>();
+
+  togglePopover() {
+    this.isOpen = !this.isOpen;
+  }
 }

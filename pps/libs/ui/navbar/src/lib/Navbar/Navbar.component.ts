@@ -8,7 +8,7 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { ButtonComponent } from '@pps/ui/button';
 import { MenuPopoverComponent } from '@pps/ui/menu-popover';
 
@@ -35,6 +35,7 @@ export class NavbarComponent {
   constructor(
     @Inject(DOCUMENT) private document: Document,
     private renderer: Renderer2,
+    private router: Router,
   ) {}
 
   protected toggleMenu(): void {
@@ -45,5 +46,14 @@ export class NavbarComponent {
     } else {
       this.renderer.removeClass(this.document.body, 'overflow-hidden');
     }
+  }
+
+  togglePopover(popover: MenuPopoverComponent | undefined) {
+    console.log('togglePopover');
+    popover?.togglePopover();
+  }
+
+  protected popoverItemClicked(productType: string) {
+    this.router.navigate([`products/${productType}`]);
   }
 }

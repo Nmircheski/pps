@@ -1,5 +1,5 @@
 <header
-  class="main-nav sm:flex-row gap-12 sm:gap-0 sm:justify-between sm:items-center w-full"
+  class="main-nav sm:flex-row gap-12 sm:gap-0 sm:justify-between sm:items-center w-full px-responsive"
   [attr.open]="menuOpen"
   [class.justify-end]="!menuOpen"
   [class.h-screen]="menuOpen"
@@ -8,7 +8,7 @@
   [class.items-start]="menuOpen"
 >
   <!-- TODO use class and style binding from angular -->
-  <div class="logo sm:block flex justify-between w-full">
+  <div class="logo sm:block flex justify-between w-full item1">
     <!-- <img [src]="logoUrl" alt="App Logo" /> -->
     <!-- TODO CREATE LOGO COMPONENT -->
     <svg
@@ -50,18 +50,22 @@
     </div>
   </div>
 
-  <nav class="navbar w-full" [class.hidden]="!menuOpen">
-    <ul
-      class="nav-list flex self-start flex-row w-full"
-      [class.flex-col]="menuOpen"
-    >
+  <nav
+    class="navbar w-full sm:block sm:flex-1 item2"
+    [class.hidden]="!menuOpen"
+  >
+    <ul class="nav-list flex flex-row w-full" [class.flex-col]="menuOpen">
       <li class="nav-link sm:self-center sm:justify-center">
-        <a href="#home" [routerLink]="['/home']" (click)="toggleMenu()"
-          >Почетна</a
-        >
+        <a href="#home" [routerLink]="['/home']">Почетна</a>
       </li>
-      <li class="nav-link sm:self-center sm:justify-center align-center">
-        <pps-menu-popover class="w-full hidden sm:block" (click)="toggleMenu()"
+      <li
+        class="nav-link sm:self-center sm:justify-center align-center"
+        (click)="togglePopover(popoverMenu)"
+      >
+        <pps-menu-popover
+          #popoverMenu
+          class="w-full hidden sm:block"
+          (onItemClicked)="popoverItemClicked($event)"
           >Продукти
           <ng-container [ngTemplateOutlet]="menuIcon" menuIcon> </ng-container>
         </pps-menu-popover>
@@ -129,18 +133,19 @@
         </ng-template>
       </li>
       <li class="nav-link sm:self-center sm:justify-center">
-        <a [routerLink]="['/about-us']" (click)="toggleMenu()">За нас</a>
-      </li>
-      <li class="nav-link sm:self-center sm:justify-center">
-        <a href="#contact" class="phone-link" (click)="toggleMenu()"
-          >+389 71 23456</a
-        >
+        <a [routerLink]="['/about-us']">За нас</a>
       </li>
     </ul>
+
+    <span
+      class="nav-link phone-link-container sm:self-center sm:justify-center"
+    >
+      <a [routerLink]="['/contact']" class="phone-link">+389 71 23456</a>
+    </span>
   </nav>
 
   <div
-    class="contact-info flex sm:self-center"
+    class="contact-info flex sm:self-center sm:block w-full item3"
     [class.flex-col]="menuOpen"
     [class.hidden]="!menuOpen"
   >
