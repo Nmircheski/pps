@@ -5,4 +5,7 @@ export interface DetailsViewConfig {
   imageSrc: string;
   buttonTitle: string;
   marginBottom?: boolean;
+  layout: DetailsLayout;
 }
+
+export type DetailsLayout = 'regular' | 'col-reverse' | 'row-reverse';

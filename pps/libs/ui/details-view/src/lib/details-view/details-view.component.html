@@ -4,28 +4,20 @@
   [class.flex-col-reverse]="colReverse"
 >
   <div
-    class="img-container sm:row-start-1 sm:row-end-3 text-left"
+    class="img-container text-left"
     [class.text-right]="colReverse"
-    [class.sm:col-start-1]="!colReverse"
-    [class.sm:col-end-2]="!colReverse"
-    [class.sm:col-start-2]="colReverse"
-    [class.sm:col-end-3]="colReverse"
+    [class]="imgClassList"
   >
     <img
       [src]="imageSrc"
       alt="App Logo"
       [class.reverse-image]="colReverse"
+      [class.row-reverse]="_layout === 'row-reverse'"
       class="img-{{ imageSize }}"
     />
   </div>
 
-  <header
-    class="sm:row-start-1 sm:row-end-2 details-header pb-10"
-    [class.sm:col-start-2]="!colReverse"
-    [class.sm:col-end-3]="!colReverse"
-    [class.sm:col-start-1]="colReverse"
-    [class.sm:col-end-2]="colReverse"
-  >
+  <header class="details-header pb-10" [class]="headerClassList">
     <h6 class="sub-title">
       {{ subTitle | uppercase }}
     </h6>
@@ -35,13 +27,10 @@
   </header>
 
   <section
-    class="sm:flex-col sm:row-start-2 sm:row-end-3 text-container text-left flex sm:gap-1"
+    class="sm:flex-col text-container text-left flex sm:gap-1"
     [class.flex-col]="!colReverse"
     [class.flex-row]="colReverse"
-    [class.sm:col-start-2]="!colReverse"
-    [class.sm:col-end-3]="!colReverse"
-    [class.sm:col-start-1]="colReverse"
-    [class.sm:col-end-2]="colReverse"
+    [class]="textClassList"
   >
     @for (paragraph of paragraphs; track $index) {
       <p class="flex-1 content">

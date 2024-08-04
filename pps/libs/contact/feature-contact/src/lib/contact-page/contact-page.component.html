@@ -1,6 +1,8 @@
-<section class="w-full h-full flex gap-10 flex-col-reverse sm:flex-row">
+<section
+  class="contact-section w-full h-full flex gap-10 flex-col-reverse sm:flex-row"
+>
   <section class="form-container flex-1">
-    <div class="form-content-container flex flex-col gap-10">
+    <div class="form-content-container flex flex-col gap-10 pl-responsive">
       <header>
         <h1 class="main-title contact-text">Контактирај не!</h1>
         <h6 class="mt-4">
@@ -20,7 +22,6 @@
             <div
               [class.flex]="item.type === 'link'"
               [class.flex-row]="item.type === 'link'"
-              [class.justify-between]="item.type === 'link'"
             >
               @if (item.type === 'link') {
                 <textarea

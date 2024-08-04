@@ -10,6 +10,7 @@ import { DetailsViewConfig } from '@pps/ui/details-view';
 export class HomepageComponent {
   detailsViewConfig: DetailsViewConfig[] = [
     {
+      layout: 'col-reverse',
       buttonTitle: 'Повеќе за нас',
       imageSrc: 'assets/aboutUsImageDetails.png',
       subTitle: 'За нас',
@@ -19,6 +20,7 @@ export class HomepageComponent {
         'Нашето сеопфатно портфолио ни овозможува да ги исполниме уникатните барања на секоја индустрија,обезбедувајќи приспособени решенија за етикети според вашите барања.',
     },
     {
+      layout: 'col-reverse',
       buttonTitle: 'дознај повеќе',
       imageSrc: 'assets/aboutUsImageDetails.png',
       subTitle: 'Технологии',

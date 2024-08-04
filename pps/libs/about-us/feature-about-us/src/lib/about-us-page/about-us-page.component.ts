@@ -10,20 +10,22 @@ import { DetailsViewConfig } from '@pps/ui/details-view';
 export class AboutUsPageComponent {
   detailsViewConfigList: DetailsViewConfig[] = [
     {
+      layout: 'row-reverse',
       subTitle: 'За нас',
       mainTitle: 'Бизнис што се темели на цврсти фамилијарни темели',
-      imageSrc: 'assets/card-cups-small.png',
+      imageSrc: 'assets/card-cups.png',
       marginBottom: false,
       buttonTitle: '',
       paragraphContent:
         'Нашиот посветен тим континуирано истражува и развива нови решенија за етикетирање за да биде во тек со постојано менувачките трендови НА пазарот и да му помогне НА вашиот бренд да остане пред конкуренцијата.',
     },
     {
+      layout: 'regular',
       mainTitle:
         'Семеен бизнис со стремеж за создавање наследство на извонредност',
       subTitle: 'За нас',
       imageSrc: 'assets/industryExpandablePanel.png',
-      buttonTitle: 'ПОВЕЌЕ ЗА НАС',
+      buttonTitle: '',
       marginBottom: true,
       paragraphContent:
         'Нашето сеопфатно портфолио ни овозможува да ги исполниме уникатните барања на секоја индустрија, обезбедувајќи приспособени решенија за етикети според вашите барања.',
@@ -31,12 +33,13 @@ export class AboutUsPageComponent {
   ];
 
   endDetailsConfig: DetailsViewConfig = {
+    layout: 'col-reverse',
     imageSrc: 'assets/aboutUsImageDetails.png',
     subTitle: 'Технологии',
     mainTitle: 'Најсовремени машини и техники за етикети со највисок квалитет',
     paragraphContent:
       'Нашето сеопфатно портфолио ни овозможува да ги исполниме уникатните барања на секоја индустрија, обезбедувајќи приспособени решенија за етикети според вашите барања.',
-    buttonTitle: 'ДОЗНАЈ ПОВЕЌЕ',
+    buttonTitle: '',
   };
 
   expandablePanelConfig: {
