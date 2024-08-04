@@ -65,8 +65,8 @@
           >Продукти
           <ng-container [ngTemplateOutlet]="menuIcon" menuIcon> </ng-container>
         </pps-menu-popover>
-        <ng-container class="block sm:hidden">
-          <cdk-accordion class="w-full">
+        <ng-container>
+          <cdk-accordion class="w-full block sm:hidden">
             <cdk-accordion-item
               class="w-full"
               #accordionItem="cdkAccordionItem"
@@ -141,8 +141,8 @@
 
   <div
     class="contact-info flex sm:self-center"
-    [class.hidden]="!menuOpen"
     [class.flex-col]="menuOpen"
+    [class.hidden]="!menuOpen"
   >
     <pps-button [routerLink]="['/contact']"> Контакт </pps-button>
   </div>

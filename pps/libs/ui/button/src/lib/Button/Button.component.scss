@@ -36,6 +36,7 @@
 .pps-button.bg-none {
   background: transparent;
   color: rgba(51, 51, 51, 1);
+  padding-left: 0 !important;
   .button-suffix {
     background: rgba(51, 51, 51, 1);
   }
@@ -61,8 +62,8 @@
 
 .button-suffix {
   border-radius: 9999px;
-  width: 6px;
-  height: 6px;
+  width: 4px;
+  height: 4px;
 }
 
 @media (max-width: 375px) {

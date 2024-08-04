@@ -5,15 +5,11 @@ article {
   padding-right: calc(8px + 1.5625vw);
 }
 
-.reverse-image {
-  width: 100% !important;
-  height: 315px !important;
-}
-
 .img-container img {
   width: 517px;
   height: 317px;
   border-radius: 30px;
+  display: inline;
 }
 
 .sub-title {

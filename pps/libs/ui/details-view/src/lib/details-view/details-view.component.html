@@ -1,9 +1,16 @@
 <article
-  class="flex flex-wrap sm:flex-nowrap gap-10"
+  class="flex flex-wrap sm:grid sm:grid-cols-2 sm:grid-rows-2 sm:flex-nowrap gap-x-20 px-responsive mt-20"
   [class.mb-40]="marginBottom"
   [class.flex-col-reverse]="colReverse"
 >
-  <div class="img-container sm:flex-1">
+  <div
+    class="img-container sm:row-start-1 sm:row-end-3 text-left"
+    [class.text-right]="colReverse"
+    [class.sm:col-start-1]="!colReverse"
+    [class.sm:col-end-2]="!colReverse"
+    [class.sm:col-start-2]="colReverse"
+    [class.sm:col-end-3]="colReverse"
+  >
     <img
       [src]="imageSrc"
       alt="App Logo"
@@ -12,7 +19,13 @@
     />
   </div>
 
-  <header class="sm:flex-1 details-header">
+  <header
+    class="sm:row-start-1 sm:row-end-2 details-header"
+    [class.sm:col-start-2]="!colReverse"
+    [class.sm:col-end-3]="!colReverse"
+    [class.sm:col-start-1]="colReverse"
+    [class.sm:col-end-2]="colReverse"
+  >
     <h6 class="sub-title">
       {{ subTitle | uppercase }}
     </h6>
@@ -22,9 +35,13 @@
   </header>
 
   <section
-    class="text-container sm:flex-1 text-left flex"
+    class="sm:flex-col sm:row-start-2 sm:row-end-3 text-container text-left flex sm:gap-1"
     [class.flex-col]="!colReverse"
     [class.flex-row]="colReverse"
+    [class.sm:col-start-2]="!colReverse"
+    [class.sm:col-end-3]="!colReverse"
+    [class.sm:col-start-1]="colReverse"
+    [class.sm:col-end-2]="colReverse"
   >
     @for (paragraph of paragraphs; track $index) {
       <p class="flex-1 content">

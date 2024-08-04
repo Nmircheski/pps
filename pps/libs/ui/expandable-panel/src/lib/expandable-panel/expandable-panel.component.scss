@@ -1,6 +1,6 @@
-.example-accordion {
+.accordion {
   display: block;
-  max-width: 500px;
+  max-width: 100%;
 }
 
 .example-accordion-item {
@@ -52,8 +52,6 @@
 
 .accordion-container {
   padding-top: 30px;
-  padding-left: calc(8px + 1.5625vw);
-  padding-right: calc(8px + 1.5625vw);
   min-height: 500px;
 }
 
