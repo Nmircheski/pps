@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, ViewEncapsulation } from '@angular/core';
 import { ButtonComponent } from '@pps/ui/button';
+import { DetailsViewConfig } from '../models/models';
 
 @Component({
   selector: 'pps-details-view',
@@ -10,11 +11,11 @@ import { ButtonComponent } from '@pps/ui/button';
   styleUrl: './details-view.component.scss',
   encapsulation: ViewEncapsulation.None,
 })
-export class DetailsViewComponent {
+export class DetailsViewComponent implements DetailsViewConfig {
   @Input() imageSrc: string = '';
   @Input() buttonTitle: string = '';
   @Input() imageSize: 'small' | 'large' = 'small';
-  @Input() set textContent(text: string) {
+  @Input() set paragraphContent(text: string) {
     this.splitTextIntoParagraphs(text);
   }
   @Input() paragraphDelimiter: string = '<br>';

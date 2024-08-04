@@ -1,12 +1,13 @@
 <pps-details-view
-  [imageSrc]="'assets/card-cups-small.png'"
-  [subTitle]="detailsViewConfig.subTitle"
-  [mainTitle]="detailsViewConfig.mainTitle"
-  [textContent]="detailsViewConfig.paragraphContent"
+  [imageSrc]="productDetailsViewConfig.imageSrc"
+  [subTitle]="productDetailsViewConfig.subTitle"
+  [mainTitle]="productDetailsViewConfig.mainTitle"
+  [paragraphContent]="productDetailsViewConfig.paragraphContent"
   [imageSize]="'large'"
+  [colReverse]="true"
 >
 </pps-details-view>
-<section class="cards-section">
+<section class="cards-section px-responsive">
   <pps-benefits-list> </pps-benefits-list>
   <p class="cards-heading">Видови самолепливи етикети</p>
   <div class="cards-container">

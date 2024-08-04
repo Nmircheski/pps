@@ -1,10 +1,10 @@
-import { IProduct } from '../models/models';
+import { IProduct } from '../../models/models';
 
 export const products: IProduct[] = [
   {
     id: 'labels',
     title: 'Самолепливи етикети',
-    imageSrc: 'assets/card-cups-small.png',
+    imageSrc: 'assets/productLabels.png',
     cardList: [
       {
         header: 'Самолеплива хартија',

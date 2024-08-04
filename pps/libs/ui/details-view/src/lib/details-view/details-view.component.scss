@@ -5,11 +5,20 @@ article {
   padding-right: calc(8px + 1.5625vw);
 }
 
+.details-article {
+  grid-template-rows: max-content 1fr;
+}
+
 .img-container img {
   width: 517px;
   height: 317px;
   border-radius: 30px;
   display: inline;
+}
+
+.img-container img.img-large {
+  width: 580px;
+  height: 580px;
 }
 
 .sub-title {
