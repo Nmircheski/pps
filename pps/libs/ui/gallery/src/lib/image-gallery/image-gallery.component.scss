@@ -41,6 +41,17 @@ h1 {
   padding-right: calc(8px + 1.5625vw);
 }
 
+@media (max-width: 1550px) {
+  swiper-slide {
+    margin-left: 10px;
+    width: 450px !important;
+  }
+
+  swiper-slide img {
+    width: 450px !important;
+  }
+}
+
 @media (max-width: 375px) {
   h1 {
     font-size: 26px;
