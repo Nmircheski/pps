@@ -1,11 +1,12 @@
 .example-list {
-  width: 125px;
+  min-width: 125px;
   border-radius: 15px;
   background: #fff;
   text-align: center;
   padding: 10px;
   margin: 0;
   margin-top: 10px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .example-list > li {
@@ -14,7 +15,6 @@
 }
 
 .cdk-overlay-pane {
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .example-list > li:hover {
