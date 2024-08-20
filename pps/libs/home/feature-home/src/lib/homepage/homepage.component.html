@@ -6,23 +6,45 @@
   [type]="'main'"
 ></pps-banner>
 
-<section class="cards-section">
+<section class="cards-section px-responsive">
   <h3 class="cards-heading-small">Продукти</h3>
   <p class="cards-heading">
     Нашите решенија го подобруваат имиџот на вашиот бренд
   </p>
 
   <div class="cards-container">
-    <pps-card [type]="'labels'"></pps-card>
-    <pps-card [type]="'cups'"></pps-card>
+    <pps-card
+      (buttonClicked)="routeToProducts('labels')"
+      [titleIcon]="'labels'"
+      [bgType]="'labels'"
+      [title]="'Самолепливи Етикети'"
+    >
+      <ng-container card-content>
+        Без разлика дали ви се потребни издржливи, водоотпорни етикети за
+        надворешна употреба, на високи или ниски температури, имаме решенија.
+      </ng-container></pps-card
+    >
+    <pps-card
+      [titleIcon]="'cups'"
+      [bgType]="'cups'"
+      [title]="'Хартиени Чаши'"
+      (buttonClicked)="routeToProducts('cups')"
+    >
+      <ng-container card-content>
+        Ја разбираме зголемената побарувачка за еколошки алтернативи, а нашите
+        хартиени чаши се произведуваат со одржливи материјали и процеси.
+      </ng-container></pps-card
+    >
   </div>
 </section>
+
 <pps-details-view
+  [imageSize]="'small'"
   [imageSrc]="'assets/aboutUsImageDetails.png'"
-  [buttonTitle]="detailsViewConfig.buttonTitle"
-  [subTitle]="detailsViewConfig.subTitle"
-  [mainTitle]="detailsViewConfig.mainTitle"
-  [paragraphContent]="detailsViewConfig.paragraphContent"
+  [buttonTitle]="detailsViewConfig[0].buttonTitle"
+  [subTitle]="detailsViewConfig[0].subTitle"
+  [mainTitle]="detailsViewConfig[0].mainTitle"
+  [paragraphContent]="detailsViewConfig[0].paragraphContent"
 >
 </pps-details-view>
 
@@ -42,6 +64,19 @@
   [subTitle]="expandablePanelConfig.subTitle"
   [mainTitle]="expandablePanelConfig.mainTitle"
 ></pps-expandable-panel>
+
+<pps-details-view
+  class="bottom-details"
+  [imageSize]="'small'"
+  [imageSrc]="detailsViewConfig[1].imageSrc"
+  [buttonTitle]="detailsViewConfig[1].buttonTitle"
+  [subTitle]="detailsViewConfig[1].subTitle"
+  [mainTitle]="detailsViewConfig[1].mainTitle"
+  [paragraphContent]="detailsViewConfig[1].paragraphContent"
+  [colReverse]="true"
+  [layout]="detailsViewConfig[1].layout"
+>
+</pps-details-view>
 
 <pps-contact-banner
   [heading]="

@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { ButtonComponent } from '@pps/ui/button';
 
 @Component({
@@ -12,4 +13,10 @@ import { ButtonComponent } from '@pps/ui/button';
 export class ContactBannerComponent {
   @Input() heading = '';
   @Input() content = '';
+
+  constructor(private readonly router: Router) {}
+
+  navigateContactPage() {
+    this.router.navigate(['/contact']);
+  }
 }

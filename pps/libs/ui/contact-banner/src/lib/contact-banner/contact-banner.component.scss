@@ -1,7 +1,7 @@
 .cta-banner {
   margin-top: 100px;
-  padding-left: 150px;
-  padding-right: 150px;
+  padding-left: calc(4px + 1.5625vw);
+  padding-right: calc(4px + 1.5625vw);
   padding-top: 20px;
   padding-bottom: 20px;
   position: relative;
@@ -30,13 +30,14 @@
     url('./../../../../../../apps/pps/src/assets/banner.png'),
     lightgray 50% / cover no-repeat;
   background-blend-mode: hard-light, normal;
-  min-height: 400px;
+  background-position: center 40%;
+  min-height: 300px;
   border-radius: 0px 0px 40px 40px;
 }
 
 .contact-container {
   text-align: center;
-  padding: 0px 300px;
+  padding: 0px calc(8px + 10.5625vw);
 
   h1 {
     text-align: center;
@@ -73,4 +74,12 @@
   margin-top: 20px;
   display: flex;
   justify-content: center;
+}
+
+@media (max-width: 375px) {
+  .contact-banner-heading {
+    font-size: 24px;
+    line-height: 32px;
+    text-align: center;
+  }
 }

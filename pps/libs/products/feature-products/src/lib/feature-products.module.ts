@@ -11,6 +11,7 @@ import { ImageGalleryModule } from '@pps/ui/gallery';
 import { PromoBannerComponent } from '@pps/ui/promo-banner';
 import { featureHomeRoutes } from './lib.routes';
 import { ProductsPageComponent } from './products-page/ProductsPage.component';
+import { ProductsService } from './services/products.service';
 
 @NgModule({
   imports: [
@@ -26,5 +27,6 @@ import { ProductsPageComponent } from './products-page/ProductsPage.component';
     ImageGalleryModule,
   ],
   declarations: [ProductsPageComponent],
+  providers: [ProductsService],
 })
 export class FeatureProductsModule {}

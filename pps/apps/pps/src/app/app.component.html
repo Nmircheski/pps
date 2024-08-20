@@ -1,7 +1,9 @@
-<pps-navbar [logoUrl]="logoUrl"></pps-navbar>
+<pps-navbar #navbar="ppsNavbar" [logoUrl]="logoUrl"></pps-navbar>
 <!-- TODO check where should main go semantically? -->
-<main>
-  <router-outlet></router-outlet>
-</main>
+@if (!navbar.menuOpen) {
+  <main>
+    <router-outlet></router-outlet>
+  </main>
 
-<pps-footer [logoUrl]="logoUrl"> </pps-footer>
+  <pps-footer [logoUrl]="logoUrl"> </pps-footer>
+}

@@ -1,6 +1,7 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { SwiperContainer } from 'swiper/element';
 import { SwiperOptions } from 'swiper/types';
+import { Image } from '../models/models';
 
 @Component({
   selector: 'pps-image-gallery',
@@ -8,7 +9,7 @@ import { SwiperOptions } from 'swiper/types';
   styleUrl: './image-gallery.component.scss',
 })
 export class ImageGalleryComponent {
-  protected images: { src: string }[] = [];
+  protected images: Image[] = [];
 
   ngOnInit() {
     this.images = [
@@ -34,7 +35,7 @@ export class ImageGalleryComponent {
 
   // Swiper
   public readonly swiperConfig: SwiperOptions = {
-    spaceBetween: 20,
+    spaceBetween: 10,
     slidesPerView: 3,
   };
 

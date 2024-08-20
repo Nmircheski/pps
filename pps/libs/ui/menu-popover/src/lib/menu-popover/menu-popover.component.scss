@@ -1,23 +1,31 @@
 .example-list {
-  width: 125px;
+  min-width: 125px;
   border-radius: 15px;
   background: #fff;
   text-align: center;
   padding: 10px;
   margin: 0;
   margin-top: 10px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .example-list > li {
   list-style-type: none;
-  border-bottom: solid 1px #8b8b8b;
-  padding: 8px 0;
+  padding: 8px 12px;
 }
 
-.example-list > li:last-child {
-  border-bottom: none;
+.cdk-overlay-pane {
 }
 
-.menu-trigger:hover {
+.example-list > li:hover {
+  background: rgba(248, 242, 228, 1);
   cursor: pointer;
+  border-radius: 15px;
+}
+
+@media (max-width: 375px) {
+  .menu-trigger {
+    display: flex;
+    justify-content: space-between;
+  }
 }

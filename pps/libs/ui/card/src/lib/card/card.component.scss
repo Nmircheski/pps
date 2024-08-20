@@ -2,7 +2,7 @@
   border: 1px solid #ccc;
   padding-top: 100px;
   padding-left: 40px;
-  padding-right: 20px;
+  padding-right: calc(2px + 1.5625vw);
   padding-bottom: 50px;
   text-align: center;
   flex-shrink: 0;
@@ -31,12 +31,17 @@
   }
 }
 
-.card.labels {
+.card.bg-labels {
   background-image: url('../../../../../../apps/pps/src/assets/card-labels-bg.png');
 }
 
-.card.cups {
+.card.bg-cups {
   background-image: url('../../../../../../apps/pps/src/assets/card-cups-bg.png');
+}
+
+.card.bg-light {
+  background: rgba(250, 247, 246, 1);
+  border: none;
 }
 
 .card:hover {
@@ -96,4 +101,20 @@
   letter-spacing: 0.75px;
   text-transform: uppercase;
   padding-bottom: 5px;
+}
+
+@media (max-width: 375px) {
+  .card {
+    padding-left: 20px;
+    padding-top: 30px;
+    padding-bottom: 10px;
+    padding-right: calc(2px + 1.5625vw);
+    gap: 0px;
+  }
+
+  .card-header h3 {
+    font-size: 22px;
+    line-height: 32px;
+    text-align: left;
+  }
 }

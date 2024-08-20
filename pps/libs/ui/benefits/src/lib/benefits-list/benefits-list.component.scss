@@ -4,7 +4,7 @@
   height: Hug (238px) px;
   top: 720px;
   left: 280px;
-  padding: 40px 100px;
+  padding: 40px calc(4px + 8.5625vw);
   gap: 60px;
   border-radius: 30px;
   border: 2px 0px 2px 0px;
@@ -12,4 +12,21 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
+}
+
+@media (max-width: 1550px) {
+  .list-container {
+    gap: 20px;
+    padding: 40px calc(4px + 5.5625vw);
+  }
+}
+
+@media (max-width: 375px) {
+  .list-container {
+    flex-wrap: wrap;
+    column-gap: 15px;
+    row-gap: 40px;
+    padding: 40px 20px;
+    justify-content: flex-start;
+  }
 }

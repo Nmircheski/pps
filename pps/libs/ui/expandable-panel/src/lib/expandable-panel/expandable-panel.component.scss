@@ -1,6 +1,6 @@
-.example-accordion {
+.accordion {
   display: block;
-  max-width: 500px;
+  max-width: 100%;
 }
 
 .example-accordion-item {
@@ -27,7 +27,6 @@
   font-weight: 700;
   line-height: 20px;
   letter-spacing: 0em;
-  text-align: left;
   color: #4d4d4d;
 }
 
@@ -53,15 +52,13 @@
 
 .accordion-container {
   padding-top: 30px;
-  padding-left: 300px;
-  padding-right: 300px;
   min-height: 500px;
 }
 
 .content-container {
   background-color: #faf7f6;
   border-radius: 50px;
-  height: 70vh;
+  min-height: 70vh;
 }
 
 .sub-title {
@@ -70,7 +67,6 @@
   font-weight: 600;
   line-height: 14px;
   letter-spacing: 0.1em;
-  text-align: left;
   color: #7a82cc;
 }
 .main-title {
@@ -79,6 +75,16 @@
   font-weight: 700;
   line-height: 40px;
   letter-spacing: 0em;
-  text-align: left;
   color: #33517e;
+}
+
+@media (max-width: 375px) {
+  .content-container {
+    height: auto;
+    border-radius: 20px;
+  }
+
+  .expandable-image {
+    height: 345px;
+  }
 }

@@ -21,4 +21,17 @@ body {
   background: #f3f4f5;
 }
 
-//test dadsa
+@media (max-width: 375px) {
+  body {
+    padding: 0 10px;
+  }
+
+  main {
+    margin: 0;
+  }
+
+  .px-responsive {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+}

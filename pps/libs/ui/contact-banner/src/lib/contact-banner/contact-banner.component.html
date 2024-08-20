@@ -10,7 +10,13 @@
     }
     <div class="cta-button-container">
       <!-- Your content goes here -->
-      <pps-button class="cta-button"> КОНТАКТ </pps-button>
+      <pps-button
+        class="cta-button"
+        [bgType]="'light'"
+        (onClick)="navigateContactPage()"
+      >
+        КОНТАКТ
+      </pps-button>
     </div>
   </div>
 </section>

@@ -9,8 +9,22 @@ module.exports = {
   ],
   theme: {
     extend: {
-      
+      padding: {
+        responsive: 'calc(12px + 14vw)',
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      const newUtilities = {
+        '.pl-responsive': {
+          paddingLeft: 'calc(12px + 14vw)',
+        },
+        '.pr-responsive': {
+          paddingRight: 'calc(12px + 14vw)',
+        },
+      };
+      addUtilities(newUtilities, ['responsive', 'hover']);
+    },
+  ],
 };
