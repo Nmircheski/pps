@@ -5,7 +5,7 @@
 }
 
 .navbar {
-  display: flex;
+  // display: flex;
 }
 
 .navbar > ul {
@@ -57,7 +57,7 @@
   transform: rotate(180deg);
 }
 
-@media (max-width: 375px) {
+@media (max-width: 640px) {
   .main-nav[open='true'] {
     padding-top: 0;
     padding-bottom: 0;
