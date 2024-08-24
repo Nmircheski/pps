@@ -10,7 +10,7 @@ module.exports = {
   theme: {
     extend: {
       padding: {
-        responsive: 'calc(12px + 14vw)',
+        responsive: 'calc(12px + 4vw)',
       },
     },
   },
@@ -18,10 +18,10 @@ module.exports = {
     function ({ addUtilities }) {
       const newUtilities = {
         '.pl-responsive': {
-          paddingLeft: 'calc(12px + 14vw)',
+          paddingLeft: 'calc(12px + 4vw)',
         },
         '.pr-responsive': {
-          paddingRight: 'calc(12px + 14vw)',
+          paddingRight: 'calc(12px + 4vw)',
         },
       };
       addUtilities(newUtilities, ['responsive', 'hover']);
