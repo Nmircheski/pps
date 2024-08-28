@@ -19,7 +19,7 @@
 
 .nav-link {
   display: flex;
-  padding: 15px 20px;
+  padding: 15px 1.5vw;
   color: #6b72b2;
   font-size: 15px;
   font-style: normal;
@@ -58,6 +58,10 @@
 }
 
 @media (max-width: 640px) {
+  .hide-nav {
+    display: none;
+  }
+
   .main-nav[open='true'] {
     padding-top: 0;
     padding-bottom: 0;
