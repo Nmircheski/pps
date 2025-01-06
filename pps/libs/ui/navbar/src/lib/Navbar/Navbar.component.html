@@ -1,5 +1,5 @@
 <header
-  class="main-nav sm:flex-row gap-12 sm:gap-0 sm:justify-between sm:items-center w-full"
+  class="main-nav xl:flex-row gap-12 xl:gap-0 xl:justify-between xl:items-center w-full"
   [attr.open]="menuOpen"
   [class.justify-end]="!menuOpen"
   [class.h-screen]="menuOpen"
@@ -9,7 +9,7 @@
 >
   <!-- TODO use class and style binding from angular -->
   <div
-    class="logo sm:block flex justify-between w-full sm:flex-1"
+    class="logo xl:block flex justify-between w-full xl:flex-1"
     (click)="navigateHome()"
   >
     <!-- <img [src]="logoUrl" alt="App Logo" /> -->
@@ -35,7 +35,7 @@
       />
     </svg>
 
-    <div class="sm:hidden" (click)="toggleMenu()">
+    <div class="xl:hidden" (click)="toggleMenu()">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         class="h-6 w-6"
@@ -55,33 +55,33 @@
 
   <nav
     [class.hide-nav]="!menuOpen"
-    class="flex navbar w-full item2 sm:justify-center sm:align-center"
+    class="flex navbar w-full item2 xl:justify-center xl:align-center"
   >
     <ul
-      class="nav-list flex flex-row w-full sm:justify-center"
+      class="nav-list flex flex-row w-full xl:justify-center"
       [class.flex-col]="menuOpen"
     >
       <li
-        class="nav-link sm:self-center sm:justify-center"
+        class="nav-link xl:self-center xl:justify-center"
         (click)="toggleMenu()"
       >
         <a href="#home" [routerLink]="['/home']">Почетна</a>
       </li>
       <li
-        class="nav-link sm:self-center sm:justify-center align-center"
+        class="nav-link xl:self-center xl:justify-center align-center"
         (click)="togglePopover(undefined, undefined)"
       >
         @if (!isMobileScreen) {
           <pps-menu-popover
             #popoverMenu
-            class="w-full hidden sm:block"
+            class="w-full hidden xl:block"
             (onItemClicked)="popoverItemClicked($event); toggleMenu()"
             >Продукти
             <ng-container [ngTemplateOutlet]="menuIcon" menuIcon>
             </ng-container>
           </pps-menu-popover>
         } @else {
-          <cdk-accordion class="w-full block sm:hidden">
+          <cdk-accordion class="w-full block xl:hidden">
             <cdk-accordion-item
               class="w-full"
               #accordionItem="cdkAccordionItem"
@@ -105,7 +105,7 @@
                 role="region"
                 [style.display]="accordionItem.expanded ? '' : 'none'"
               >
-                <li class="nav-link sub-link sm:self-center sm:justify-center">
+                <li class="nav-link sub-link xl:self-center xl:justify-center">
                   <a
                     [routerLink]="['/products/labels']"
                     (click)="toggleMenu(); accordionItem.toggle()"
@@ -113,7 +113,7 @@
                   >
                 </li>
 
-                <li class="nav-link sub-link sm:self-center sm:justify-center">
+                <li class="nav-link sub-link xl:self-center xl:justify-center">
                   <a
                     [routerLink]="['/products/cups']"
                     (click)="toggleMenu(); accordionItem.toggle()"
@@ -144,7 +144,7 @@
         </ng-template>
       </li>
       <li
-        class="nav-link sm:self-center sm:justify-center"
+        class="nav-link xl:self-center xl:justify-center"
         (click)="toggleMenu()"
       >
         <a [routerLink]="['/about-us']">За нас</a>
@@ -152,7 +152,7 @@
     </ul>
 
     <span
-      class="nav-link phone-link-container sm:self-center sm:justify-center sm:whitespace-nowrap"
+      class="nav-link phone-link-container xl:self-center xl:justify-center xl:whitespace-nowrap"
       (click)="toggleMenu()"
     >
       <a [routerLink]="['/contact']" class="phone-link">+389 71 23456</a>
@@ -160,7 +160,7 @@
   </nav>
 
   <div
-    class="contact-info flex sm:self-center sm:block w-full item3 sm:flex-1"
+    class="contact-info flex xl:self-center xl:block w-full item3 xl:flex-1"
     (click)="toggleMenu()"
     [class.flex-col]="menuOpen"
     [class.hidden]="!menuOpen"

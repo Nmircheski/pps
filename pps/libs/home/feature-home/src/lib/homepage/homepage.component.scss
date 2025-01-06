@@ -32,6 +32,7 @@
 .cards-container {
   padding-top: 20px;
   display: flex;
+  flex-wrap: wrap;
   gap: 40px;
 
   pps-card {
