@@ -10,7 +10,7 @@ module.exports = {
   theme: {
     extend: {
       padding: {
-        responsive: 'calc(12px + 15vw)',
+        responsive: 'calc(12px + 14vw)',
       },
     },
   },

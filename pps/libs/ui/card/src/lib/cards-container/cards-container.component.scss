@@ -1,0 +1,20 @@
+.cards-container {
+  padding-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+
+  .pps-card {
+    flex: 1;
+    min-width: 375px;
+  }
+}
+
+@media (max-width: 640px) {
+  .cards-container {
+    flex-direction: column;
+    .pps-card {
+      min-width: unset;
+    }
+  }
+}

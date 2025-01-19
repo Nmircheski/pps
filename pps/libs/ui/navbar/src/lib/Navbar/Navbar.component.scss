@@ -2,7 +2,8 @@
   margin-top: 30px;
   display: flex;
   width: 100%;
-  padding: 0 calc(calc(8px + 2.5625vw) + theme('padding.responsive'));
+  padding: 0px calc(calc(8px + 2.5625vw) + theme('padding.responsive')) 20px
+    calc(calc(8px + 2.5625vw) + theme('padding.responsive'));
 }
 
 .navbar {
@@ -21,8 +22,7 @@
 .nav-link {
   display: flex;
   gap: 2px;
-  // padding: 15px 1.5vw;
-  padding: 10px 20px 10px 20px;
+  padding: 15px 1vw;
   color: #6b72b2;
   font-size: 15px;
   font-style: normal;
@@ -34,6 +34,7 @@
 
 .contact-info {
   color: #6b72b2;
+  padding-left: 10px;
 }
 
 .phone-link {
