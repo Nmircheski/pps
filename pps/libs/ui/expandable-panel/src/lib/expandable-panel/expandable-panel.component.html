@@ -2,7 +2,7 @@
   <div
     class="content-container flex gap-10 sm:gap-[40px] overflow-hidden flex-wrap"
   >
-    <div class="sm:flex-1 w-full">
+    <div class="media-item sm:flex-1 w-full">
       <img
         [src]="logoUrl"
         class="h-full w-full overflow-hidden expandable-image"
@@ -10,18 +10,18 @@
       />
     </div>
 
-    <aside class="sm:flex-1 flex flex-col">
+    <aside class="media-item sm:flex-1 flex flex-col">
       <!-- TODO create a component - pps-title and reuse it -->
-      <header class="flex-1 pb-5 pt-10 sm:pr-[40px]">
-        <h6 class="sub-title mt-5 text-center sm:text-left">
+      <header class="sm:px-[36px] flex-1 pb-5 pt-10">
+        <h6 class="sub-title mt-5 text-center">
           {{ subTitle | uppercase }}
         </h6>
-        <h1 class="main-title mt-5 text-center sm:text-left">
+        <h1 class="main-title mt-5 text-center">
           {{ mainTitle }}
         </h1>
       </header>
 
-      <cdk-accordion class="accordion flex-1 pb-10 w-full sm:pr-[40px]">
+      <cdk-accordion class="accordion flex-1 pb-10 w-full sm:px-[20px]">
         <div class="flex flex-col h-full w-full">
           @for (item of items; track item; let index = $index) {
             <cdk-accordion-item

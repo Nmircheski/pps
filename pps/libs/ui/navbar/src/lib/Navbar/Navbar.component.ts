@@ -2,6 +2,7 @@ import { CdkAccordion, CdkAccordionModule } from '@angular/cdk/accordion';
 import { CommonModule, DOCUMENT } from '@angular/common';
 import {
   Component,
+  ElementRef,
   Inject,
   Input,
   Renderer2,
@@ -40,6 +41,10 @@ export class NavbarComponent {
 
   @ViewChild('popoverMenu') popover: MenuPopoverComponent | undefined;
 
+  @ViewChild('hamburgerMenu', { read: ElementRef }) menuMode:
+    | ElementRef<HTMLDivElement>
+    | undefined;
+
   constructor(
     @Inject(DOCUMENT) private document: Document,
     private renderer: Renderer2,
@@ -55,16 +60,31 @@ export class NavbarComponent {
   }
 
   protected toggleMenu(): void {
-    if (!this.isMobileScreen) {
+    const hamburgerMenu = this.menuMode?.nativeElement;
+
+    if (!hamburgerMenu) {
+      return;
+    }
+
+    const style = getComputedStyle(hamburgerMenu);
+
+    if (style.display === 'none') {
       return;
     }
 
     this.menuOpen = !this.menuOpen;
 
     if (this.menuOpen) {
-      this.renderer.addClass(this.document.body, 'overflow-hidden');
+      const scrollBarWidth =
+        window.innerWidth - document.body.clientWidth + 'px';
+
+      this.renderer.setStyle(
+        this.document.body,
+        'margin-right',
+        scrollBarWidth,
+      );
     } else {
-      this.renderer.removeClass(this.document.body, 'overflow-hidden');
+      this.renderer.removeStyle(this.document.body, 'margin-right');
     }
   }
 
