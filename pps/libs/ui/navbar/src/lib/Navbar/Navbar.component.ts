@@ -76,6 +76,7 @@ export class NavbarComponent {
     this.menuOpen = !this.menuOpen;
 
     if (this.menuOpen) {
+      //scrollbar dissapears - fill the missing space with margin
       const scrollBarWidth =
         window.innerWidth - document.body.clientWidth + 'px';
 
