@@ -61,15 +61,8 @@ export class NavbarComponent {
 
   protected toggleMenu(): void {
     // is mobile menu active
-    const hamburgerMenu = this.menuMode?.nativeElement;
 
-    if (!hamburgerMenu) {
-      return;
-    }
-
-    const style = getComputedStyle(hamburgerMenu);
-
-    if (style.display === 'none') {
+    if (!this.isMobileMenuActive()) {
       return;
     }
 
@@ -93,11 +86,31 @@ export class NavbarComponent {
   togglePopover(
     popover: MenuPopoverComponent | undefined,
     accordion: CdkAccordion | undefined,
-  ) {
+  ): void {
+    if (this.isMobileMenuActive()) {
+      return;
+    }
     this.popover?.togglePopover();
   }
 
   protected popoverItemClicked(productType: string) {
     this.router.navigate([`products/${productType}`]);
+  }
+
+  private isMobileMenuActive(): boolean {
+    // is mobile menu active
+    const hamburgerMenu = this.menuMode?.nativeElement;
+
+    if (!hamburgerMenu) {
+      return false;
+    }
+
+    const style = getComputedStyle(hamburgerMenu);
+
+    if (style.display === 'none') {
+      return false;
+    }
+
+    return true;
   }
 }
