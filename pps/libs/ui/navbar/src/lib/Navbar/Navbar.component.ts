@@ -60,6 +60,7 @@ export class NavbarComponent {
   }
 
   protected toggleMenu(): void {
+    // is mobile menu active
     const hamburgerMenu = this.menuMode?.nativeElement;
 
     if (!hamburgerMenu) {
