@@ -10,8 +10,8 @@
   border: 2px 0px 2px 0px;
   opacity: 0px;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: space-around;
 }
 
 @media (max-width: 1550px) {

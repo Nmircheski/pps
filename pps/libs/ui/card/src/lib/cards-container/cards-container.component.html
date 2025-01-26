@@ -1,0 +1,5 @@
+<section class="cards-container">
+  @for (template of cardsTemplates; track $index) {
+    <ng-container [ngTemplateOutlet]="template"> </ng-container>
+  }
+</section>

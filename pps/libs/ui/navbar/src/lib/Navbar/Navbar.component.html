@@ -1,6 +1,6 @@
 <header
-  class="main-nav xl:flex-row gap-12 xl:gap-0 xl:justify-between xl:items-center w-full"
-  [attr.open]="menuOpen"
+  class="main-nav gap-12 xl:gap-0 xl:justify-between xl:items-center w-full"
+  [attr.open]="menuOpen || null"
   [class.justify-end]="!menuOpen"
   [class.h-screen]="menuOpen"
   [class.flex-col]="menuOpen"
@@ -8,13 +8,12 @@
   [class.items-start]="menuOpen"
 >
   <!-- TODO use class and style binding from angular -->
-  <div
-    class="logo xl:block flex justify-between w-full xl:flex-1"
-    (click)="navigateHome()"
-  >
+  <div class="logo justify-between w-full xl:flex-1">
     <!-- <img [src]="logoUrl" alt="App Logo" /> -->
     <!-- TODO CREATE LOGO COMPONENT -->
     <svg
+      (click)="navigateHome()"
+      class="h-full"
       width="205"
       height="30"
       viewBox="0 0 205 30"
@@ -35,7 +34,7 @@
       />
     </svg>
 
-    <div class="xl:hidden" (click)="toggleMenu()">
+    <div #hamburgerMenu class="hamburger-menu" (click)="toggleMenu()">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         class="h-6 w-6"
@@ -52,7 +51,6 @@
       </svg>
     </div>
   </div>
-
   <nav
     [class.hide-nav]="!menuOpen"
     class="flex navbar w-full item2 xl:justify-center xl:align-center"
@@ -71,7 +69,7 @@
         class="nav-link xl:self-center xl:justify-center align-center"
         (click)="togglePopover(undefined, undefined)"
       >
-        @if (!isMobileScreen) {
+        @if (!menuOpen) {
           <pps-menu-popover
             #popoverMenu
             class="w-full hidden xl:block"
@@ -87,7 +85,7 @@
               #accordionItem="cdkAccordionItem"
             >
               <a
-                class="w-full flex justify-between items-center"
+                class="w-full flex justify-between items-center cursor-pointer"
                 (click)="accordionItem?.toggle()"
               >
                 Продукти
@@ -158,10 +156,11 @@
       <a [routerLink]="['/contact']" class="phone-link">+389 71 23456</a>
     </span>
   </nav>
-
+  <!-- TODO rename hide-nav class so it can fit button and nav -->
   <div
     class="contact-info flex xl:self-center xl:block w-full item3 xl:flex-1"
     (click)="toggleMenu()"
+    [class.hide-nav]="!menuOpen"
     [class.flex-col]="menuOpen"
     [class.hidden]="!menuOpen"
   >

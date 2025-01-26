@@ -4,6 +4,8 @@ import {
   EventEmitter,
   Input,
   Output,
+  TemplateRef,
+  ViewChild,
   ViewEncapsulation,
 } from '@angular/core';
 import { ButtonComponent } from '@pps/ui/button';
@@ -38,4 +40,8 @@ export class CardComponent {
   @Input() public hideLinkButtonSm = false;
 
   @Output() buttonClicked = new EventEmitter<void>();
+
+  @ViewChild('templateRef', { read: TemplateRef }) public templateRef:
+    | TemplateRef<any>
+    | undefined;
 }
