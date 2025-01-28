@@ -2,13 +2,15 @@
   margin-top: 60px;
   margin-bottom: 60px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
   grid-template-rows: auto;
+  column-gap: calc(10px + 4.5625vw);
   width: 100%;
   min-height: 260px;
   justify-content: space-between;
   align-items: center;
-  column-gap: calc(10px + 4.5625vw);
+  padding: 30px calc(calc(8px + 3.5625vw) + theme('padding.responsive')) 20px
+    calc(calc(8px + 3.5625vw) + theme('padding.responsive'));
 }
 
 .logo {
@@ -18,12 +20,16 @@
 }
 
 .footer-nav-container {
-  grid-column: 1/2;
-  grid-row: 2/3;
+  // grid-column: 1/2;
+  // grid-row: 2/3;
   display: flex;
   flex-direction: row;
-  gap: calc(4px + 1.5625vw);
+  gap: calc(4px + 0.5625vw);
   align-self: start;
+
+  pps-footer-nav {
+    flex: 1;
+  }
 }
 
 .subs-container {
@@ -46,7 +52,7 @@
 }
 
 .contact-container {
-  padding-top: calc(4px + 1.5625vw);
+  // padding-top: calc(4px + 1.5625vw);
 }
 
 .thumbnail {
@@ -82,22 +88,22 @@
   border-radius: 12px;
 }
 
-.subs-container,
-.contact-container,
-.contact-links-container {
-  margin-top: 10px;
-}
+// .subs-container,
+// .contact-container,
+// .contact-links-container {
+//   margin-top: 10px;
+// }
 
 @media (max-width: 1006px) {
   .pps-footer {
     grid-template-columns: 1fr;
-    // grid-template-rows: 1fr 1fr 1fr 1fr;
+    // grid-template-rows: 1fr 1fr 1fr
     // padding: 0px 15px;
     gap: 20px;
   }
 
   .logo {
-    width: 100%;
+    // width: 100%;
     display: flex;
     justify-items: center;
     grid-column: 1/2;
@@ -105,26 +111,33 @@
   }
 
   .footer-nav-container {
-    grid-column: 1/2;
-    grid-row: 4/5;
+    // grid-column: 1/2;
+    // grid-row: 4/5;
     padding-top: 12px;
     flex-wrap: wrap;
-    gap: 50px;
+    gap: 20px;
   }
 
   .subs-container {
-    grid-column: 1/2;
-    grid-row: 2/3;
+    // grid-column: 1/2;
+    // grid-row: 2/3;
   }
 
   .contact-container {
-    grid-column: 1/2;
-    grid-row: 3/4;
+    // grid-column: 1/2;
+    // grid-row: 3/4;
   }
 
   .subs-header {
     font-size: 20px;
     line-height: 28px;
     text-align: left;
+  }
+}
+
+@media (max-width: 640px) {
+  .pps-footer {
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
