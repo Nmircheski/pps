@@ -1,6 +1,6 @@
 # Promo Paper Solutions
 
-[![Angular](https://img.shields.io/badge/Angular-v15-red)](https://angular.io/) [![NX](https://img.shields.io/badge/NX-Monorepo-blue)](https://nx.dev/)
+[![Angular](https://img.shields.io/badge/Angular-v17-red)](https://angular.io/) [![NX](https://img.shields.io/badge/NX-Monorepo-blue)](https://nx.dev/)
 
 **Promo Paper Solutions** is an Angular application powered by the NX monorepo architecture, designed to streamline and modernize the way promotional content is managed and distributed.
 
