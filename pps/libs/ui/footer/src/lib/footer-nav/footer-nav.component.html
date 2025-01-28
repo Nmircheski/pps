@@ -1,10 +1,12 @@
 <nav class="footer-nav">
-  <p class="nav-header">{{ title }}</p>
+  <h1 class="nav-header whitespace-nowrap">{{ title }}</h1>
 
   <ul class="nav-list">
     @for (item of links; track item.name) {
       <li style="padding-bottom: 10px">
-        <a routerLink="item.routerLink"> {{ item.name }}</a>
+        <a [routerLink]="item.routerLink" class="whitespace-nowrap">
+          {{ item.name }}</a
+        >
       </li>
     }
   </ul>

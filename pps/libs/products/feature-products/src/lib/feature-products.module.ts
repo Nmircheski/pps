@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { BannerComponent } from '@pps/ui/banner';
 import { BenefitsModule } from '@pps/ui/benefits';
-import { CardComponent } from '@pps/ui/card';
+import { CardComponent, CardsContainerComponent } from '@pps/ui/card';
 import { ContactBannerComponent } from '@pps/ui/contact-banner';
 import { DetailsViewComponent } from '@pps/ui/details-view';
 import { ExpandablePanelComponent } from '@pps/ui/expandable-panel';
@@ -21,6 +21,7 @@ import { ProductsService } from './services/products.service';
     PromoBannerComponent,
     ContactBannerComponent,
     CardComponent,
+    CardsContainerComponent,
     ExpandablePanelComponent,
     DetailsViewComponent,
     BenefitsModule,

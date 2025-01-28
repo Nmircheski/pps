@@ -1,16 +1,9 @@
-<footer class="pps-footer py-0 px-responsive">
+<footer class="pps-footer py-0">
   <div class="logo">
     <img [src]="logoUrl" alt="App Logo" />
   </div>
 
-  <div class="footer-nav-container">
-    @for (config of navConfigs; track config.title) {
-      <pps-footer-nav [links]="config.items" [title]="config.title">
-      </pps-footer-nav>
-    }
-  </div>
-
-  <div class="subs-container">
+  <!-- <div class="subs-container self-start">
     <h1 class="subs-header">Пријави се за е-вести</h1>
     <form class="subs-form">
       <pps-input class="mt-4 flex-1 sm:flex-none"></pps-input>
@@ -18,9 +11,10 @@
         >Прати</pps-button
       >
     </form>
-  </div>
+  </div> -->
+
   <div class="contact-container">
-    <h1 class="subs-header">Или контактирај не</h1>
+    <h1 class="subs-header">Контактирај не</h1>
     <ul class="contact-links-container">
       <li>
         <span class="contact-link">
@@ -86,5 +80,12 @@
         >
       </li>
     </ul>
+  </div>
+
+  <div class="footer-nav-container">
+    @for (config of navConfigs; track config.title) {
+      <pps-footer-nav [links]="config.items" [title]="config.title">
+      </pps-footer-nav>
+    }
   </div>
 </footer>

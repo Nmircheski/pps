@@ -59,6 +59,10 @@
   background-color: #faf7f6;
   border-radius: 50px;
   min-height: 70vh;
+
+  .media-item {
+    min-width: 350px;
+  }
 }
 
 .sub-title {
@@ -69,6 +73,7 @@
   letter-spacing: 0.1em;
   color: #7a82cc;
 }
+
 .main-title {
   font-family: Mulish;
   font-size: 32px;
@@ -78,10 +83,19 @@
   color: #33517e;
 }
 
+@media (max-width: 1200px) {
+  .media-item img {
+    max-height: 450px;
+  }
+}
+
 @media (max-width: 640px) {
   .content-container {
     height: auto;
     border-radius: 20px;
+    .media-item {
+      min-width: unset;
+    }
   }
 
   .expandable-image {

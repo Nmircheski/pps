@@ -1,11 +1,18 @@
 .main-nav {
-  margin-top: 30px;
   display: flex;
   width: 100%;
+  padding: 30px calc(calc(8px + 3.5625vw) + theme('padding.responsive')) 20px
+    calc(calc(8px + 3.5625vw) + theme('padding.responsive'));
 }
 
 .navbar {
-  // display: flex;
+  display: flex;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.hamburger-menu {
+  display: none;
 }
 
 .navbar > ul {
@@ -15,11 +22,13 @@
 .logo {
   height: 45px;
   cursor: pointer;
+  display: block;
 }
 
 .nav-link {
   display: flex;
-  padding: 15px 1.5vw;
+  gap: 2px;
+  padding: 15px 1vw;
   color: #6b72b2;
   font-size: 15px;
   font-style: normal;
@@ -35,7 +44,7 @@
 
 .phone-link {
   display: flex;
-  padding: 10px 20px;
+  padding: 0;
   justify-content: center;
   align-items: center;
   gap: 10px;
@@ -57,27 +66,30 @@
   transform: rotate(180deg);
 }
 
-@media (max-width: 640px) {
+@media (max-width: 1280px) {
   .hide-nav {
     display: none;
   }
 
+  .hamburger-menu {
+    display: block;
+  }
+
   .main-nav[open='true'] {
-    padding-top: 0;
     padding-bottom: 0;
-    margin: 30px 0px;
     position: relative;
     height: 100vh;
+  }
+
+  .logo {
+    display: flex;
   }
 
   .navbar {
     flex-direction: column;
     align-items: flex-start;
-    padding-left: 20px;
-  }
-
-  .main-nav {
-    padding: 0;
+    padding-left: 0px;
+    padding-right: 0px;
   }
 
   .hide-nav {
@@ -85,10 +97,8 @@
   }
 
   .contact-info {
-    align-items: center;
-
     button {
-      width: 65vw;
+      width: 100%;
       .button-text {
         font-size: 24px;
         line-height: 24px;
@@ -117,5 +127,12 @@
     padding-bottom: 0px;
     font-size: 16px;
     line-height: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .main-nav {
+    padding-left: 30px;
+    padding-right: 30px;
   }
 }
