@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "yarn nx run pps:serve"
+    "start": "yarn nx run pps:serve",
+    "build:azure": "yarn nx run pps:build:production --base-href /pps/  --output-path=../dist/browser"
   },
   "private": true,
   "dependencies": {
