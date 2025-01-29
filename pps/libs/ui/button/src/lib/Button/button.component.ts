@@ -11,8 +11,8 @@ import {
   selector: 'pps-button',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './button.component.html',
-  styleUrl: './button.component.scss',
+  templateUrl: './Button.component.html',
+  styleUrl: './Button.component.scss',
   encapsulation: ViewEncapsulation.None,
 })
 export class ButtonComponent {
