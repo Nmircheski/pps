@@ -23,7 +23,7 @@
 
       <cdk-accordion class="accordion flex-1 pb-10 w-full sm:px-[20px]">
         <div class="flex flex-col h-full w-full">
-          @for (item of items; track item; let index = $index) {
+          @for (item of items(); track item; let index = $index) {
             <cdk-accordion-item
               #accordionItem="cdkAccordionItem"
               class="example-accordion-item flex-1 w-full"

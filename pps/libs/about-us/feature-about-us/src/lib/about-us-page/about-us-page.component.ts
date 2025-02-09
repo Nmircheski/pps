@@ -1,15 +1,15 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, signal, ViewEncapsulation } from '@angular/core';
 import { DetailsViewConfig } from '@pps/ui/details-view';
 
 @Component({
-    selector: 'pps-about-us-page',
-    templateUrl: './about-us-page.component.html',
-    styleUrl: './about-us-page.component.scss',
-    encapsulation: ViewEncapsulation.None,
-    standalone: false
+  selector: 'pps-about-us-page',
+  templateUrl: './about-us-page.component.html',
+  styleUrl: './about-us-page.component.scss',
+  encapsulation: ViewEncapsulation.None,
+  standalone: false,
 })
 export class AboutUsPageComponent {
-  detailsViewConfigList: DetailsViewConfig[] = [
+  detailsViewConfigList = signal<DetailsViewConfig[]>([
     {
       layout: 'row-reverse',
       subTitle: 'За нас',
@@ -31,9 +31,9 @@ export class AboutUsPageComponent {
       paragraphContent:
         'Нашето сеопфатно портфолио ни овозможува да ги исполниме уникатните барања на секоја индустрија, обезбедувајќи приспособени решенија за етикети според вашите барања.',
     },
-  ];
+  ]);
 
-  endDetailsConfig: DetailsViewConfig = {
+  endDetailsConfig = signal<DetailsViewConfig>({
     layout: 'col-reverse',
     imageSrc: 'assets/aboutUsImageDetails.png',
     subTitle: 'Технологии',
@@ -41,13 +41,13 @@ export class AboutUsPageComponent {
     paragraphContent:
       'Нашето сеопфатно портфолио ни овозможува да ги исполниме уникатните барања на секоја индустрија, обезбедувајќи приспособени решенија за етикети според вашите барања.',
     buttonTitle: '',
-  };
+  });
 
-  expandablePanelConfig: {
+  expandablePanelConfig = signal<{
     subTitle: string;
     mainTitle: string;
-  } = {
+  }>({
     mainTitle: 'Соработуваме и растеме во повеќе сектори',
     subTitle: 'индустрии',
-  };
+  });
 }

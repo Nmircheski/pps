@@ -6,17 +6,17 @@
   <div
     class="img-container text-left"
     [class.text-right]="colReverse()"
-    [class]="imgClassList"
+    [class]="imgClassList()"
   >
     <img
       [src]="imageSrc()"
       alt="App Logo"
-      [class.row-reverse]="_layout === 'row-reverse'"
+      [class.row-reverse]="layout() === 'row-reverse'"
       class="img-{{ imageSize() }}"
     />
   </div>
 
-  <header class="details-header sm:pb-10" [class]="headerClassList">
+  <header class="details-header sm:pb-10" [class]="headerClassList()">
     <h6 class="sub-title">
       {{ subTitle() | uppercase }}
     </h6>
@@ -27,9 +27,9 @@
 
   <section
     class="flex-col sm:flex-col text-container text-left flex sm:gap-1"
-    [class]="textClassList"
+    [class]="textClassList()"
   >
-    @for (paragraph of paragraphs; track $index) {
+    @for (paragraph of paragraphs(); track $index) {
       <p class="flex-1 content">
         {{ paragraph }}
       </p>

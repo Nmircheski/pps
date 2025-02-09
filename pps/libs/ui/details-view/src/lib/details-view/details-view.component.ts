@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, ViewEncapsulation, input } from '@angular/core';
+import { Component, ViewEncapsulation, computed, input } from '@angular/core';
 import { ButtonComponent } from '@pps/ui/button';
 import { DetailsLayout } from '../models/models';
 
@@ -13,104 +13,109 @@ import { DetailsLayout } from '../models/models';
 export class DetailsViewComponent {
   readonly imageSrc = input<string>('');
   readonly buttonTitle = input<string>('');
-  readonly imageSize = input<'small' | 'large'>('small');
-  @Input() set paragraphContent(text: string) {
-    this.splitTextIntoParagraphs(text);
-  }
+  imageSize = input<'small' | 'large'>('small');
+  readonly paragraphContent = input<string>('');
+
+  readonly paragraphs = computed(() => {
+    if (!this.paragraphContent().length) {
+      return [];
+    } else {
+      return this.paragraphContent().split(this.paragraphDelimiter());
+    }
+  });
+
   readonly paragraphDelimiter = input<string>('<br>');
   readonly mainTitle = input<string>('');
   readonly subTitle = input<string>('');
   readonly colReverse = input<boolean | null>(null);
   readonly marginBottom = input<boolean>(false);
-  @Input() set layout(position: DetailsLayout) {
-    this._layout = position;
-    this.setLayoutClasses(position);
-  }
-  protected _layout: DetailsLayout = 'regular';
 
-  paragraphs: string[] = [];
+  readonly layout = input<DetailsLayout>('regular');
 
-  imgClassList: string[] = [];
-  headerClassList: string[] = [];
-  textClassList: string[] = [];
-
-  ngOnInit() {
-    this.setLayoutClasses(this._layout);
-  }
-
-  private splitTextIntoParagraphs(text: string) {
-    if (!text.length) {
-      this.paragraphs = [];
-    } else {
-      this.paragraphs = text.split(this.paragraphDelimiter());
-    }
-  }
-
-  private setLayoutClasses(position: DetailsLayout) {
-    switch (position) {
+  readonly imgClassList = computed(() => {
+    switch (this.layout()) {
       case 'regular': {
-        this.imgClassList = [
+        return [
           'sm:col-start-1',
           'sm:col-end-2',
           'sm:row-start-1',
           'sm:row-end-3',
         ];
-        this.headerClassList = [
-          'sm:col-start-2',
-          'sm:col-end-3',
-          'sm:row-start-1',
-          'sm:row-end-2',
-        ];
-        this.textClassList = [
-          'col-start-2',
-          'sm:col-end-3',
-          'sm:row-start-2',
-          'sm:row-end-3',
-        ];
-        break;
       }
       case 'col-reverse': {
-        this.imgClassList = [
+        return [
           'sm:sm:col-start-2',
           'sm:col-end-3',
           'sm:row-start-1',
           'sm:row-end-3',
         ];
-        this.headerClassList = [
-          'sm:sm:col-start-1',
-          'sm:col-end-2',
-          'sm:row-start-1',
-          ' sm:row-end-2',
-        ];
-        this.textClassList = [
-          'sm:col-start-1',
-          'sm:col-end-2',
-          'sm:row-start-2',
-          ' sm:row-end-3',
-        ];
-        break;
       }
       case 'row-reverse': {
-        this.imgClassList = [
+        return [
           'sm:col-start-1',
           'sm:col-end-3',
           'sm:row-start-2',
           'sm:row-end-3',
         ];
-        this.headerClassList = [
-          'sm:col-start-1',
-          'sm:col-end-1',
-          'sm:row-start-1',
-          'sm:row-end-2',
-        ];
-        this.textClassList = [
+      }
+    }
+  });
+
+  readonly headerClassList = computed(() => {
+    switch (this.layout()) {
+      case 'regular': {
+        return [
           'sm:col-start-2',
           'sm:col-end-3',
           'sm:row-start-1',
           'sm:row-end-2',
         ];
-        break;
+      }
+      case 'col-reverse': {
+        return [
+          'sm:sm:col-start-1',
+          'sm:col-end-2',
+          'sm:row-start-1',
+          ' sm:row-end-2',
+        ];
+      }
+      case 'row-reverse': {
+        return [
+          'sm:col-start-1',
+          'sm:col-end-1',
+          'sm:row-start-1',
+          'sm:row-end-2',
+        ];
       }
     }
-  }
+  });
+
+  readonly textClassList = computed(() => {
+    switch (this.layout()) {
+      case 'regular': {
+        return [
+          'col-start-2',
+          'sm:col-end-3',
+          'sm:row-start-2',
+          'sm:row-end-3',
+        ];
+      }
+      case 'col-reverse': {
+        return [
+          'sm:col-start-1',
+          'sm:col-end-2',
+          'sm:row-start-2',
+          ' sm:row-end-3',
+        ];
+      }
+      case 'row-reverse': {
+        return [
+          'sm:col-start-2',
+          'sm:col-end-3',
+          'sm:row-start-1',
+          'sm:row-end-2',
+        ];
+      }
+    }
+  });
 }
