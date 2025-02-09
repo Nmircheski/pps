@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { Icon } from '../models/models';
 
 @Component({
@@ -8,7 +8,7 @@ import { Icon } from '../models/models';
     standalone: false
 })
 export class BenefitItemComponent {
-  @Input() icon: Icon | undefined;
+  readonly icon = input<Icon>();
 
   protected readonly Icon = Icon;
 }

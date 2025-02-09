@@ -1,27 +1,27 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, ViewEncapsulation } from '@angular/core';
+import { Component, Input, ViewEncapsulation, input } from '@angular/core';
 import { ButtonComponent } from '@pps/ui/button';
-import { DetailsLayout, DetailsViewConfig } from '../models/models';
+import { DetailsLayout } from '../models/models';
 
 @Component({
-    selector: 'pps-details-view',
-    imports: [CommonModule, ButtonComponent],
-    templateUrl: './details-view.component.html',
-    styleUrl: './details-view.component.scss',
-    encapsulation: ViewEncapsulation.None
+  selector: 'pps-details-view',
+  imports: [CommonModule, ButtonComponent],
+  templateUrl: './details-view.component.html',
+  styleUrl: './details-view.component.scss',
+  encapsulation: ViewEncapsulation.None,
 })
-export class DetailsViewComponent implements DetailsViewConfig {
-  @Input() imageSrc: string = '';
-  @Input() buttonTitle: string = '';
-  @Input() imageSize: 'small' | 'large' = 'small';
+export class DetailsViewComponent {
+  readonly imageSrc = input<string>('');
+  readonly buttonTitle = input<string>('');
+  readonly imageSize = input<'small' | 'large'>('small');
   @Input() set paragraphContent(text: string) {
     this.splitTextIntoParagraphs(text);
   }
-  @Input() paragraphDelimiter: string = '<br>';
-  @Input() mainTitle: string = '';
-  @Input() subTitle: string = '';
-  @Input() colReverse: boolean | null = null;
-  @Input() marginBottom: boolean = false;
+  readonly paragraphDelimiter = input<string>('<br>');
+  readonly mainTitle = input<string>('');
+  readonly subTitle = input<string>('');
+  readonly colReverse = input<boolean | null>(null);
+  readonly marginBottom = input<boolean>(false);
   @Input() set layout(position: DetailsLayout) {
     this._layout = position;
     this.setLayoutClasses(position);
@@ -42,7 +42,7 @@ export class DetailsViewComponent implements DetailsViewConfig {
     if (!text.length) {
       this.paragraphs = [];
     } else {
-      this.paragraphs = text.split(this.paragraphDelimiter);
+      this.paragraphs = text.split(this.paragraphDelimiter());
     }
   }
 

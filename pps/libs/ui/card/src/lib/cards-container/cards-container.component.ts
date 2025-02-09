@@ -36,8 +36,8 @@ export class CardsContainerComponent {
     this.cardsTemplates =
       this._cardList
         ?.toArray()
-        .filter((c) => c.templateRef)
-        .map((c) => c.templateRef!) ?? [];
+        .filter((c) => c.templateRef())
+        .map((c) => c.templateRef()!) ?? [];
 
     this.changeDetecorRef.detectChanges();
   }

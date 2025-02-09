@@ -1,8 +1,8 @@
 <ng-template #templateRef>
-  <article class="pps-card card bg-{{ bgType }}">
+  <article class="pps-card card bg-{{ bgType() }}">
     <header class="card-header">
       <div class="card-icon">
-        @switch (titleIcon) {
+        @switch (titleIcon()) {
           @case ('labels') {
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -67,9 +67,9 @@
           }
         }
       </div>
-      <h3 class="text-left">{{ title }}</h3>
+      <h3 class="text-left">{{ title() }}</h3>
     </header>
-    <div class="card-body sm:block" [class.hidden]="hideContentSm">
+    <div class="card-body sm:block" [class.hidden]="hideContentSm()">
       <p>
         <ng-content [select]="'card-content'"> </ng-content>
       </p>
@@ -77,7 +77,7 @@
 
     <pps-button
       (onClick)="onButtonClick()"
-      [class.hidden]="hideLinkButtonSm"
+      [class.hidden]="hideLinkButtonSm()"
       class="sm:block"
       [bgType]="'none'"
     >

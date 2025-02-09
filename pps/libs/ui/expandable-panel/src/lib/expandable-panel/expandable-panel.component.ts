@@ -1,6 +1,6 @@
 import { CdkAccordionModule } from '@angular/cdk/accordion';
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 @Component({
     selector: 'pps-expandable-panel',
@@ -16,7 +16,7 @@ export class ExpandablePanelComponent {
     'услужна индустрија',
   ];
   expandedIndex = 0;
-  @Input() logoUrl: string = '';
-  @Input() subTitle: string = '';
-  @Input() mainTitle: string = '';
+  readonly logoUrl = input<string>('');
+  readonly subTitle = input<string>('');
+  readonly mainTitle = input<string>('');
 }

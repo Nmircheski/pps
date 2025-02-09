@@ -4,7 +4,7 @@
   >
     <div class="media-item sm:flex-1 w-full">
       <img
-        [src]="logoUrl"
+        [src]="logoUrl()"
         class="h-full w-full overflow-hidden expandable-image"
         alt="App Logo"
       />
@@ -14,10 +14,10 @@
       <!-- TODO create a component - pps-title and reuse it -->
       <header class="sm:px-[36px] flex-1 pb-5 pt-10">
         <h6 class="sub-title mt-5 text-center">
-          {{ subTitle | uppercase }}
+          {{ subTitle() | uppercase }}
         </h6>
         <h1 class="main-title mt-5 text-center">
-          {{ mainTitle }}
+          {{ mainTitle() }}
         </h1>
       </header>
 

@@ -1,8 +1,8 @@
 <nav class="footer-nav">
-  <h1 class="nav-header whitespace-nowrap">{{ title }}</h1>
+  <h1 class="nav-header whitespace-nowrap">{{ title() }}</h1>
 
   <ul class="nav-list">
-    @for (item of links; track item.name) {
+    @for (item of links(); track item.name) {
       <li style="padding-bottom: 10px">
         <a [routerLink]="item.routerLink" class="whitespace-nowrap">
           {{ item.name }}</a

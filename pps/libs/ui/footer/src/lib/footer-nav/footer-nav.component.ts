@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FooterLink } from '../models/models';
 import { RouterModule } from '@angular/router';
@@ -10,7 +10,7 @@ import { RouterModule } from '@angular/router';
     styleUrl: './footer-nav.component.scss'
 })
 export class FooterNavComponent {
-  @Input() title = '';
+  readonly title = input('');
 
-  @Input() links: FooterLink[] = [];
+  readonly links = input<FooterLink[]>([]);
 }

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { FooterNavComponent } from '../footer-nav/footer-nav.component';
 import { FooterList } from '../models/models';
 
@@ -10,7 +10,7 @@ import { FooterList } from '../models/models';
   styleUrl: './footer.component.scss',
 })
 export class FooterComponent {
-  @Input() logoUrl: string = '';
+  readonly logoUrl = input<string>('');
 
   navConfigs: FooterList[] = [
     {

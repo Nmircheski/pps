@@ -1,6 +1,6 @@
 <button
-  class="pps-button bg-{{ bgType }}"
-  [class.flex-row-reverse]="iconPosition === 'prefix'"
+  class="pps-button bg-{{ bgType() }}"
+  [class.flex-row-reverse]="iconPosition() === 'prefix'"
   (click)="onClicked()"
 >
   <p class="button-text">
