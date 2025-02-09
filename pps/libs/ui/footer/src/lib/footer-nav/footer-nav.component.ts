@@ -4,11 +4,10 @@ import { FooterLink } from '../models/models';
 import { RouterModule } from '@angular/router';
 
 @Component({
-  selector: 'pps-footer-nav',
-  standalone: true,
-  imports: [CommonModule, RouterModule],
-  templateUrl: './footer-nav.component.html',
-  styleUrl: './footer-nav.component.scss',
+    selector: 'pps-footer-nav',
+    imports: [CommonModule, RouterModule],
+    templateUrl: './footer-nav.component.html',
+    styleUrl: './footer-nav.component.scss'
 })
 export class FooterNavComponent {
   @Input() title = '';

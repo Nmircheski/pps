@@ -11,13 +11,12 @@ import {
 import { CardComponent } from '../card/card.component';
 
 @Component({
-  selector: 'pps-cards-container',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './cards-container.component.html',
-  styleUrl: './cards-container.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  encapsulation: ViewEncapsulation.None,
+    selector: 'pps-cards-container',
+    imports: [CommonModule],
+    templateUrl: './cards-container.component.html',
+    styleUrl: './cards-container.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    encapsulation: ViewEncapsulation.None
 })
 export class CardsContainerComponent {
   public cardsTemplates: TemplateRef<any>[] = [];

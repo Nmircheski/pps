@@ -8,12 +8,11 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'pps-button',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './Button.component.html',
-  styleUrl: './Button.component.scss',
-  encapsulation: ViewEncapsulation.None,
+    selector: 'pps-button',
+    imports: [CommonModule],
+    templateUrl: './Button.component.html',
+    styleUrl: './Button.component.scss',
+    encapsulation: ViewEncapsulation.None
 })
 export class ButtonComponent {
   /**

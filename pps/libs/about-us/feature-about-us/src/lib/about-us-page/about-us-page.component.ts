@@ -2,10 +2,11 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { DetailsViewConfig } from '@pps/ui/details-view';
 
 @Component({
-  selector: 'pps-about-us-page',
-  templateUrl: './about-us-page.component.html',
-  styleUrl: './about-us-page.component.scss',
-  encapsulation: ViewEncapsulation.None,
+    selector: 'pps-about-us-page',
+    templateUrl: './about-us-page.component.html',
+    styleUrl: './about-us-page.component.scss',
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class AboutUsPageComponent {
   detailsViewConfigList: DetailsViewConfig[] = [

@@ -16,19 +16,18 @@ import { ButtonComponent } from '@pps/ui/button';
 import { MenuPopoverComponent } from '@pps/ui/menu-popover';
 
 @Component({
-  selector: 'pps-navbar',
-  exportAs: 'ppsNavbar',
-  standalone: true,
-  imports: [
-    CommonModule,
-    ButtonComponent,
-    MenuPopoverComponent,
-    RouterModule,
-    CdkAccordionModule,
-  ],
-  templateUrl: './Navbar.component.html',
-  styleUrl: './Navbar.component.scss',
-  encapsulation: ViewEncapsulation.None,
+    selector: 'pps-navbar',
+    exportAs: 'ppsNavbar',
+    imports: [
+        CommonModule,
+        ButtonComponent,
+        MenuPopoverComponent,
+        RouterModule,
+        CdkAccordionModule,
+    ],
+    templateUrl: './Navbar.component.html',
+    styleUrl: './Navbar.component.scss',
+    encapsulation: ViewEncapsulation.None
 })
 export class NavbarComponent {
   navigateHome() {

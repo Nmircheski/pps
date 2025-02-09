@@ -4,9 +4,10 @@ import { SwiperOptions } from 'swiper/types';
 import { Image } from '../models/models';
 
 @Component({
-  selector: 'pps-image-gallery',
-  templateUrl: './image-gallery.component.html',
-  styleUrl: './image-gallery.component.scss',
+    selector: 'pps-image-gallery',
+    templateUrl: './image-gallery.component.html',
+    styleUrl: './image-gallery.component.scss',
+    standalone: false
 })
 export class ImageGalleryComponent {
   protected images: Image[] = [];

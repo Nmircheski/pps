@@ -4,12 +4,11 @@ import { ButtonComponent } from '@pps/ui/button';
 import { DetailsLayout, DetailsViewConfig } from '../models/models';
 
 @Component({
-  selector: 'pps-details-view',
-  standalone: true,
-  imports: [CommonModule, ButtonComponent],
-  templateUrl: './details-view.component.html',
-  styleUrl: './details-view.component.scss',
-  encapsulation: ViewEncapsulation.None,
+    selector: 'pps-details-view',
+    imports: [CommonModule, ButtonComponent],
+    templateUrl: './details-view.component.html',
+    styleUrl: './details-view.component.scss',
+    encapsulation: ViewEncapsulation.None
 })
 export class DetailsViewComponent implements DetailsViewConfig {
   @Input() imageSrc: string = '';

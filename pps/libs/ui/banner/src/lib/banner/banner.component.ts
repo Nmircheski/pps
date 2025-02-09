@@ -4,12 +4,11 @@ import { Router } from '@angular/router';
 import { ButtonComponent } from '@pps/ui/button';
 
 @Component({
-  selector: 'pps-banner',
-  standalone: true,
-  imports: [CommonModule, ButtonComponent],
-  templateUrl: './banner.component.html',
-  styleUrl: './banner.component.scss',
-  encapsulation: ViewEncapsulation.None,
+    selector: 'pps-banner',
+    imports: [CommonModule, ButtonComponent],
+    templateUrl: './banner.component.html',
+    styleUrl: './banner.component.scss',
+    encapsulation: ViewEncapsulation.None
 })
 export class BannerComponent {
   @Input() heading = '';

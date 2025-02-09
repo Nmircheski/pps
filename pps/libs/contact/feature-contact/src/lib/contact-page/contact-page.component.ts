@@ -2,9 +2,10 @@ import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
 import { ContactItem } from '../models/interfaces';
 
 @Component({
-  selector: 'pps-contact-page',
-  templateUrl: './contact-page.component.html',
-  styleUrl: './contact-page.component.scss',
+    selector: 'pps-contact-page',
+    templateUrl: './contact-page.component.html',
+    styleUrl: './contact-page.component.scss',
+    standalone: false
 })
 export class ContactPageComponent {
   contactItems: ContactItem[] = [

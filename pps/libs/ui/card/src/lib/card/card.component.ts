@@ -11,12 +11,11 @@ import {
 import { ButtonComponent } from '@pps/ui/button';
 
 @Component({
-  selector: 'pps-card',
-  standalone: true,
-  imports: [CommonModule, ButtonComponent],
-  templateUrl: './card.component.html',
-  styleUrl: './card.component.scss',
-  encapsulation: ViewEncapsulation.None,
+    selector: 'pps-card',
+    imports: [CommonModule, ButtonComponent],
+    templateUrl: './card.component.html',
+    styleUrl: './card.component.scss',
+    encapsulation: ViewEncapsulation.None
 })
 export class CardComponent {
   onButtonClick() {

@@ -3,11 +3,10 @@ import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'pps-expandable-panel',
-  standalone: true,
-  imports: [CommonModule, CdkAccordionModule],
-  templateUrl: './expandable-panel.component.html',
-  styleUrl: './expandable-panel.component.scss',
+    selector: 'pps-expandable-panel',
+    imports: [CommonModule, CdkAccordionModule],
+    templateUrl: './expandable-panel.component.html',
+    styleUrl: './expandable-panel.component.scss'
 })
 export class ExpandablePanelComponent {
   items = [
