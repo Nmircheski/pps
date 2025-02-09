@@ -4,11 +4,10 @@ import { FooterComponent } from '@pps/ui/footer';
 import { NavbarComponent } from '@pps/ui/navbar';
 
 @Component({
-  standalone: true,
-  imports: [NavbarComponent, FooterComponent, RouterModule],
-  selector: 'pps-root',
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
+    imports: [NavbarComponent, FooterComponent, RouterModule],
+    selector: 'pps-root',
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.scss'
 })
 export class AppComponent {
   title = 'pps';

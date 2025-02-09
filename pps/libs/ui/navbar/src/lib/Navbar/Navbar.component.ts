@@ -4,10 +4,10 @@ import {
   Component,
   ElementRef,
   Inject,
-  Input,
   Renderer2,
-  ViewChild,
   ViewEncapsulation,
+  viewChild,
+  input
 } from '@angular/core';
 
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
@@ -16,19 +16,18 @@ import { ButtonComponent } from '@pps/ui/button';
 import { MenuPopoverComponent } from '@pps/ui/menu-popover';
 
 @Component({
-  selector: 'pps-navbar',
-  exportAs: 'ppsNavbar',
-  standalone: true,
-  imports: [
-    CommonModule,
-    ButtonComponent,
-    MenuPopoverComponent,
-    RouterModule,
-    CdkAccordionModule,
-  ],
-  templateUrl: './Navbar.component.html',
-  styleUrl: './Navbar.component.scss',
-  encapsulation: ViewEncapsulation.None,
+    selector: 'pps-navbar',
+    exportAs: 'ppsNavbar',
+    imports: [
+        CommonModule,
+        ButtonComponent,
+        MenuPopoverComponent,
+        RouterModule,
+        CdkAccordionModule,
+    ],
+    templateUrl: './Navbar.component.html',
+    styleUrl: './Navbar.component.scss',
+    encapsulation: ViewEncapsulation.None
 })
 export class NavbarComponent {
   navigateHome() {
@@ -37,13 +36,11 @@ export class NavbarComponent {
   public menuOpen = false;
   protected isMobileScreen: boolean = false;
 
-  @Input() logoUrl: string = '';
+  readonly logoUrl = input<string>('');
 
-  @ViewChild('popoverMenu') popover: MenuPopoverComponent | undefined;
+  readonly popover = viewChild<MenuPopoverComponent>('popoverMenu');
 
-  @ViewChild('hamburgerMenu', { read: ElementRef }) menuMode:
-    | ElementRef<HTMLDivElement>
-    | undefined;
+  readonly menuMode = viewChild('hamburgerMenu', { read: ElementRef });
 
   constructor(
     @Inject(DOCUMENT) private document: Document,
@@ -90,7 +87,7 @@ export class NavbarComponent {
     if (this.isMobileMenuActive()) {
       return;
     }
-    this.popover?.togglePopover();
+    this.popover()?.togglePopover();
   }
 
   protected popoverItemClicked(productType: string) {
@@ -99,7 +96,7 @@ export class NavbarComponent {
 
   private isMobileMenuActive(): boolean {
     // is mobile menu active
-    const hamburgerMenu = this.menuMode?.nativeElement;
+    const hamburgerMenu = this.menuMode()?.nativeElement;
 
     if (!hamburgerMenu) {
       return false;

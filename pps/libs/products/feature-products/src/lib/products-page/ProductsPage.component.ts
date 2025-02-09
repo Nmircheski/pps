@@ -5,9 +5,10 @@ import { ProductsService } from '../services/products.service';
 import { ProductsRouteStatics } from '../static/route-statics';
 
 @Component({
-  selector: 'pps-products-page',
-  templateUrl: './ProductsPage.component.html',
-  styleUrl: './ProductsPage.component.scss',
+    selector: 'pps-products-page',
+    templateUrl: './ProductsPage.component.html',
+    styleUrl: './ProductsPage.component.scss',
+    standalone: false
 })
 export class ProductsPageComponent implements OnInit {
   protected productType = '';

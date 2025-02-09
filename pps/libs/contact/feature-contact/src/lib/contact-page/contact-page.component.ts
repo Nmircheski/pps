@@ -1,10 +1,11 @@
-import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
+import { Component, ElementRef, Renderer2, viewChild } from '@angular/core';
 import { ContactItem } from '../models/interfaces';
 
 @Component({
-  selector: 'pps-contact-page',
-  templateUrl: './contact-page.component.html',
-  styleUrl: './contact-page.component.scss',
+    selector: 'pps-contact-page',
+    templateUrl: './contact-page.component.html',
+    styleUrl: './contact-page.component.scss',
+    standalone: false
 })
 export class ContactPageComponent {
   contactItems: ContactItem[] = [
@@ -26,14 +27,9 @@ export class ContactPageComponent {
     },
   ];
 
-  @ViewChild('formContainer', { read: ElementRef }) formContainer:
-    | ElementRef<HTMLElement>
-    | undefined;
-  @ViewChild('imgContainer', { read: ElementRef }) imgContainer:
-    | ElementRef<HTMLElement>
-    | undefined;
-  @ViewChild('container', { read: ElementRef, static: true })
-  container!: ElementRef<HTMLElement>;
+  readonly formContainer = viewChild('formContainer', { read: ElementRef });
+  readonly imgContainer = viewChild('imgContainer', { read: ElementRef });
+  readonly container = viewChild.required('container', { read: ElementRef });
 
   private resizeObserver: ResizeObserver | undefined;
 
@@ -42,7 +38,7 @@ export class ContactPageComponent {
   ngAfterViewInit(): void {
     const resizeObserver = new ResizeObserver(this.handleItemsWrapping);
 
-    resizeObserver.observe(this.container.nativeElement);
+    resizeObserver.observe(this.container().nativeElement);
   }
 
   ngOnDestroy(): void {
@@ -51,8 +47,8 @@ export class ContactPageComponent {
 
   private handleItemsWrapping = (): void => {
     //TODO this should be propagated through observable and distinctUntilChanged.. to reduce number of calls
-    const formElement = this.formContainer?.nativeElement;
-    const imageElement = this.imgContainer?.nativeElement;
+    const formElement = this.formContainer()?.nativeElement;
+    const imageElement = this.imgContainer()?.nativeElement;
 
     if (
       formElement &&

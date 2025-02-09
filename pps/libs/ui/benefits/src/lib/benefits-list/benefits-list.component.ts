@@ -2,9 +2,10 @@ import { Component } from '@angular/core';
 import { Icon } from '../models/models';
 
 @Component({
-  selector: 'pps-benefits-list',
-  templateUrl: './benefits-list.component.html',
-  styleUrl: './benefits-list.component.scss',
+    selector: 'pps-benefits-list',
+    templateUrl: './benefits-list.component.html',
+    styleUrl: './benefits-list.component.scss',
+    standalone: false
 })
 export class BenefitsListComponent {
   protected readonly benefitsList: {
