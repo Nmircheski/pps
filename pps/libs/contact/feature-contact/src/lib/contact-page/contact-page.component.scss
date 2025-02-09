@@ -4,17 +4,40 @@
 
 .form-container,
 .image-container {
-  flex: 1;
+  flex: 1 1 33%;
+  min-width: 400px;
+  box-sizing: border-box;
+  min-height: 450px;
 }
 
 .contact-section {
   min-height: 80vh;
+  border-radius: 0 40px 40px 0;
 }
 
-.image-container .img {
-  max-width: 100%;
-  height: 100%;
+.rounded-right {
   border-radius: 0 40px 40px 0;
+}
+
+.rounded-left {
+  border-radius: 40px 0 0 40px;
+}
+
+.rounded-bottom {
+  border-radius: 0 0 40px 40px;
+
+  .form-content-container {
+    padding-bottom: calc(12px + 1.5625vw + 2.5rem);
+  }
+}
+
+.rounded-top {
+  border-radius: 40px 40px 0 0;
+}
+
+.image-container.img {
+  max-width: 100%;
+  // border-radius: 0 40px 40px 0;
   background: //TODO style this correctly
     linear-gradient(0deg, #192744 0%, #192744 100%),
     url('../../../../../../apps/pps/src/assets/banner.png'),
@@ -27,7 +50,6 @@
 .form-content-container {
   padding-top: calc(12px + 1.5625vw);
   padding-bottom: calc(12px + 1.5625vw);
-  padding-right: calc(8px + 1.5625vw);
 }
 
 .form-container p {
@@ -89,7 +111,7 @@ textarea.contact-text {
   }
 
   .form-container {
-    padding-bottom: 50px;
+    // padding-bottom: 50px;
     text-align: left;
 
     h1 {
@@ -108,8 +130,8 @@ textarea.contact-text {
     }
   }
 
-  .image-container .img {
-    padding: 20vh;
-    border-radius: 40px 40px 0px 0px;
+  .image-container.img {
+    // padding: 20vh;
+    // border-radius: 40px 40px 0px 0px;
   }
 }

@@ -1,8 +1,9 @@
 <section
-  class="contact-section w-full h-full flex gap-10 flex-col-reverse sm:flex-row"
+  #container
+  class="contact-section w-full h-full flex items-stretch gap-10 flex-wrap-reverse"
 >
-  <section class="form-container flex-1">
-    <div class="form-content-container flex flex-col gap-10 pl-responsive">
+  <section #formContainer class="form-container">
+    <div class="form-content-container flex flex-col gap-10 p">
       <header>
         <h1 class="main-title contact-text">Контактирај не!</h1>
         <h6 class="mt-4">
@@ -85,7 +86,5 @@
       </div>
     </div>
   </section>
-  <aside class="image-container flex-1">
-    <div class="img h-full bg-cover bg-center"></div>
-  </aside>
+  <aside #imgContainer class="image-container img bg-cover bg-center"></aside>
 </section>

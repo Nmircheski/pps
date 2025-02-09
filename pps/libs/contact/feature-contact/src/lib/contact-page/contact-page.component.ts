@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
 import { ContactItem } from '../models/interfaces';
 
 @Component({
@@ -25,4 +25,68 @@ export class ContactPageComponent {
       value: '+389 71 234 567',
     },
   ];
+
+  @ViewChild('formContainer', { read: ElementRef }) formContainer:
+    | ElementRef<HTMLElement>
+    | undefined;
+  @ViewChild('imgContainer', { read: ElementRef }) imgContainer:
+    | ElementRef<HTMLElement>
+    | undefined;
+  @ViewChild('container', { read: ElementRef, static: true })
+  container!: ElementRef<HTMLElement>;
+
+  private resizeObserver: ResizeObserver | undefined;
+
+  constructor(private readonly renderer: Renderer2) {}
+
+  ngAfterViewInit(): void {
+    const resizeObserver = new ResizeObserver(this.handleItemsWrapping);
+
+    resizeObserver.observe(this.container.nativeElement);
+  }
+
+  ngOnDestroy(): void {
+    this.resizeObserver?.disconnect();
+  }
+
+  private handleItemsWrapping = (): void => {
+    //TODO this should be propagated through observable and distinctUntilChanged.. to reduce number of calls
+    const formElement = this.formContainer?.nativeElement;
+    const imageElement = this.imgContainer?.nativeElement;
+
+    if (
+      formElement &&
+      imageElement &&
+      this.areItemsWrapped(formElement, imageElement)
+    ) {
+      console.log('wrapped');
+      this.renderer.removeClass(imageElement, 'rounded-right');
+      this.renderer.addClass(imageElement, 'rounded-top');
+      this.renderer.setAttribute(
+        formElement,
+        'class',
+        'form-container rounded-bottom px-responsive',
+      );
+    } else {
+      console.log('not wrapped');
+      this.renderer.removeClass(imageElement, 'rounded-top');
+      this.renderer.addClass(imageElement, 'rounded-right');
+      this.renderer.setAttribute(
+        formElement,
+        'class',
+        'form-container rounded-left pl-responsive',
+      );
+    }
+  };
+
+  private areItemsWrapped = (
+    formElement: HTMLElement,
+    imageElement: HTMLElement,
+  ): boolean => {
+    if (imageElement.offsetTop !== formElement.offsetTop) {
+      return true;
+    }
+
+    return false;
+  };
 }
