@@ -3,10 +3,11 @@ import { Router } from '@angular/router';
 import { DetailsViewConfig } from '@pps/ui/details-view';
 
 @Component({
-  selector: 'pps-homepage',
-  templateUrl: './homepage.component.html',
-  styleUrl: './homepage.component.scss',
-  encapsulation: ViewEncapsulation.None,
+    selector: 'pps-homepage',
+    templateUrl: './homepage.component.html',
+    styleUrl: './homepage.component.scss',
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class HomepageComponent {
   routeToProducts(type: string) {

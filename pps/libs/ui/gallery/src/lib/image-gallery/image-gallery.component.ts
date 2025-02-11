@@ -1,12 +1,13 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, viewChild } from '@angular/core';
 import { SwiperContainer } from 'swiper/element';
 import { SwiperOptions } from 'swiper/types';
 import { Image } from '../models/models';
 
 @Component({
-  selector: 'pps-image-gallery',
-  templateUrl: './image-gallery.component.html',
-  styleUrl: './image-gallery.component.scss',
+    selector: 'pps-image-gallery',
+    templateUrl: './image-gallery.component.html',
+    styleUrl: './image-gallery.component.scss',
+    standalone: false
 })
 export class ImageGalleryComponent {
   protected images: Image[] = [];
@@ -28,8 +29,8 @@ export class ImageGalleryComponent {
     ];
   }
 
-  @ViewChild('swiper') swiper!: ElementRef<SwiperContainer>;
-  @ViewChild('swiperThumbs') swiperThumbs!: ElementRef<SwiperContainer>;
+  readonly swiper = viewChild.required<ElementRef<SwiperContainer>>('swiper');
+  readonly swiperThumbs = viewChild.required<ElementRef<SwiperContainer>>('swiperThumbs');
 
   index = 0;
 
@@ -42,8 +43,8 @@ export class ImageGalleryComponent {
   swiperThumbsConfig: SwiperOptions = {};
 
   ngAfterViewInit() {
-    this.swiper.nativeElement.swiper.activeIndex = this.index;
-    this.swiperThumbs.nativeElement.swiper.activeIndex = this.index;
+    this.swiper().nativeElement.swiper.activeIndex = this.index;
+    this.swiperThumbs().nativeElement.swiper.activeIndex = this.index;
   }
 
   slideChange(swiper: any) {

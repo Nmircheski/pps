@@ -8,12 +8,11 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'pps-menu-popover',
-  standalone: true,
-  imports: [CommonModule, OverlayModule],
-  templateUrl: './menu-popover.component.html',
-  styleUrl: './menu-popover.component.scss',
-  encapsulation: ViewEncapsulation.None,
+    selector: 'pps-menu-popover',
+    imports: [CommonModule, OverlayModule],
+    templateUrl: './menu-popover.component.html',
+    styleUrl: './menu-popover.component.scss',
+    encapsulation: ViewEncapsulation.None
 })
 export class MenuPopoverComponent {
   public isOpen = false;

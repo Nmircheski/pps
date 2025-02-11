@@ -1,11 +1,11 @@
 <section class="cta-banner contact-banner">
   <div class="contact-container">
     <h1 class="contact-banner-heading">
-      {{ heading }}
+      {{ heading() }}
     </h1>
-    @if (content) {
+    @if (content()) {
       <p class="banner-content">
-        {{ content }}
+        {{ content() }}
       </p>
     }
     <div class="cta-button-container">
