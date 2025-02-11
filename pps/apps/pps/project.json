@@ -16,7 +16,11 @@
         "polyfills": ["zone.js"],
         "tsConfig": "apps/pps/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": ["apps/pps/src/favicon.ico", "apps/pps/src/assets"],
+        "assets": [
+          "apps/pps/src/favicon.ico",
+          "apps/pps/src/assets",
+          "apps/pps/src/azure"
+        ],
         "styles": ["apps/pps/src/styles.scss"],
         "scripts": []
       },
