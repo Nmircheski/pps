@@ -1,22 +1,18 @@
 <section class="cta-banner contact-banner">
-  <div class="contact-container">
-    <h1 class="contact-banner-heading">
-      {{ heading() }}
-    </h1>
-    @if (content()) {
-      <p class="banner-content">
-        {{ content() }}
-      </p>
-    }
-    <div class="cta-button-container">
-      <!-- Your content goes here -->
-      <pps-button
-        class="cta-button"
-        [bgType]="'light'"
-        (onClick)="navigateContactPage()"
-      >
-        КОНТАКТ
-      </pps-button>
-    </div>
-  </div>
+  <h1 class="contact-banner-heading">
+    {{ heading() }}
+  </h1>
+  @if (content()) {
+    <p class="banner-content">
+      {{ content() }}
+    </p>
+  }
+  <!-- Your content goes here -->
+  <pps-button
+    class="cta-button"
+    [bgType]="'light'"
+    (onClick)="navigateContactPage()"
+  >
+    КОНТАКТ
+  </pps-button>
 </section>

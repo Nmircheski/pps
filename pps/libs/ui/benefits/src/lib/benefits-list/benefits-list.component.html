@@ -1,5 +1,7 @@
-<div class="list-container">
-  @for (item of benefitsList; track item.icon) {
-    <pps-benefit-item [icon]="item.icon"></pps-benefit-item>
-  }
-</div>
+<section class="benefits-container px-responsive">
+  <div class="list-container">
+    @for (item of benefitsList; track item.icon) {
+      <pps-benefit-item [icon]="item.icon"></pps-benefit-item>
+    }
+  </div>
+</section>

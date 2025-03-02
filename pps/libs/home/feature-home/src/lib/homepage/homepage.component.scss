@@ -1,54 +1,8 @@
-.cards-section {
-  text-align: center;
-  padding-top: 30px;
+.main-details-view {
+  display: block;
+  margin-top: 100px;
 }
-
-.cards-heading {
-  color: #33517e;
-  text-align: center;
-  font-family: Mulish;
-  font-size: 26px;
-  line-height: 34px;
-  font-style: normal;
-  font-weight: 700;
-  padding: 20px 40px;
-  text-align: center;
-}
-
-.cards-heading-small {
-  align-self: stretch;
-  color: #7a82cc;
-  text-align: center;
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 14px; /* 100% */
-  text-transform: uppercase;
-  font-size: 14px;
-  letter-spacing: 0.1em;
-  text-align: center;
-}
-
-.cards-container {
-  padding-top: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
-
-  pps-card {
-    flex: 1;
-    min-width: 375px;
-  }
-}
-
 @media (max-width: 640px) {
-  .cards-container {
-    flex-direction: column;
-    pps-card {
-      min-width: unset;
-    }
-  }
-
   .bottom-details article {
     margin-bottom: 150px;
   }

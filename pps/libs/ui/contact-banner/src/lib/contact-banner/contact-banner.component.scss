@@ -1,12 +1,12 @@
 .cta-banner {
-  margin-top: 100px;
-  padding-left: calc(4px + 1.5625vw);
-  padding-right: calc(4px + 1.5625vw);
-  padding-top: 20px;
-  padding-bottom: 20px;
+  margin-top: 50px;
+  padding: 70px 400px;
   position: relative;
   display: flex;
+  gap: 30px;
+  flex-direction: column;
   align-items: center;
+  text-align: center;
 }
 
 .svg-container {
@@ -36,9 +36,6 @@
 }
 
 .contact-container {
-  text-align: center;
-  padding: 0px calc(8px + 10.5625vw);
-
   h1 {
     text-align: center;
   }
@@ -51,7 +48,6 @@
   font-weight: 700;
   line-height: 40px;
   letter-spacing: 0em;
-  text-align: left;
 }
 
 .banner-content {

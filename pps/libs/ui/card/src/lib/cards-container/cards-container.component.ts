@@ -4,6 +4,7 @@ import {
   ChangeDetectorRef,
   Component,
   ContentChildren,
+  input,
   QueryList,
   TemplateRef,
   ViewEncapsulation,
@@ -11,20 +12,22 @@ import {
 import { CardComponent } from '../card/card.component';
 
 @Component({
-    selector: 'pps-cards-container',
-    imports: [CommonModule],
-    templateUrl: './cards-container.component.html',
-    styleUrl: './cards-container.component.scss',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    encapsulation: ViewEncapsulation.None
+  selector: 'pps-cards-container',
+  imports: [CommonModule],
+  templateUrl: './cards-container.component.html',
+  styleUrl: './cards-container.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None,
 })
 export class CardsContainerComponent {
+  mainTitle = input('');
+  subTitle = input('');
+
   public cardsTemplates: TemplateRef<any>[] = [];
 
   @ContentChildren(CardComponent) set cardList(
     cards: QueryList<CardComponent> | undefined,
   ) {
-    console.log('called: ', cards);
     this._cardList = cards;
   }
 
