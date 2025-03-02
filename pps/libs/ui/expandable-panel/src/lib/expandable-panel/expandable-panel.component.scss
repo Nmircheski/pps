@@ -37,7 +37,7 @@
 
 .example-accordion-item-header,
 .example-accordion-item-body {
-  padding: 16px;
+  padding: 16px 16px 16px 0px;
 }
 
 .example-accordion-item:first-child {
@@ -51,7 +51,8 @@
 }
 
 .accordion-container {
-  padding-top: 30px;
+  padding-top: 150px;
+  padding-bottom: 50px;
   min-height: 500px;
 }
 

@@ -1,5 +1,13 @@
-<section class="cards-container">
-  @for (template of cardsTemplates; track $index) {
-    <ng-container [ngTemplateOutlet]="template"> </ng-container>
-  }
+<section class="cards-section px-responsive">
+  <header>
+    <h3 class="cards-heading-small">{{ subTitle() }}</h3>
+    <p class="cards-heading">
+      {{ mainTitle() }}
+    </p>
+  </header>
+  <section class="cards-container">
+    @for (template of cardsTemplates; track $index) {
+      <ng-container [ngTemplateOutlet]="template"> </ng-container>
+    }
+  </section>
 </section>
