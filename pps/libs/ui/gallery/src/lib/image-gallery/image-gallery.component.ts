@@ -1,36 +1,20 @@
-import { Component, ElementRef, viewChild } from '@angular/core';
+import { Component, ElementRef, input, viewChild } from '@angular/core';
 import { SwiperContainer } from 'swiper/element';
 import { SwiperOptions } from 'swiper/types';
 import { Image } from '../models/models';
 
 @Component({
-    selector: 'pps-image-gallery',
-    templateUrl: './image-gallery.component.html',
-    styleUrl: './image-gallery.component.scss',
-    standalone: false
+  selector: 'pps-image-gallery',
+  templateUrl: './image-gallery.component.html',
+  styleUrl: './image-gallery.component.scss',
+  standalone: false,
 })
 export class ImageGalleryComponent {
-  protected images: Image[] = [];
-
-  ngOnInit() {
-    this.images = [
-      {
-        src: 'assets/gallery/image2.png',
-      },
-      {
-        src: 'assets/gallery/image3.png',
-      },
-      {
-        src: 'assets/gallery/image4.png',
-      },
-      {
-        src: 'assets/gallery/image5.png',
-      },
-    ];
-  }
+  images = input<Image[]>([]);
 
   readonly swiper = viewChild.required<ElementRef<SwiperContainer>>('swiper');
-  readonly swiperThumbs = viewChild.required<ElementRef<SwiperContainer>>('swiperThumbs');
+  readonly swiperThumbs =
+    viewChild.required<ElementRef<SwiperContainer>>('swiperThumbs');
 
   index = 0;
 
