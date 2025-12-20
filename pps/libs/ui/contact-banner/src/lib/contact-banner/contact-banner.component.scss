@@ -1,6 +1,8 @@
 .cta-banner {
   margin-top: 50px;
-  padding: 70px 400px;
+  padding: 70px 0;
+  padding-left: calc(4px + 1.5625vw);
+  padding-right: calc(4px + 1.5625vw);
   position: relative;
   display: flex;
   gap: 30px;
