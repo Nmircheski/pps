@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import {
   Component,
   EventEmitter,
@@ -12,7 +12,7 @@ import { ButtonComponent } from '@pps/ui/button';
 
 @Component({
     selector: 'pps-card',
-    imports: [CommonModule, ButtonComponent],
+    imports: [ButtonComponent],
     templateUrl: './card.component.html',
     styleUrl: './card.component.scss',
     encapsulation: ViewEncapsulation.None

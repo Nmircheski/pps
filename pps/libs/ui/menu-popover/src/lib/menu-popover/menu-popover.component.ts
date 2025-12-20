@@ -1,5 +1,5 @@
 import { OverlayModule } from '@angular/cdk/overlay';
-import { CommonModule } from '@angular/common';
+
 import {
   Component,
   EventEmitter,
@@ -9,7 +9,7 @@ import {
 
 @Component({
     selector: 'pps-menu-popover',
-    imports: [CommonModule, OverlayModule],
+    imports: [OverlayModule],
     templateUrl: './menu-popover.component.html',
     styleUrl: './menu-popover.component.scss',
     encapsulation: ViewEncapsulation.None

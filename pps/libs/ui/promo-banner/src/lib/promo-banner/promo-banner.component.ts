@@ -1,11 +1,11 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, input } from '@angular/core';
 import { Router } from '@angular/router';
 import { ButtonComponent } from '@pps/ui/button';
 
 @Component({
     selector: 'pps-promo-banner',
-    imports: [CommonModule, ButtonComponent],
+    imports: [ButtonComponent],
     templateUrl: './promo-banner.component.html',
     styleUrl: './promo-banner.component.scss'
 })

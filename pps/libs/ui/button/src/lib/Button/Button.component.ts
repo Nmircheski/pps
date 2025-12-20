@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import {
   Component,
   EventEmitter,
@@ -9,7 +9,7 @@ import {
 
 @Component({
     selector: 'pps-button',
-    imports: [CommonModule],
+    imports: [],
     templateUrl: './Button.component.html',
     styleUrl: './Button.component.scss',
     encapsulation: ViewEncapsulation.None
