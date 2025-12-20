@@ -5,7 +5,7 @@
   "scripts": {
     "start": "yarn nx run pps:serve",
     "serve": "yarn nx run pps:serve",
-    "build:azure": "yarn nx run pps:build:production  --output-path=./dist/browser",
+    "build:azure": "yarn nx run pps:build:production  --output-path=./dist",
     "build": "yarn nx run pps:build:production"
   },
   "private": true,
