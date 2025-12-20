@@ -5,10 +5,10 @@ import { ProductsService } from '../services/products.service';
 import { ProductsRouteStatics } from '../static/route-statics';
 
 @Component({
-    selector: 'pps-products-page',
-    templateUrl: './ProductsPage.component.html',
-    styleUrl: './ProductsPage.component.scss',
-    standalone: false
+  selector: 'pps-products-page',
+  templateUrl: './ProductsPage.component.html',
+  styleUrl: './ProductsPage.component.scss',
+  standalone: false,
 })
 export class ProductsPageComponent implements OnInit {
   protected productType = '';
@@ -18,6 +18,7 @@ export class ProductsPageComponent implements OnInit {
     subTitle: string;
     mainTitle: string;
     paragraphContent: string;
+    images: { src: string }[];
   } = {
     imageSrc: '',
     subTitle: 'Продукти',
@@ -26,6 +27,8 @@ export class ProductsPageComponent implements OnInit {
     со различни облици. Тоа овозможува, на оние кои веќе поседуваат принтери, индивидуално да се занимаваатсо производство етикети на веќе одредени (подготвени) форми етикети. 
       <br> Ќе најдете повеќе од 40 видови облици на етикети, подготвени за допечатување, во ролни со количина на етикети по ваша желба или специфика на принтерот. 
       <br> Термалната самолеплива хартија е најинтересна за купувачите, бидејки за печатење не е потребна боја или клише.`,
+
+    images: [],
   };
   constructor(
     private readonly route: ActivatedRoute,
@@ -45,6 +48,7 @@ export class ProductsPageComponent implements OnInit {
         this.productDetailsViewConfig = {
           ...this.productDetailsViewConfig,
           imageSrc: product?.imageSrc ?? this.productDetailsViewConfig.imageSrc,
+          images: product?.imageGalleryUrls ?? [],
         };
       });
   }

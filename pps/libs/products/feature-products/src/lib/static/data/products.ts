@@ -4,7 +4,7 @@ export const products: IProduct[] = [
   {
     id: 'labels',
     title: 'Самолепливи етикети',
-    imageSrc: 'assets/productLabels.png',
+    imageSrc: 'assets/gallery/labels/label_main.png',
     cardList: [
       {
         header: 'Самолеплива хартија',
@@ -29,26 +29,32 @@ export const products: IProduct[] = [
     ],
     imageGalleryUrls: [
       {
-        src: '',
+        src: 'assets/gallery/labels/label_01.png',
       },
       {
-        src: '',
+        src: 'assets/gallery/labels/label_02.png',
       },
       {
-        src: '',
+        src: 'assets/gallery/labels/label_03.png',
       },
       {
-        src: '',
+        src: 'assets/gallery/labels/label_04.png',
       },
       {
-        src: '',
+        src: 'assets/gallery/labels/label_05.png',
+      },
+      {
+        src: 'assets/gallery/labels/label_06.png',
+      },
+      {
+        src: 'assets/gallery/labels/label_07.png',
       },
     ],
   },
   {
     id: 'cups',
     title: 'Хартиени чаши',
-    imageSrc: 'assets/card-cups-small.png',
+    imageSrc: 'assets/gallery/cups/cups_main.png',
     cardList: [
       {
         header: 'За пијалоци',
@@ -63,19 +69,25 @@ export const products: IProduct[] = [
     ],
     imageGalleryUrls: [
       {
-        src: '',
+        src: 'assets/gallery/cups/cups_main.png',
       },
       {
-        src: '',
+        src: 'assets/gallery/cups/cups_02.png',
       },
       {
-        src: '',
+        src: 'assets/gallery/cups/cups_03.png',
       },
       {
-        src: '',
+        src: 'assets/gallery/cups/cups_04.png',
       },
       {
-        src: '',
+        src: 'assets/gallery/cups/cups_05.png',
+      },
+      {
+        src: 'assets/gallery/cups/cups_06.png',
+      },
+      {
+        src: 'assets/gallery/cups/cups_07.png',
       },
     ],
   },
