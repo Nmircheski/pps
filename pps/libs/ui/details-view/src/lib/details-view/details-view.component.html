@@ -1,44 +1,44 @@
 <article
-  class="details-article flex flex-wrap sm:grid sm:grid-cols-2 sm:grid-rows-2 sm:flex-nowrap px-responsive pb-20"
-  [class.mb-40]="marginBottom"
-  [class.sm:flex-col-reverse]="colReverse"
+  class="details-article flex flex-wrap sm:grid sm:grid-cols-2 sm:grid-rows-2 sm:flex-nowrap px-responsive"
+  [class.mb-40]="marginBottom()"
+  [class.sm:flex-col-reverse]="colReverse()"
 >
   <div
     class="img-container text-left"
-    [class.text-right]="colReverse"
-    [class]="imgClassList"
+    [class.text-right]="colReverse()"
+    [class]="imgClassList()"
   >
     <img
-      [src]="imageSrc"
+      [src]="imageSrc()"
       alt="App Logo"
-      [class.row-reverse]="_layout === 'row-reverse'"
-      class="img-{{ imageSize }}"
+      [class.row-reverse]="layout() === 'row-reverse'"
+      class="img-{{ imageSize() }} w-full h-auto object-cover"
     />
   </div>
 
-  <header class="details-header sm:pb-10" [class]="headerClassList">
+  <header class="details-header sm:pb-10" [class]="headerClassList()">
     <h6 class="sub-title">
-      {{ subTitle | uppercase }}
+      {{ subTitle() | uppercase }}
     </h6>
     <h1 class="basis-6 main-title">
-      {{ mainTitle }}
+      {{ mainTitle() }}
     </h1>
   </header>
 
   <section
     class="flex-col sm:flex-col text-container text-left flex sm:gap-1"
-    [class]="textClassList"
+    [class]="textClassList()"
   >
-    @for (paragraph of paragraphs; track $index) {
+    @for (paragraph of paragraphs(); track $index) {
       <p class="flex-1 content">
         {{ paragraph }}
       </p>
       <br />
     }
 
-    @if (buttonTitle) {
+    @if (buttonTitle()) {
       <div class="flex-1 flex btn-container">
-        <pps-button class="self-end">{{ buttonTitle }}</pps-button>
+        <pps-button class="self-end">{{ buttonTitle() }}</pps-button>
       </div>
     }
   </section>

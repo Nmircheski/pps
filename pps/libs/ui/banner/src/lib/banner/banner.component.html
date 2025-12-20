@@ -1,15 +1,15 @@
 <section
   class="px-responsive"
-  [class.main-banner]="type === 'main'"
-  [class.mid-banner]="type === 'mid'"
+  [class.main-banner]="type() === 'main'"
+  [class.mid-banner]="type() === 'mid'"
 >
   <div class="cta-container">
     <h1 class="banner-heading">
-      {{ heading }}
+      {{ heading() }}
     </h1>
 
     <p class="banner-content">
-      {{ content }}
+      {{ content() }}
     </p>
 
     <pps-button class="cta-button" (onClick)="navigateContactPage()">

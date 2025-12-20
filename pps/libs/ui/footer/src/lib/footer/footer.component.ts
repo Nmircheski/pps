@@ -1,19 +1,16 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
-import { ButtonComponent } from '@pps/ui/button';
-import { InputComponent } from '@pps/ui/input';
+import { Component, input } from '@angular/core';
 import { FooterNavComponent } from '../footer-nav/footer-nav.component';
 import { FooterList } from '../models/models';
 
 @Component({
   selector: 'pps-footer',
-  standalone: true,
-  imports: [CommonModule, FooterNavComponent, InputComponent, ButtonComponent],
+  imports: [CommonModule, FooterNavComponent],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.scss',
 })
 export class FooterComponent {
-  @Input() logoUrl: string = '';
+  readonly logoUrl = input<string>('');
 
   navConfigs: FooterList[] = [
     {

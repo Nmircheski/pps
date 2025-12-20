@@ -1,4 +1,4 @@
-@for (config of detailsViewConfigList; track $index) {
+@for (config of detailsViewConfigList(); track $index) {
   <pps-details-view
     [imageSrc]="config.imageSrc"
     [subTitle]="config.subTitle"
@@ -23,17 +23,17 @@
 
 <pps-expandable-panel
   [logoUrl]="'assets/tape.png'"
-  [subTitle]="expandablePanelConfig.subTitle"
-  [mainTitle]="expandablePanelConfig.mainTitle"
+  [subTitle]="expandablePanelConfig().subTitle"
+  [mainTitle]="expandablePanelConfig().mainTitle"
 ></pps-expandable-panel>
 
 <pps-details-view
-  [imageSrc]="endDetailsConfig.imageSrc"
-  [subTitle]="endDetailsConfig.subTitle"
-  [mainTitle]="endDetailsConfig.mainTitle"
-  [paragraphContent]="endDetailsConfig.paragraphContent"
-  [buttonTitle]="endDetailsConfig.buttonTitle"
-  [layout]="endDetailsConfig.layout"
+  [imageSrc]="endDetailsConfig().imageSrc"
+  [subTitle]="endDetailsConfig().subTitle"
+  [mainTitle]="endDetailsConfig().mainTitle"
+  [paragraphContent]="endDetailsConfig().paragraphContent"
+  [buttonTitle]="endDetailsConfig().buttonTitle"
+  [layout]="endDetailsConfig().layout"
 >
 </pps-details-view>
 

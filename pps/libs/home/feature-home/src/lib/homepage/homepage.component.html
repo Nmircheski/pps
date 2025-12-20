@@ -6,39 +6,36 @@
   [type]="'main'"
 ></pps-banner>
 
-<section class="cards-section px-responsive">
-  <h3 class="cards-heading-small">Продукти</h3>
-  <p class="cards-heading">
-    Нашите решенија го подобруваат имиџот на вашиот бренд
-  </p>
-
-  <pps-cards-container>
-    <pps-card
-      (buttonClicked)="routeToProducts('labels')"
-      [titleIcon]="'labels'"
-      [bgType]="'labels'"
-      [title]="'Самолепливи Етикети'"
-    >
-      <ng-container card-content>
-        Без разлика дали ви се потребни издржливи, водоотпорни етикети за
-        надворешна употреба, на високи или ниски температури, имаме решенија.
-      </ng-container></pps-card
-    >
-    <pps-card
-      [titleIcon]="'cups'"
-      [bgType]="'cups'"
-      [title]="'Хартиени Чаши'"
-      (buttonClicked)="routeToProducts('cups')"
-    >
-      <ng-container card-content>
-        Ја разбираме зголемената побарувачка за еколошки алтернативи, а нашите
-        хартиени чаши се произведуваат со одржливи материјали и процеси.
-      </ng-container></pps-card
-    >
-  </pps-cards-container>
-</section>
+<pps-cards-container
+  [subTitle]="'Продукти'"
+  [mainTitle]="'Нашите решенија го подобруваат имиџот на вашиот бренд'"
+>
+  <pps-card
+    (buttonClicked)="routeToProducts('labels')"
+    [titleIcon]="'labels'"
+    [bgType]="'labels'"
+    [title]="'Самолепливи Етикети'"
+  >
+    <ng-container card-content>
+      Без разлика дали ви се потребни издржливи, водоотпорни етикети за
+      надворешна употреба, на високи или ниски температури, имаме решенија.
+    </ng-container></pps-card
+  >
+  <pps-card
+    [titleIcon]="'cups'"
+    [bgType]="'cups'"
+    [title]="'Хартиени Чаши'"
+    (buttonClicked)="routeToProducts('cups')"
+  >
+    <ng-container card-content>
+      Ја разбираме зголемената побарувачка за еколошки алтернативи, а нашите
+      хартиени чаши се произведуваат со одржливи материјали и процеси.
+    </ng-container></pps-card
+  >
+</pps-cards-container>
 
 <pps-details-view
+  class="main-details-view"
   [imageSize]="'small'"
   [imageSrc]="'assets/aboutUsImageDetails.png'"
   [buttonTitle]="detailsViewConfig[0].buttonTitle"
@@ -49,7 +46,6 @@
 </pps-details-view>
 
 <pps-promo-banner
-  class="mt-40 block"
   [heading]="
     'Откријте ја разликата што нашата експертиза може да ја направи за вашиот бизнис'
   "

@@ -2,26 +2,25 @@ import { CommonModule } from '@angular/common';
 import {
   Component,
   EventEmitter,
-  Input,
   Output,
   ViewEncapsulation,
+  input
 } from '@angular/core';
 
 @Component({
-  selector: 'pps-button',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './button.component.html',
-  styleUrl: './button.component.scss',
-  encapsulation: ViewEncapsulation.None,
+    selector: 'pps-button',
+    imports: [CommonModule],
+    templateUrl: './Button.component.html',
+    styleUrl: './Button.component.scss',
+    encapsulation: ViewEncapsulation.None
 })
 export class ButtonComponent {
   /**
    * Background type
    */
-  @Input() public bgType: 'blue' | 'light' | 'none' = 'blue';
+  public readonly bgType = input<'blue' | 'light' | 'none'>('blue');
 
-  @Input() public iconPosition: 'suffix' | 'prefix' = 'suffix';
+  public readonly iconPosition = input<'suffix' | 'prefix'>('suffix');
 
   @Output() onClick = new EventEmitter<void>();
 

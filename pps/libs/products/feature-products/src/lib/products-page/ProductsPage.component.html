@@ -8,58 +8,59 @@
   [layout]="'col-reverse'"
 >
 </pps-details-view>
-<section class="cards-section px-responsive">
-  <pps-benefits-list> </pps-benefits-list>
-  <p class="cards-heading">Видови самолепливи етикети</p>
-  <pps-cards-container>
-    <pps-card
-      [title]="'Самолеплива Хартија'"
-      [bgType]="'light'"
-      [hideLinkButtonSm]="true"
-      [hideContentSm]="false"
-    >
-      <ng-container card-content>
-        Без разлика дали ви се потребни издржливи, водоотпорни етикети за
-        надворешна употреба, на високи или ниски температури, имаме решенија....
-      </ng-container>
-    </pps-card>
-    <pps-card
-      [title]="'Самолеплива Пластика'"
-      [bgType]="'light'"
-      [hideLinkButtonSm]="true"
-      [hideContentSm]="false"
-    >
-      <ng-container card-content>
-        Без разлика дали ви се потребни издржливи, водоотпорни етикети за
-        надворешна употреба, на високи или ниски температури, имаме решенија....
-      </ng-container></pps-card
-    >
-    <pps-card
-      [title]="'Термална Самолеплива Хартија'"
-      [bgType]="'light'"
-      [hideLinkButtonSm]="true"
-      [hideContentSm]="false"
-    >
-      <ng-container card-content>
-        Без разлика дали ви се потребни издржливи, водоотпорни етикети за
-        надворешна употреба, на високи или ниски температури, имаме решенија....
-      </ng-container></pps-card
-    >
-    <pps-card
-      [title]="'А4  Самолепливи Пресечени Етикети'"
-      [bgType]="'light'"
-      [hideLinkButtonSm]="true"
-      [hideContentSm]="false"
-    >
-      <ng-container card-content>
-        Без разлика дали ви се потребни издржливи, водоотпорни етикети за
-        надворешна употреба, на високи или ниски температури, имаме решенија....
-      </ng-container></pps-card
-    >
-  </pps-cards-container>
-</section>
 
-<pps-image-gallery></pps-image-gallery>
+<pps-benefits-list> </pps-benefits-list>
+
+<pps-cards-container [mainTitle]="'Видови самолепливи етикети'">
+  <pps-card
+    [title]="'Самолеплива Хартија'"
+    [bgType]="'light'"
+    [hideLinkButtonSm]="true"
+    [hideContentSm]="false"
+  >
+    <ng-container card-content>
+      Без разлика дали ви се потребни издржливи, водоотпорни етикети за
+      надворешна употреба, на високи или ниски температури, имаме решенија....
+    </ng-container>
+  </pps-card>
+  <pps-card
+    [title]="'Самолеплива Пластика'"
+    [bgType]="'light'"
+    [hideLinkButtonSm]="true"
+    [hideContentSm]="false"
+  >
+    <ng-container card-content>
+      Без разлика дали ви се потребни издржливи, водоотпорни етикети за
+      надворешна употреба, на високи или ниски температури, имаме решенија....
+    </ng-container></pps-card
+  >
+  <pps-card
+    [title]="'Термална Самолеплива Хартија'"
+    [bgType]="'light'"
+    [hideLinkButtonSm]="true"
+    [hideContentSm]="false"
+  >
+    <ng-container card-content>
+      Без разлика дали ви се потребни издржливи, водоотпорни етикети за
+      надворешна употреба, на високи или ниски температури, имаме решенија....
+    </ng-container></pps-card
+  >
+  <pps-card
+    [title]="'А4  Самолепливи Пресечени Етикети'"
+    [bgType]="'light'"
+    [hideLinkButtonSm]="true"
+    [hideContentSm]="false"
+  >
+    <ng-container card-content>
+      Без разлика дали ви се потребни издржливи, водоотпорни етикети за
+      надворешна употреба, на високи или ниски температури, имаме решенија....
+    </ng-container></pps-card
+  >
+</pps-cards-container>
+
+<pps-image-gallery
+  [images]="productDetailsViewConfig.images"
+></pps-image-gallery>
 
 <pps-contact-banner
   [heading]="

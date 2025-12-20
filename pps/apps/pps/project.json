@@ -7,18 +7,22 @@
   "tags": [],
   "targets": {
     "build": {
-      "executor": "@angular-devkit/build-angular:browser",
+      "executor": "@nx/angular:application",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/pps/",
         "index": "apps/pps/src/index.html",
-        "main": "apps/pps/src/main.ts",
         "polyfills": ["zone.js"],
         "tsConfig": "apps/pps/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": ["apps/pps/src/favicon.ico", "apps/pps/src/assets"],
+        "assets": [
+          "apps/pps/src/favicon.ico",
+          "apps/pps/src/assets",
+          "apps/pps/src/azure"
+        ],
         "styles": ["apps/pps/src/styles.scss"],
-        "scripts": []
+        "scripts": [],
+        "browser": "apps/pps/src/main.ts"
       },
       "configurations": {
         "production": {
@@ -37,9 +41,7 @@
           "outputHashing": "all"
         },
         "development": {
-          "buildOptimizer": false,
           "optimization": false,
-          "vendorChunk": true,
           "extractLicenses": false,
           "sourceMap": true,
           "namedChunks": true
@@ -48,7 +50,7 @@
       "defaultConfiguration": "production"
     },
     "serve": {
-      "executor": "@angular-devkit/build-angular:dev-server",
+      "executor": "@nx/angular:dev-server",
       "configurations": {
         "production": {
           "buildTarget": "pps:build:production"
@@ -66,8 +68,7 @@
       }
     },
     "lint": {
-      "executor": "@nx/eslint:lint",
-      "outputs": ["{options.outputFile}"]
+      "executor": "@nx/eslint:lint"
     },
     "test": {
       "executor": "@nx/jest:jest",

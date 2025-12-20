@@ -3,6 +3,9 @@
   width: 100%;
   padding: 30px calc(calc(8px + 3.5625vw) + theme('padding.responsive')) 20px
     calc(calc(8px + 3.5625vw) + theme('padding.responsive'));
+  // padding: 20px 0px;
+  // margin: 0px 360px; //TODO - reponsivness missing?
+  // max-width: 1200px;
 }
 
 .navbar {
@@ -132,7 +135,7 @@
 
 @media (max-width: 640px) {
   .main-nav {
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }

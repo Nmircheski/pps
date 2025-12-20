@@ -1,13 +1,14 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { Icon } from '../models/models';
 
 @Component({
-  selector: 'pps-benefit-item',
-  templateUrl: './benefit-item.component.html',
-  styleUrl: './benefit-item.component.scss',
+    selector: 'pps-benefit-item',
+    templateUrl: './benefit-item.component.html',
+    styleUrl: './benefit-item.component.scss',
+    standalone: false
 })
 export class BenefitItemComponent {
-  @Input() icon: Icon | undefined;
+  readonly icon = input<Icon>();
 
   protected readonly Icon = Icon;
 }

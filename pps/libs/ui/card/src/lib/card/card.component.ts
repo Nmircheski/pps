@@ -2,46 +2,43 @@ import { CommonModule } from '@angular/common';
 import {
   Component,
   EventEmitter,
-  Input,
   Output,
   TemplateRef,
-  ViewChild,
   ViewEncapsulation,
+  viewChild,
+  input
 } from '@angular/core';
 import { ButtonComponent } from '@pps/ui/button';
 
 @Component({
-  selector: 'pps-card',
-  standalone: true,
-  imports: [CommonModule, ButtonComponent],
-  templateUrl: './card.component.html',
-  styleUrl: './card.component.scss',
-  encapsulation: ViewEncapsulation.None,
+    selector: 'pps-card',
+    imports: [CommonModule, ButtonComponent],
+    templateUrl: './card.component.html',
+    styleUrl: './card.component.scss',
+    encapsulation: ViewEncapsulation.None
 })
 export class CardComponent {
   onButtonClick() {
     this.buttonClicked.emit();
   }
-  @Input() public titleIcon: 'labels' | 'cups' = 'labels';
-  @Input() public title = '';
+  public readonly titleIcon = input<'labels' | 'cups'>('labels');
+  public readonly title = input('');
   /**
    * Background type
    */
-  @Input() public bgType: 'labels' | 'cups' | 'light' = 'labels';
+  public readonly bgType = input<'labels' | 'cups' | 'light'>('labels');
   /**
    * Controls whether the paragph content is hidden on small screen
    * @default true
    */
-  @Input() public hideContentSm = true;
+  public readonly hideContentSm = input(true);
   /**
    * Controls whether  the show more button is hidden on small screen
    * @default false
    */
-  @Input() public hideLinkButtonSm = false;
+  public readonly hideLinkButtonSm = input(false);
 
   @Output() buttonClicked = new EventEmitter<void>();
 
-  @ViewChild('templateRef', { read: TemplateRef }) public templateRef:
-    | TemplateRef<any>
-    | undefined;
+  readonly templateRef = viewChild('templateRef', { read: TemplateRef });
 }
