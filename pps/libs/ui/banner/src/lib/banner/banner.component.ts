@@ -1,11 +1,11 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, ViewEncapsulation, input } from '@angular/core';
 import { Router } from '@angular/router';
 import { ButtonComponent } from '@pps/ui/button';
 
 @Component({
     selector: 'pps-banner',
-    imports: [CommonModule, ButtonComponent],
+    imports: [ButtonComponent],
     templateUrl: './banner.component.html',
     styleUrl: './banner.component.scss',
     encapsulation: ViewEncapsulation.None

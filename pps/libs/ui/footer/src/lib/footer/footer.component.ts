@@ -1,11 +1,11 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, input } from '@angular/core';
 import { FooterNavComponent } from '../footer-nav/footer-nav.component';
 import { FooterList } from '../models/models';
 
 @Component({
   selector: 'pps-footer',
-  imports: [CommonModule, FooterNavComponent],
+  imports: [FooterNavComponent],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.scss',
 })
