@@ -9,21 +9,21 @@ export const appRoutes: Route[] = [
   {
     path: 'home',
     loadChildren: () =>
-      import('@pps/feature-home').then((m) => m.FeatureHomeModule),
+      import('@pps/feature-home').then((m) => m.featureHomeRoutes),
   },
   {
     path: 'products/:productsId',
     loadChildren: () =>
-      import('@pps/feature-products').then((m) => m.FeatureProductsModule),
+      import('@pps/feature-products').then((m) => m.featureHomeRoutes),
   },
   {
     path: 'contact',
     loadChildren: () =>
-      import('@pps/feature-contact').then((m) => m.FeatureContactModule),
+      import('@pps/feature-contact').then((m) => m.featureContactRoutes),
   },
   {
     path: 'about-us',
     loadChildren: () =>
-      import('@pps/feature-about-us').then((m) => m.FeatureAboutUsModule),
+      import('@pps/feature-about-us').then((m) => m.featureAboutUsRoutes),
   },
 ];

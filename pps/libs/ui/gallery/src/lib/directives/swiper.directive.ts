@@ -2,8 +2,7 @@ import { AfterViewInit, Directive, ElementRef, input } from '@angular/core';
 import { SwiperContainer } from 'swiper/element';
 import { SwiperOptions } from 'swiper/types';
 @Directive({
-    selector: '[ppsSwiper]',
-    standalone: false
+  selector: '[ppsSwiper]',
 })
 export class SwiperDirective implements AfterViewInit {
   readonly config = input<SwiperOptions>();

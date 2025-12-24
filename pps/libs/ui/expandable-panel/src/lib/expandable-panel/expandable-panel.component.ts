@@ -1,10 +1,10 @@
 import { CdkAccordionModule } from '@angular/cdk/accordion';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { Component, input, signal } from '@angular/core';
 
 @Component({
   selector: 'pps-expandable-panel',
-  imports: [CommonModule, CdkAccordionModule],
+  imports: [CommonModule, CdkAccordionModule, NgOptimizedImage],
   templateUrl: './expandable-panel.component.html',
   styleUrl: './expandable-panel.component.scss',
 })

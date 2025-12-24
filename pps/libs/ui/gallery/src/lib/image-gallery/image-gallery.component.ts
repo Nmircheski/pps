@@ -1,20 +1,32 @@
-import { Component, ElementRef, input, viewChild } from '@angular/core';
-import { SwiperContainer } from 'swiper/element';
+import { NgOptimizedImage } from '@angular/common';
+import {
+  AfterViewInit,
+  Component,
+  CUSTOM_ELEMENTS_SCHEMA,
+  ElementRef,
+  input,
+  viewChild,
+} from '@angular/core';
+import { register, SwiperContainer } from 'swiper/element';
 import { SwiperOptions } from 'swiper/types';
+import { SwiperDirective } from '../directives/swiper.directive';
 import { Image } from '../models/models';
+
+register();
 
 @Component({
   selector: 'pps-image-gallery',
+  imports: [SwiperDirective, NgOptimizedImage],
   templateUrl: './image-gallery.component.html',
   styleUrl: './image-gallery.component.scss',
-  standalone: false,
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class ImageGalleryComponent {
+export class ImageGalleryComponent implements AfterViewInit {
   images = input<Image[]>([]);
 
-  readonly swiper = viewChild.required<ElementRef<SwiperContainer>>('swiper');
+  readonly swiper = viewChild<ElementRef<SwiperContainer>>('swiper');
   readonly swiperThumbs =
-    viewChild.required<ElementRef<SwiperContainer>>('swiperThumbs');
+    viewChild<ElementRef<SwiperContainer>>('swiperThumbs');
 
   index = 0;
 
@@ -27,8 +39,17 @@ export class ImageGalleryComponent {
   swiperThumbsConfig: SwiperOptions = {};
 
   ngAfterViewInit() {
-    this.swiper().nativeElement.swiper.activeIndex = this.index;
-    this.swiperThumbs().nativeElement.swiper.activeIndex = this.index;
+    const swiper = this.swiper()?.nativeElement.swiper;
+
+    if (swiper) {
+      swiper.activeIndex = this.index;
+    }
+
+    const thumbsSwiper = this.swiperThumbs()?.nativeElement.swiper;
+
+    if (thumbsSwiper) {
+      thumbsSwiper.activeIndex = this.index;
+    }
   }
 
   slideChange(swiper: any) {

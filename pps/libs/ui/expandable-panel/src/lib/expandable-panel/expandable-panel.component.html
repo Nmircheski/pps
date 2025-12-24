@@ -2,9 +2,10 @@
   <div
     class="content-container flex gap-10 sm:gap-[40px] overflow-hidden flex-wrap"
   >
-    <div class="media-item sm:flex-1 w-full">
+    <div class="media-item sm:flex-1 w-full relative">
       <img
-        [src]="logoUrl()"
+        [ngSrc]="logoUrl()"
+        fill
         class="h-full w-full overflow-hidden expandable-image"
         alt="App Logo"
       />

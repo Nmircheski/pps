@@ -1,1 +1,1 @@
-export * from './lib/feature-about-us.module';
+export * from './lib/lib.routes';

@@ -1,11 +1,11 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { Component, ViewEncapsulation, computed, input } from '@angular/core';
 import { ButtonComponent } from '@pps/ui/button';
 import { DetailsLayout } from '../models/models';
 
 @Component({
   selector: 'pps-details-view',
-  imports: [CommonModule, ButtonComponent],
+  imports: [CommonModule, ButtonComponent, NgOptimizedImage],
   templateUrl: './details-view.component.html',
   styleUrl: './details-view.component.scss',
   encapsulation: ViewEncapsulation.None,

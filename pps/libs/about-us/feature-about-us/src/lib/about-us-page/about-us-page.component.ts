@@ -1,12 +1,22 @@
+import { CommonModule } from '@angular/common';
 import { Component, signal, ViewEncapsulation } from '@angular/core';
-import { DetailsViewConfig } from '@pps/ui/details-view';
+import { ContactBannerComponent } from '@pps/ui/contact-banner';
+import { DetailsViewComponent, DetailsViewConfig } from '@pps/ui/details-view';
+import { ExpandablePanelComponent } from '@pps/ui/expandable-panel';
+import { PromoBannerComponent } from '@pps/ui/promo-banner';
 
 @Component({
   selector: 'pps-about-us-page',
+  imports: [
+    CommonModule,
+    DetailsViewComponent,
+    PromoBannerComponent,
+    ContactBannerComponent,
+    ExpandablePanelComponent,
+  ],
   templateUrl: './about-us-page.component.html',
   styleUrl: './about-us-page.component.scss',
   encapsulation: ViewEncapsulation.None,
-  standalone: false,
 })
 export class AboutUsPageComponent {
   detailsViewConfigList = signal<DetailsViewConfig[]>([

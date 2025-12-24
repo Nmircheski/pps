@@ -1,13 +1,28 @@
+import { CommonModule } from '@angular/common';
 import { Component, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
-import { DetailsViewConfig } from '@pps/ui/details-view';
+import { BannerComponent } from '@pps/ui/banner';
+import { CardComponent, CardsContainerComponent } from '@pps/ui/card';
+import { ContactBannerComponent } from '@pps/ui/contact-banner';
+import { DetailsViewComponent, DetailsViewConfig } from '@pps/ui/details-view';
+import { ExpandablePanelComponent } from '@pps/ui/expandable-panel';
+import { PromoBannerComponent } from '@pps/ui/promo-banner';
 
 @Component({
-    selector: 'pps-homepage',
-    templateUrl: './homepage.component.html',
-    styleUrl: './homepage.component.scss',
-    encapsulation: ViewEncapsulation.None,
-    standalone: false
+  selector: 'pps-homepage',
+  imports: [
+    CommonModule,
+    BannerComponent,
+    PromoBannerComponent,
+    ContactBannerComponent,
+    CardComponent,
+    CardsContainerComponent,
+    ExpandablePanelComponent,
+    DetailsViewComponent,
+  ],
+  templateUrl: './homepage.component.html',
+  styleUrl: './homepage.component.scss',
+  encapsulation: ViewEncapsulation.None,
 })
 export class HomepageComponent {
   routeToProducts(type: string) {

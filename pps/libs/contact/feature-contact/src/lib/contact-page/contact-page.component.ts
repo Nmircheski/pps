@@ -1,11 +1,12 @@
+import { UpperCasePipe } from '@angular/common';
 import { Component, ElementRef, Renderer2, viewChild } from '@angular/core';
 import { ContactItem } from '../models/interfaces';
 
 @Component({
-    selector: 'pps-contact-page',
-    templateUrl: './contact-page.component.html',
-    styleUrl: './contact-page.component.scss',
-    standalone: false
+  selector: 'pps-contact-page',
+  imports: [UpperCasePipe],
+  templateUrl: './contact-page.component.html',
+  styleUrl: './contact-page.component.scss',
 })
 export class ContactPageComponent {
   contactItems: ContactItem[] = [

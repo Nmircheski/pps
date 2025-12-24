@@ -1,14 +1,30 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { map } from 'rxjs';
 import { ProductsService } from '../services/products.service';
 import { ProductsRouteStatics } from '../static/route-statics';
 
+import { BenefitsListComponent } from '@pps/ui/benefits';
+import { CardComponent, CardsContainerComponent } from '@pps/ui/card';
+import { ContactBannerComponent } from '@pps/ui/contact-banner';
+import { DetailsViewComponent } from '@pps/ui/details-view';
+import { ImageGalleryComponent } from '@pps/ui/gallery';
+
 @Component({
   selector: 'pps-products-page',
+  imports: [
+    CommonModule,
+    ContactBannerComponent,
+    CardComponent,
+    CardsContainerComponent,
+    DetailsViewComponent,
+    ImageGalleryComponent,
+    BenefitsListComponent,
+  ],
+  providers: [ProductsService],
   templateUrl: './ProductsPage.component.html',
   styleUrl: './ProductsPage.component.scss',
-  standalone: false,
 })
 export class ProductsPageComponent implements OnInit {
   protected productType = '';

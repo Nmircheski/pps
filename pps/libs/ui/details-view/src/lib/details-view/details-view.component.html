@@ -9,7 +9,9 @@
     [class]="imgClassList()"
   >
     <img
-      [src]="imageSrc()"
+      [ngSrc]="imageSrc()"
+      width="580"
+      height="580"
       alt="App Logo"
       [class.row-reverse]="layout() === 'row-reverse'"
       class="img-{{ imageSize() }} w-full h-auto object-cover"
