@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { map } from 'rxjs';
 import { ProductsService } from '../services/products.service';
@@ -46,10 +46,9 @@ export class ProductsPageComponent implements OnInit {
 
     images: [],
   };
-  constructor(
-    private readonly route: ActivatedRoute,
-    private readonly productsService: ProductsService,
-  ) {}
+
+  private readonly route = inject(ActivatedRoute);
+  private readonly productsService = inject(ProductsService);
 
   ngOnInit() {
     this.productType =

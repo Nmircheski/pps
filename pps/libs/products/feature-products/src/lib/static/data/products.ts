@@ -75,19 +75,10 @@ export const products: IProduct[] = [
         src: 'assets/gallery/cups/cups_02.png',
       },
       {
-        src: 'assets/gallery/cups/cups_03.png',
-      },
-      {
         src: 'assets/gallery/cups/cups_04.png',
       },
       {
-        src: 'assets/gallery/cups/cups_05.png',
-      },
-      {
         src: 'assets/gallery/cups/cups_06.png',
-      },
-      {
-        src: 'assets/gallery/cups/cups_07.png',
       },
     ],
   },
