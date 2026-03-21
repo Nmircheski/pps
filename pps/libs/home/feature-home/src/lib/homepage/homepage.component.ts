@@ -33,7 +33,7 @@ export class HomepageComponent {
     {
       layout: 'col-reverse',
       buttonTitle: 'Повеќе за нас',
-      imageSrc: 'assets/aboutUsImageDetails.png',
+      imageSrc: 'assets/aboutUs-new.webp',
       subTitle: 'За нас',
       mainTitle:
         'Семеен бизнис со стремеж за создавање наследство на извонредност',
@@ -43,7 +43,7 @@ export class HomepageComponent {
     {
       layout: 'col-reverse',
       buttonTitle: 'дознај повеќе',
-      imageSrc: 'assets/aboutUsImageDetails.png',
+      imageSrc: 'assets/aboutUs-new.webp',
       subTitle: 'Технологии',
       mainTitle:
         'Најсовремени машини и техники за етикети со највисок квалитет',
