@@ -35,7 +35,7 @@ export class AboutUsPageComponent {
       mainTitle:
         'Семеен бизнис со стремеж за создавање наследство на извонредност',
       subTitle: 'За нас',
-      imageSrc: 'assets/industryExpandablePanel.png',
+      imageSrc: 'assets/industryPanel-new.webp',
       buttonTitle: '',
       marginBottom: true,
       paragraphContent:
@@ -45,7 +45,7 @@ export class AboutUsPageComponent {
 
   endDetailsConfig = signal<DetailsViewConfig>({
     layout: 'col-reverse',
-    imageSrc: 'assets/aboutUsImageDetails.png',
+    imageSrc: 'assets/aboutUs-new.webp',
     subTitle: 'Технологии',
     mainTitle: 'Најсовремени машини и техники за етикети со највисок квалитет',
     paragraphContent:
