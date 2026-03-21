@@ -24,7 +24,7 @@ export class AboutUsPageComponent {
       layout: 'row-reverse',
       subTitle: 'За нас',
       mainTitle: 'Бизнис што се темели на цврсти фамилијарни темели',
-      imageSrc: 'assets/card-cups.png',
+      imageSrc: 'assets/card-cups.jpg',
       marginBottom: false,
       buttonTitle: '',
       paragraphContent:
